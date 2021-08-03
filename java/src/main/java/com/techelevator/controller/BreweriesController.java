@@ -13,19 +13,23 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
 public class BreweriesController {
 
     private BreweryDAO breweryDAO;
-    private BreweryService breweryService;
 
-    public BreweriesController(BreweryDAO breweryDAO, BreweryService breweryService) {
+
+    public BreweriesController(BreweryDAO breweryDAO) {
         this.breweryDAO = breweryDAO;
-        this.breweryService = breweryService;
+
     }
     // GET API Brewery provides list of all breweries in Cleveland
-    @RequestMapping(path = "/breweries", method = RequestMethod.GET)
-    public List<Brewery> breweries () {return breweryDAO.list();}
+
+    @RequestMapping(path = "/brewery", method = RequestMethod.GET)
+    public List<Brewery> list () {
+      List<Brewery> breweries  = breweryDAO.list();
+      return breweries;
+    }
+
 
 
     //GET API Brewery by ID provides the brewery with given ID -- int or long for ID???

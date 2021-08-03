@@ -1,19 +1,6 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS brewery CASCADE;
 
-CREATE TABLE brewery (
-brewery_id serial,
-brewery_name varchar(50) NOT NULL,
-street varchar(50) NOT NULL,
-city varchar(50) NOT NULL,
-state varchar(50) NOT NULL,
-zip_code varchar(10) NOT NULL,
-phone varchar(15) NOT NULL,
-history text NOT NULL,
-hours_of_operation text NOT NULL,
-image text NOT NULL
-);
 
 INSERT INTO brewery (brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image)
 VALUES('BottleHouse Brewery', '13368 Madison Ave', 'Lakewood', 'Ohio', '44107', '216-926-0025','As we move through year 9 our passion for the art of beer, mead and cider making increases daily.  Through our 3 taprooms (Cleveland Heights, Lakewood, Shaker Heights), we have been able to share our passions and our products without distributing our beer to retail stores.  This model allows us to stay true to our belief that communities deserve a welcoming place to gather and share life over a well-made beer.
@@ -30,5 +17,7 @@ VALUES ('Sibling Revelry Brewing', '29305 Clemens Rd', 'Westlake', 'Ohio', '4414
 );
 
 COMMIT;
+
+
            
 

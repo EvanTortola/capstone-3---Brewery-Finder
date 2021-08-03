@@ -27,12 +27,12 @@ public class BrewerySqlDAO implements BreweryDAO {
     @Override
     public List<Brewery> list () {
         List<Brewery> breweries = new ArrayList<>();
-        String sql = "SELECT brewery_id, brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image FROM brewery";
+        String sql = "SELECT brewery_id, brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image FROM brewery;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while (results.next()) {
-            Brewery card = mapRowToCard(results);
-            breweries.add(card);
+            Brewery brewery = mapRowToCard(results);
+            breweries.add(brewery);
         }
         return breweries;
     }
