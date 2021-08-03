@@ -27,7 +27,7 @@ public class BrewerySqlDAO implements BreweryDAO {
     @Override
     public List<Brewery> list () {
         List<Brewery> breweries = new ArrayList<>();
-        String sql = "SELECT id, name, street, city, state, phone FROM breweries";
+        String sql = "SELECT brewery_id, brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image FROM brewery";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while (results.next()) {
@@ -40,7 +40,7 @@ public class BrewerySqlDAO implements BreweryDAO {
     @Override
     public Brewery get(long id) {
         Brewery card = null;
-        String sql = "SELECT id, name, street, city, state, phone FRM breweries WHERE id = ? ";
+        String sql = "SELECT brewery_id, brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image WHERE brewery_id = ? ";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql,id);
         if(results.next()) {
@@ -55,12 +55,17 @@ public class BrewerySqlDAO implements BreweryDAO {
 
     private Brewery mapRowToCard(SqlRowSet rs) {
         Brewery brewery = new Brewery();
-        brewery.setBreweryId(rs.getLong("id"));
-        brewery.setBreweryName(rs.getString("name"));
+        brewery.setBreweryId(rs.getLong("brewery_id"));
+        brewery.setBreweryName(rs.getString("brewery_name"));
         brewery.setBreweryAddress(rs.getString("street"));
         brewery.setBreweryCity(rs.getString("city"));
         brewery.setBreweryState(rs.getString("state"));
+        brewery.setZipCode(rs.getString("zip_code"));
         brewery.setPhoneNumber(rs.getString("phone"));
+        brewery.setHistory(rs.getString("history"));
+        brewery.setHoursOfOperation(rs.getString("hours_of_operation"));
+        brewery.setImage(rs.getString("image"));
+
 
         return brewery;
     }
