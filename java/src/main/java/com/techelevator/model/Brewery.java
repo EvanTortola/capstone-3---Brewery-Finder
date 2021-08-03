@@ -6,24 +6,32 @@ import javax.validation.constraints.NotEmpty;
 
 public class Brewery {
 
-    @JsonProperty("id")
+
     @NotEmpty
     private Long breweryId;
-    @JsonProperty("name")
+
     @NotEmpty
     private String breweryName;
-    @JsonProperty("street")
+
     @NotEmpty
     private String breweryAddress;
-    @JsonProperty("city")
+
     @NotEmpty
     private String breweryCity;
-    @JsonProperty("state")
+
     @NotEmpty
     private String breweryState;
-    @JsonProperty("phone")
+
     @NotEmpty
     private String phoneNumber;
+
+    private String history;
+
+    private String image;
+
+    private String hoursOfOperation;
+
+    private String zipCode;
 
     public Long getBreweryId() {
         return breweryId;
@@ -71,5 +79,37 @@ public class Brewery {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getHistory() {
+        return history;
+    }
+
+    public void setHistory(String history) {
+        this.history = history;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getHoursOfOperation() {
+        return hoursOfOperation;
+    }
+
+    public void setHoursOfOperation(String hoursOfOperation) {
+        this.hoursOfOperation = hoursOfOperation;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 }
