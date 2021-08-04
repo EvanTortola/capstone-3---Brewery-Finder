@@ -1,12 +1,18 @@
 <template>
-  <div class="home">
-    <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
+  <div class="home  hero-img vw-100 vh-100">
+    <brewery-card/>
   </div>
 </template>
 
 <script>
+
+import BreweryCard from '@/components/BreweryCard.vue';
+
 export default {
+  components: {
+    BreweryCard
+
+  },
   name: "home"
 };
 </script>
