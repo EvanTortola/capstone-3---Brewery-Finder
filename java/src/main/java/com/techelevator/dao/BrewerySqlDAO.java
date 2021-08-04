@@ -17,9 +17,6 @@ public class BrewerySqlDAO implements BreweryDAO {
 
     private JdbcTemplate jdbcTemplate;
 
-    // Do we need this??
-    private Logger log = LoggerFactory.getLogger(getClass());
-
     public BrewerySqlDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
