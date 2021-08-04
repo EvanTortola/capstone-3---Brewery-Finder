@@ -11,10 +11,9 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-<<<<<<< HEAD
+
 @RequestMapping("/breweries")
-=======
->>>>>>> 4009a40b5aff5b7d13fcefb766e32d455f87552c
+
 public class BreweriesController {
 
     private BreweryDAO breweryDAO;
@@ -24,11 +23,11 @@ public class BreweriesController {
         this.breweryDAO = breweryDAO;
 
     }
-<<<<<<< HEAD
+
 
     @RequestMapping(path = "", method = RequestMethod.GET)
     public List<Brewery> breweries () {return breweryDAO.list();}
-=======
+
     // GET API Brewery provides list of all breweries in Cleveland
 
     @RequestMapping(path = "/brewery", method = RequestMethod.GET)
@@ -37,7 +36,7 @@ public class BreweriesController {
       return breweries;
     }
 
->>>>>>> 4009a40b5aff5b7d13fcefb766e32d455f87552c
+
 
 
 
