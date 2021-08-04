@@ -1,9 +1,88 @@
 <template>
 
-  <div class="hero-img">  
-    <!-- <img src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2133x1600/1f6f18af7d335d1c230ed4410cfd0ebd/photo-1559526642-c3f001ea68ee.jpg" alt="interior of a brewery with many silver cisterns and wooden boxes">  -->
+  <div class="hero-img vw-100 vh-100">  
+
     <b-container fluid class="bv-row">
-      <b-row class="mb-3">
+     
+      <div id="login" class="text-center"> 
+        <form class="form-signin" @submit.prevent="login">
+
+          <b-row class="mb-3">
+            <b-col>
+              <h1 class="h3 mb-3 font-weight-normal text-white">Please Sign In</h1>
+              <div
+                class="alert alert-danger"
+                role="alert"
+                v-if="invalidCredentials"
+              >Invalid username and password!</div>
+              <div
+                class="alert alert-success"
+                role="alert"
+                v-if="this.$route.query.registration"
+              >Thank you for registering, please sign in.</div>
+            </b-col>
+            <b-col></b-col>
+            <b-col>
+              <h1 class="h3 mb-3 font-weight-normal text-white">Admin Log In</h1>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col>
+              <label for="username" class="sr-only text-white">Username</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              placeholder="Username"
+              v-model="user.username"
+              required
+              autofocus
+            />
+            </b-col>
+            <b-col></b-col>
+            <b-col>
+              <label class="sr-only text-white">Username</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              placeholder="Username"
+            />
+            </b-col>
+          </b-row>
+            
+          <b-row>
+            <b-col>
+              <label for="password" class="sr-only text-white">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                placeholder="Password"
+                v-model="user.password"
+                required
+              />
+              <router-link :to="{ name: 'register' }" class="text-primary bg-white">Need an account?</router-link>&nbsp;
+              <button type="submit" class="btn btn-light">Sign in</button>
+            </b-col>
+            <b-col></b-col>
+            <b-col>
+              <label for="password" class="sr-only text-white">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  placeholder="Password"
+                />
+                <button type="submit" class="btn btn-light align-left">Sign in</button>
+            </b-col>
+          </b-row>
+            
+        </form>
+      </div>
+    </b-container>    
+    <!-- <b-container fluid class="bv-row">
+      <b-row class="mb-5">
 
         <b-col>
           <div id="login" class="text-left">
@@ -72,7 +151,7 @@
         </b-col>
         <b-col></b-col>
       </b-row>
-    </b-container>
+    </b-container> -->
      
     <!-- <div id="login" class="text-left">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1> -->
@@ -115,43 +194,6 @@
       <!-- <router-link :to="{ name: 'register' }">Need an account?</router-link>
         <button type="submit">Sign in</button> -->
     <!-- </div> -->
-
-    <!-- <div id="login" class="text-center">
-      <form class="form-signin" @submit.prevent="login">
-        <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
-        <div
-          class="alert alert-danger"
-          role="alert"
-          v-if="invalidCredentials"
-        >Invalid username and password!</div>
-        <div
-          class="alert alert-success"
-          role="alert"
-          v-if="this.$route.query.registration"
-        >Thank you for registering, please sign in.</div>
-        <label for="username" class="sr-only">Username</label>
-        <input
-          type="text"
-          id="username"
-          class="form-control"
-          placeholder="Username"
-          v-model="user.username"
-          required
-          autofocus
-        />
-        <label for="password" class="sr-only">Password</label>
-        <input
-          type="password"
-          id="password"
-          class="form-control"
-          placeholder="Password"
-          v-model="user.password"
-          required
-        />
-        <router-link :to="{ name: 'register' }">Need an account?</router-link>
-        <button type="submit">Sign in</button>
-      </form>
-    </div> -->
   </div>
 </template>
 
@@ -184,7 +226,7 @@ export default {
         .catch(error => {
           const response = error.response;
 
-          if (response.status === 401) {
+          if (response.status === 401) { 
             this.invalidCredentials = true;
           }
         });
@@ -198,8 +240,5 @@ export default {
    background-image: url("../assets/img/bg.jpg");
    background-size: cover;
  }
-
-
-
 </style>
 
