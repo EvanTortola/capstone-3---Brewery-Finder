@@ -30,7 +30,7 @@ public class BreweriesController {
 
     // GET API Brewery provides list of all breweries in Cleveland
 
-    @RequestMapping(path = "/brewery", method = RequestMethod.GET)
+    @RequestMapping(path = "/breweries", method = RequestMethod.GET)
     public List<Brewery> list () {
       List<Brewery> breweries  = breweryDAO.list();
       return breweries;
@@ -38,11 +38,9 @@ public class BreweriesController {
 
 
 
-
-
-    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
-    public Brewery getWithId (@Valid
-                               @PathVariable int id) {
+    //GET API Brewery by ID provides the brewery with given ID -- int or long for ID???
+    @RequestMapping(path = "/breweries/{id}", method = RequestMethod.GET)
+    public Brewery getWithId (@Valid @PathVariable int id) {
         return breweryDAO.get(id);
     }
 
