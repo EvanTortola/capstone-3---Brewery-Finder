@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin
 @RestController
 
-@RequestMapping("/breweries")
+
 
 public class BreweriesController {
 
@@ -25,8 +25,7 @@ public class BreweriesController {
     }
 
 
-    @RequestMapping(path = "", method = RequestMethod.GET)
-    public List<Brewery> breweries () {return breweryDAO.list();}
+
 
     // GET API Brewery provides list of all breweries in Cleveland
 
