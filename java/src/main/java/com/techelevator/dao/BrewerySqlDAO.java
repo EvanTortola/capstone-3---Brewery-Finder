@@ -37,7 +37,7 @@ public class BrewerySqlDAO implements BreweryDAO {
     @Override
     public Brewery get(long id) {
         Brewery card = null;
-        String sql = "SELECT brewery_id, brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image WHERE brewery_id = ? ";
+        String sql = "SELECT brewery_id, brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image FROM brewery WHERE brewery_id = ?;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql,id);
         if(results.next()) {
