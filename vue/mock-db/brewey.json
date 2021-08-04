@@ -1,0 +1,37 @@
+{
+    "breweries" : [
+        {
+            "name" : "BottleHouse Brewery",
+            "address" : "13368 Madison Ave",
+            "city" : "Lakewood",
+            "state" : "Ohio",
+            "zipcode" : "44107",
+            "phone" : "216-926-0025",
+            "history" : "",
+            "hours_of_operation" : "",
+            "image" : "https://golakewood.com/wp-content/uploads/2019/03/bottlehouse-brewery-1280x640.jpg"
+        },
+        {
+            "name" : "Sibling Revelry Brewering",
+            "address" : "29305 Clemens Rd",
+            "city" : "Westlake",
+            "state" : "Ohio",
+            "zipcode" : "44145",
+            "phone" : "440-471-8559",
+            "history" : "",
+            "hours_of_operation" : "",
+            "image" : "https://golakewood.com/wp-content/uploads/2019/03/bottlehouse-brewery-1280x640.jpg"
+        },
+        {
+            "name" : "Thirsty Dog Brewing",
+            "address" : "1085 Old River Road",
+            "city" : "Cleveland",
+            "state" : "Ohio",
+            "zipcode" : "44113",
+            "phone" : "216-523-1501",
+            "history" : "",
+            "hours_of_operation" : "",
+            "image" : "https://golakewood.com/wp-content/uploads/2019/03/bottlehouse-brewery-1280x640.jpg"
+        }
+    ]
+}
