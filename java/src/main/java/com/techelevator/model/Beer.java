@@ -21,7 +21,7 @@ public class Beer {
 
     private Long breweryId;
 
-    
+
     public Beer (Long beerId, String name, String type, String description, String imgUrl, Long abv, Long breweryId) {
         this.beerId = beerId;
         this.name = name;
