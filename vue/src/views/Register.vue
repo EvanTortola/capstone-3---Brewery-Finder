@@ -1,30 +1,39 @@
 <template>
-  <div id="register" class="text-center hero-img">
+  <div id="register" class="text-center hero-img vw-100 vh-100">
     <b-container fluid class="bv-row">
-      <form class="form-register" @submit.prevent="register">
-      <b-col>
+      <form class="form-register" @submit.prevent="register">        
+               
         <b-row class="mb-5">
-        
-          
-            <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
-        
+          <b-col></b-col>
+          <b-col>
+            <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>          
             <div class="alert alert-danger" role="alert" v-if="registrationErrors">
-              {{ registrationErrorMsg }}
-            </div>
-            </b-row>
+                {{ registrationErrorMsg }}
+            </div>            
+          </b-col>
+          <b-col></b-col>
+        </b-row>
+
+        <b-row>
+          <b-col></b-col>
+          <b-col>
+            <label for="username" class="sr-only">Username</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              placeholder="Username"
+              v-model="user.username"
+              required
+              autofocus
+            />
+          </b-col>
+          <b-col></b-col>
+
+        </b-row>
             <b-row>
-              <label for="username" class="sr-only">Username</label>
-              <input
-                type="text"
-                id="username"
-                class="form-control"
-                placeholder="Username"
-                v-model="user.username"
-                required
-                autofocus
-              />
-            </b-row>
-            <b-row>
+              <b-col></b-col>
+              <b-col>
               <label for="password" class="sr-only">Password</label>
               <input
                 type="password"
@@ -42,12 +51,13 @@
                 v-model="user.confirmPassword"
                 required
               />
-              <router-link :to="{ name: 'login' }">Have an account?</router-link>
-              <button class="btn btn-lg btn-primary btn-block" type="submit">
+              <router-link :to="{ name: 'login' }" class="text-primary bg-white align-bottom">Have an account?</router-link>&nbsp;
+              <button class="btn btn-lg btn-light btn-block" type="submit">
                 Create Account
               </button>
-          </b-row>
-          </b-col>
+              </b-col>
+              <b-col></b-col>
+          </b-row>          
         </form>
     
     </b-container>

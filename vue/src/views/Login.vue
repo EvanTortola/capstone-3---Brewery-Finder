@@ -1,6 +1,6 @@
 <template>
 
-  <div class="hero-img">  
+  <div class="hero-img vw-100 vh-100">  
 
     <b-container fluid class="bv-row">
      
@@ -9,7 +9,7 @@
 
           <b-row class="mb-3">
             <b-col>
-              <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+              <h1 class="h3 mb-3 font-weight-normal text-white">Please Sign In</h1>
               <div
                 class="alert alert-danger"
                 role="alert"
@@ -22,11 +22,13 @@
               >Thank you for registering, please sign in.</div>
             </b-col>
             <b-col></b-col>
-            <b-col></b-col>
+            <b-col>
+              <h1 class="h3 mb-3 font-weight-normal text-white">Admin Log In</h1>
+            </b-col>
           </b-row>
           <b-row>
             <b-col>
-              <label for="username" class="sr-only">Username</label>
+              <label for="username" class="sr-only text-white">Username</label>
             <input
               type="text"
               id="username"
@@ -38,12 +40,20 @@
             />
             </b-col>
             <b-col></b-col>
-            <b-col></b-col>
+            <b-col>
+              <label class="sr-only text-white">Username</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              placeholder="Username"
+            />
+            </b-col>
           </b-row>
             
           <b-row>
             <b-col>
-               <label for="password" class="sr-only">Password</label>
+              <label for="password" class="sr-only text-white">Password</label>
               <input
                 type="password"
                 id="password"
@@ -52,12 +62,19 @@
                 v-model="user.password"
                 required
               />
-              <router-link :to="{ name: 'register' }">Need an account?</router-link>
-              <button type="submit">Sign in</button>
+              <router-link :to="{ name: 'register' }" class="text-primary bg-white">Need an account?</router-link>&nbsp;
+              <button type="submit" class="btn btn-light">Sign in</button>
             </b-col>
             <b-col></b-col>
             <b-col>
-             
+              <label for="password" class="sr-only text-white">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  placeholder="Password"
+                />
+                <button type="submit" class="btn btn-light align-left">Sign in</button>
             </b-col>
           </b-row>
             
