@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,11 +19,8 @@ public class BrewerySqlDAO implements BreweryDAO {
 
     private JdbcTemplate jdbcTemplate;
 
-    // Do we need this??
-    private Logger log = LoggerFactory.getLogger(getClass());
-
-    public BrewerySqlDAO(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public BrewerySqlDAO(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     @Override
@@ -56,6 +54,7 @@ public class BrewerySqlDAO implements BreweryDAO {
 
     private Brewery mapRowToCard(SqlRowSet rs) {
         Brewery brewery = new Brewery();
+
         brewery.setBreweryId(rs.getLong("brewery_id"));
         brewery.setBreweryName(rs.getString("brewery_name"));
         brewery.setBreweryAddress(rs.getString("street"));
@@ -66,7 +65,6 @@ public class BrewerySqlDAO implements BreweryDAO {
         brewery.setHistory(rs.getString("history"));
         brewery.setHoursOfOperation(rs.getString("hours_of_operation"));
         brewery.setImage(rs.getString("image"));
-
 
         return brewery;
     }
