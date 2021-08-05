@@ -2,29 +2,27 @@ package com.techelevator.controller;
 import com.techelevator.dao.BreweryDAO;
 import com.techelevator.model.Brewery;
 import org.springframework.web.bind.annotation.*;
-<<<<<<< HEAD
+
 // import services.BreweryService;
-=======
 
 
 
-//import services.BreweryService;
 
->>>>>>> 0b2457b4d04750658e6e92f3be246134a4dee571
+
 
 import javax.validation.Valid;
 import java.util.List;
 
 
-<<<<<<< HEAD
+
 @CrossOrigin
-=======
 
 
 
 
 
->>>>>>> 0b2457b4d04750658e6e92f3be246134a4dee571
+
+
 @RestController
 
 
