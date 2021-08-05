@@ -9,29 +9,37 @@ public class Brewery {
 
     @NotEmpty
     private Long breweryId;
-
     @NotEmpty
     private String breweryName;
-
     @NotEmpty
     private String breweryAddress;
-
     @NotEmpty
     private String breweryCity;
-
     @NotEmpty
     private String breweryState;
-
     @NotEmpty
     private String phoneNumber;
-
     private String history;
-
     private String image;
-
     private String hoursOfOperation;
-
     private String zipCode;
+
+    public Brewery (Long breweryId, String breweryName, String breweryAddress, String breweryCity, String breweryState, String phoneNumber,
+                     String history, String image, String hoursOfOperation, String zipCode) {
+
+        this.breweryId = breweryId;
+        this.breweryName = breweryName;
+        this.breweryAddress = breweryAddress;
+        this.breweryCity = breweryCity;
+        this.breweryState = breweryState;
+        this.phoneNumber = phoneNumber;
+        this.history = history;
+        this.image = image;
+        this.hoursOfOperation = hoursOfOperation;
+        this.zipCode= zipCode;
+    }
+
+    public Brewery() {}
 
     public Long getBreweryId() {
         return breweryId;
