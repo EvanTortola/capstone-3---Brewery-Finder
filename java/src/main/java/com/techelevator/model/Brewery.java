@@ -12,7 +12,7 @@ public class Brewery {
     @NotEmpty
     private String breweryName;
     @NotEmpty
-    private String breweryAddress;
+    private String breweryStreet;
     @NotEmpty
     private String breweryCity;
     @NotEmpty
@@ -24,12 +24,12 @@ public class Brewery {
     private String hoursOfOperation;
     private String zipCode;
 
-    public Brewery (Long breweryId, String breweryName, String breweryAddress, String breweryCity, String breweryState, String phoneNumber,
+    public Brewery (Long breweryId, String breweryName, String breweryStreet, String breweryCity, String breweryState, String phoneNumber,
                      String history, String image, String hoursOfOperation, String zipCode) {
 
         this.breweryId = breweryId;
         this.breweryName = breweryName;
-        this.breweryAddress = breweryAddress;
+        this.breweryStreet = breweryStreet;
         this.breweryCity = breweryCity;
         this.breweryState = breweryState;
         this.phoneNumber = phoneNumber;
@@ -57,12 +57,12 @@ public class Brewery {
         this.breweryName = breweryName;
     }
 
-    public String getBreweryAddress() {
-        return breweryAddress;
+    public String getBreweryStreet() {
+        return breweryStreet;
     }
 
-    public void setBreweryAddress(String breweryAddress) {
-        this.breweryAddress = breweryAddress;
+    public void setBreweryAddress(String breweryStreet) {
+        this.breweryStreet = breweryStreet;
     }
 
     public String getBreweryCity() {

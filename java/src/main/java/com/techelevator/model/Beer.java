@@ -32,6 +32,8 @@ public class Beer {
         this.breweryId = breweryId;
     }
 
+    public Beer() {}
+
     public Long getBeerId() {
         return beerId;
     }
