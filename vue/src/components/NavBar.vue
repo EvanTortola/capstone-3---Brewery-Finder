@@ -1,6 +1,8 @@
 <template>
     <div>
-        
+        <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
+      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>&nbsp;|&nbsp;
+      <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link>
     </div>
 </template>
 
