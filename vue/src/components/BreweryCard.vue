@@ -3,8 +3,9 @@
         <b-container fluid class="bv-row">
             <b-row >
                 <b-col>
-                    <router-link :to="{name: 'Brewery', params: {breweryId: this.breweryId} }">
-                    <b-card v-for="brewery in breweries" v-bind:key="brewery.id" class="card">
+                    
+                    <b-card v-for="brewery in breweries" v-bind:key="brewery.breweryId" class="card">
+                         <router-link :to="{name: 'Brewery', params: {breweryId: brewery.breweryId} }">
                          <h1>{{ brewery.breweryName }}</h1>
                             <h2>{{ brewery.breweryCity }}</h2>
                              <img :src=" brewery.image " img-bottom tag="article" style="max-width: 20rem;" class="mb-2" /> -->
@@ -14,8 +15,9 @@
                                      </svg>
                                      Like
                                 </b-button>
+                                </router-link>
                         </b-card>
-                    </router-link>
+                    
                 </b-col>
 
             </b-row>
@@ -41,7 +43,7 @@ export default {
         }
     },
     created() {
-        breweryService.getBreweries(this.$route.params.id).then(response => {
+        breweryService.getBreweries(this.$route.params.breweryId).then(response => {
             this.breweries = response.data;
         })
     }

@@ -10,9 +10,9 @@ export default {
         .then(response => this.breweries = response)
     },
 
-    getBreweryById(id) {
-        return http.get(`/breweries/${id}`)
-        .then(response => this.breweries = response)
+    getBreweryById(breweryId) {
+        return http.get(`/breweries/${breweryId}`)
+        .then(response => this.brewery = response)
     },
     
     addBrewery(brewery) {
