@@ -2,13 +2,13 @@ package com.techelevator.controller;
 import com.techelevator.dao.BreweryDAO;
 import com.techelevator.model.Brewery;
 import org.springframework.web.bind.annotation.*;
-import services.BreweryService;
+// import services.BreweryService;
 
 import javax.validation.Valid;
 import java.util.List;
 
 
-
+@CrossOrigin
 @RestController
 
 
