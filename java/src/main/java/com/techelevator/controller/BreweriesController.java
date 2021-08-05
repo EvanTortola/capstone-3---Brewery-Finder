@@ -3,11 +3,19 @@ import com.techelevator.dao.BreweryDAO;
 import com.techelevator.model.Brewery;
 import org.springframework.web.bind.annotation.*;
 
-//import services.BreweryService;
+// import services.BreweryService;
+
+
+
+
 
 
 import javax.validation.Valid;
 import java.util.List;
+
+
+
+@CrossOrigin
 
 
 
@@ -16,7 +24,9 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin
+
+
+
 public class BreweriesController {
 
     private BreweryDAO breweryDAO;
@@ -26,7 +36,11 @@ public class BreweriesController {
         this.breweryDAO = breweryDAO;
 
     }
-    // Brewery provides list of all breweries in Cleveland
+
+
+
+
+    // GET API Brewery provides list of all breweries in Cleveland
 
     @RequestMapping(path = "/breweries", method = RequestMethod.GET)
     public List<Brewery> list () {

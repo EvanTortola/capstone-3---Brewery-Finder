@@ -6,6 +6,7 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import Brewery from '../views/Brewery'
+//import BreweryDetail from '../components/BreweryDetail'
 
 Vue.use(Router)
 
@@ -57,7 +58,7 @@ const router = new Router({
       }
     },
     {
-      path: "/breweries/:id",
+      path: "/breweries/:breweryId",
       name: "Brewery",
       component: Brewery,
       meta: {
