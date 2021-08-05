@@ -23,11 +23,11 @@
             </b-col>
             <b-col></b-col>
             <b-col>
-              <h1 class="h3 mb-3 font-weight-normal text-white">Admin Log In</h1>
+              <h1 class="h3 mb-3 font-weight-normal text-white">Register</h1>
             </b-col>
           </b-row>
           <b-row>
-            <b-col>
+            <b-col>=============
               <label for="username" class="sr-only text-white">Username</label>
             <input
               type="text"
