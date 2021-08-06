@@ -24,14 +24,14 @@ public class ReviewSqlDAO implements ReviewDAO{
     public List<Review> listAll() {
         List<Review> reviews = new ArrayList<>();
 
-        String sql = ""
+        String sql = "";
 
         return reviews;
     }
 
     @Override
     public Review saveReview(Review review) {
-        Review
+        review = null;
 
         return null;
     }
