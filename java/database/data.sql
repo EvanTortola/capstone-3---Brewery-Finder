@@ -21,6 +21,12 @@ VALUES ('Thirsty Dog', '1085 Old River Road', 'Cleveland', 'Ohio', '44113', '216
 );
 
 
+SELECT review_id, review
+
+
+
+
+
 COMMIT;
 
 

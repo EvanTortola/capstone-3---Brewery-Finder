@@ -19,19 +19,36 @@ public class ReviewSqlDAO implements ReviewDAO{
         this.jdbcTemplate = jdbcTemplate;
     }
 
+
+
     //
     @Override
     public List<Review> listAll() {
         List<Review> reviews = new ArrayList<>();
 
-        String sql = "";
+        String sql = "SELECT r.review_id, r.brewery_id, r.brewery_name, r.user_experience, r.brewery_rating, r.date_time\n" +
+                "FROM review r" +
+                "JOIN brewery b " +
+                "ON r.brewery_id = b.brewery_id;";
 
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        while (results.next()) {
+            Review review = mapRowToReview(results);
+            reviews.add(review);
+        }
         return reviews;
     }
 
     @Override
     public Review saveReview(Review review) {
         review = null;
+
+        return review;
+    }
+
+    @Override
+    public Review createReview(Brewery breweryId, Review review) {
+        
 
         return null;
     }
@@ -44,6 +61,9 @@ public class ReviewSqlDAO implements ReviewDAO{
         return pastReviews;
     }
 
+
+
+    //Helper Method
     private Review mapRowToReview(SqlRowSet rs) {
         Review review = new Review();
 
