@@ -5,6 +5,7 @@ import com.techelevator.model.Brewery;
 import com.techelevator.model.BreweryNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,9 @@ public class BrewerySqlDAO implements BreweryDAO {
     public BrewerySqlDAO(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
+
+    @Autowired
+    private BrewerySqlDAO brewerySqlDAO;
 
     @Override
     public List<Brewery> list () {
@@ -48,6 +52,12 @@ public class BrewerySqlDAO implements BreweryDAO {
         }
 
         return card;
+    }
+
+    @Override
+    public void  addBrewery(String breweryName, String breweryStreet, String breweryCity, String breweryState, String phoneNumber, String history, String image, String hoursOfOperation, String zipCode) {
+        String sql = "INSERT INTO brewery (brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image) VALUES (?,?,?,?,?,?,?,?,?);";
+        jdbcTemplate.update(sql, breweryName, breweryStreet, breweryCity, breweryState, phoneNumber, history, image, hoursOfOperation, zipCode);
     }
 
 

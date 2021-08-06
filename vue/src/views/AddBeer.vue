@@ -1,6 +1,5 @@
 <template>
 <div>
-  
    <add-beer />
 </div>
  
@@ -8,7 +7,7 @@
 
 <script>
 
-import addBeer from '../components/AddBeer.vue'
+import addBeer from '../components/AddBeer'
 export default {
 
     components: {

@@ -20,10 +20,10 @@
       <input id="hoursOfOperation" type="text" class="form-control" v-model="brewery.hoursOfOperation">
       <label for="phoneNumber">Phone Number:</label>
       <input id="phoneNumber" type="tel" class="form-control" v-model="brewery.phoneNumber">
-      <label for="image">Image:</label>
-      <input id="image" type="file" name="img" accept="image/*" class="form-control" v-on:change="brewery.image">    
+      <label for="image">Image URL:</label>
+      <input id="image" type="text" name="img" accept="image/*" class="form-control" v-model="brewery.image">    
     </div>
-    <button class="btn btn-submit">Submit</button>
+    <button class="btn btn-submit" v-on:click.prevent="submitForm">Submit</button>
     <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
   </form>
   
@@ -58,31 +58,30 @@ export default {
     methods: {
         submitForm(){
             const newBrewery = {
-                breweryId: Number(this.$route.params.breweryId),
                 breweryName: this.brewery.breweryName,
-                history: this.brewery.history,
-                breweryAddress: this.brewery.breweryAddress,
+                breweryStreet: this.brewery.breweryAddress,
                 breweryCity: this.brewery.breweryCity,
                 breweryState: this.brewery.breweryState,
                 zipCode: this.brewery.zipCode,
+                phoneNumber: this.brewery.phoneNumber, 
+                history: this.brewery.history,
                 hoursOfOperation: this.brewery.hoursOfOperation,
-                phoneNumber: this.brewery.phoneNumber,
+              
                 image: this.brewery.image
             };
 
-            if (this.breweryId === 0) {
+            if (this.brewery.breweryName != '') {
                 breweryService
                     .addBrewery(newBrewery)
                     .then (response => {
                         if (response.status === 201) {
-                            this.$router.push(`/breweries/${newBrewery.breweryId}`);
+                            this.$router.push(`/`);
                         }
                     })
                     .catch(error => {
-                        this.handleErrorResponse(error, "adding");
+                        this.handleErrorResponse(error, " adding");
                     });
             } else {
-                newBrewery.breweryId = this.breweryId;
                 newBrewery.breweryName = this.brewery.breweryName;
                 newBrewery.history = this.brewery.history;
                 newBrewery.breweryAddress = this.brewery.breweryAddress;
@@ -96,16 +95,16 @@ export default {
                     .updateBrewery(newBrewery)
                     .then(response => {
                         if (response.status === 200) {
-                            this.$router.push(`/breweries/${newBrewery.breweryId}`)
+                            this.$router.push(`/`)
                         }
                     })
                     .catch(error => {
                         this.handleErrorResponse(error, "updating"); 
                     });
-            }
+             } 
         },
         cancelForm() {
-            this.$router.push(`/breweries/${this.$route.params.breweryId}`);
+            this.$router.push(`/`);
         },
         handleErrorResponse(error, verb) {
             if(error.response) {

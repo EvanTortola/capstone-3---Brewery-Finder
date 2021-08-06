@@ -9,7 +9,10 @@
         <p>{{ brewery.hoursOfOperation }}</p>
         <p> {{ brewery.phoneNumber}}</p>
         <img :src="brewery.image" alt=""> 
-        <button>Add Beer</button>       
+        <router-link :to="{name: 'addBeer', params: {breweryId: brewery.breweryId} }">
+            <button >Add Beer
+            </button>   
+            </router-link>     
     </div>
 </template>
 
