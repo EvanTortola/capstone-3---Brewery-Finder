@@ -1,5 +1,9 @@
 <template>
-  <brewery-detail />
+<div>
+  
+   <brewery-detail />
+</div>
+ 
 </template>
 
 <script>

@@ -8,5 +8,9 @@ export default {
     getBeer() {
         return http.get('/beer')
         .then(response => this.beer = response)
+    },
+
+    addBeer() {
+        return http.post()
     }
 }

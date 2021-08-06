@@ -53,4 +53,9 @@ public class BreweriesController {
     public Brewery getWithId (@Valid @PathVariable int id) {
         return breweryDAO.get(id);
     }
+
+    @RequestMapping(path = "/breweries/new", method = RequestMethod.POST)
+    public void addNewBrewery (@RequestBody Brewery brewery) {
+        breweryDAO.addBrewery(brewery.getBreweryName(), brewery.getBreweryStreet(), brewery.getBreweryCity(), brewery.getBreweryState(), brewery.getZipCode(), brewery.getPhoneNumber(), brewery.getHistory(), brewery.getHoursOfOperation(),brewery.getImage());
+    }
 }
