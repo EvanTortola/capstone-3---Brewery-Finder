@@ -7,10 +7,9 @@ public class Review {
     @NotEmpty
     private Long reviewId;
     @NotEmpty
-    private Long breweryId;
+    private Long beerId;
     @NotEmpty
-    private String breweryName;
-
+    private String beerName;
     private String userExperience;
     @NotEmpty
     private int rating;
@@ -26,8 +25,8 @@ public class Review {
 
     public Review(@NotEmpty Long reviewId, @NotEmpty Long breweryId, @NotEmpty String breweryName, String userExperience, @NotEmpty int rating, @NotEmpty String dateTime) {
         this.reviewId = reviewId;
-        this.breweryId = breweryId;
-        this.breweryName = breweryName;
+        this.beerId = breweryId;
+        this.beerName = breweryName;
         this.userExperience = userExperience;
         this.rating = rating;
         this.dateTime = dateTime;
@@ -44,20 +43,20 @@ public class Review {
         this.reviewId = reviewId;
     }
 
-    public Long getBreweryId() {
-        return breweryId;
+    public Long getBeerId() {
+        return beerId;
     }
 
-    public void setBreweryId(Long breweryId) {
-        this.breweryId = breweryId;
+    public void setBeerId(Long beerId) {
+        this.beerId = beerId;
     }
 
-    public String getBreweryName() {
-        return breweryName;
+    public String getBeerName() {
+        return beerName;
     }
 
-    public void setBreweryName(String breweryName) {
-        this.breweryName = breweryName;
+    public void setBeerName(String beerName) {
+        this.beerName = beerName;
     }
 
     public String getUserExperience() {
@@ -91,8 +90,8 @@ public class Review {
     public String ReviewToString() {
         return "Review{" +
                 ", reviewId=" + reviewId +
-                ", breweryId=" + breweryId +
-                ", breweryName=" + breweryName +
+                ", beerId=" + beerId +
+                ", beerName=" + beerName +
                 ", userExperience=" + userExperience +
                 ", dateAndTime=" + dateTime +
                 '}';

@@ -7,19 +7,11 @@ import java.util.List;
 
 public interface ReviewDAO {
 
-    List<Review> listAll();
+List<Review> listAllReviews();
 
-    Review saveReview(Review review);
+void createReview(int beerID, String beerName, String userExperience, int rating, String dateTime);
 
-    Review createReview(Long breweryId, Review review);
-
-    //Review searchReviewByBrewery();
-
-    Brewery get(Long breweryId); //should this be Long reviewId? I already use that name in the Review model
-
-    //Beer get(Long id);
-
-    //need the ability to create a review
+Review getReviewByBeer(Long beerId);
 
     //do we need a boolean createReview method for integration testing, like UserDAO line 17 has?
 }

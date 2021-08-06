@@ -1,6 +1,5 @@
 package com.techelevator.dao;
 
-import com.techelevator.model.Brewery;
 import com.techelevator.model.Review;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -23,13 +22,10 @@ public class ReviewSqlDAO implements ReviewDAO{
 
     //
     @Override
-    public List<Review> listAll() {
+    public List<Review> listAllReviews() {
         List<Review> reviews = new ArrayList<>();
 
-        String sql = "SELECT r.review_id, r.brewery_id, r.brewery_name, r.user_experience, r.brewery_rating, r.date_time\n" +
-                "FROM review r" +
-                "JOIN brewery b " +
-                "ON r.brewery_id = b.brewery_id;";
+        String sql = "SELECT r.review_id, r.beer_id, r.beer_name, r.user_experience, r.beer_rating, r.date_time FROM review r;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while (results.next()) {
@@ -40,25 +36,16 @@ public class ReviewSqlDAO implements ReviewDAO{
     }
 
     @Override
-    public Review saveReview(Review review) {
-        review = null;
-
-        return review;
-    }
-
-    @Override
-    public Review createReview(Long breweryId, Review review) {
+    public void createReview(int breweryID, String breweryName, String userExperience, int rating, String dateTime) {
+        String sql = "INSERT INTO review (beer_id, beer_name, user_experience, beer_rating, date_time) VALUES ()";
         
 
-        return null;
+
     }
 
     @Override
-    public Brewery get(Long breweryId) {
-        Brewery pastReviews = null;
-
-
-        return pastReviews;
+    public Review getReviewByBeer(Long beerId) {
+        return null;
     }
 
 
@@ -68,10 +55,10 @@ public class ReviewSqlDAO implements ReviewDAO{
         Review review = new Review();
 
         review.setReviewId(rs.getLong("review_id"));
-        review.setBreweryId(rs.getLong("brewery_id"));
-        review.setBreweryName(rs.getString("brewery_name"));
+        review.setBeerId(rs.getLong("beer_id"));
+        review.setBeerName(rs.getString("beer_name"));
         review.setUserExperience(rs.getString("user_experience"));
-        review.setRating(rs.getInt("brewery_rating"));
+        review.setRating(rs.getInt("beer_rating"));
         review.setDateTime(rs.getString("date_time"));
 
         return review;
