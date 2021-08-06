@@ -47,7 +47,7 @@ public class ReviewSqlDAO implements ReviewDAO{
     }
 
     @Override
-    public Review createReview(Brewery breweryId, Review review) {
+    public Review createReview(Long breweryId, Review review) {
         
 
         return null;

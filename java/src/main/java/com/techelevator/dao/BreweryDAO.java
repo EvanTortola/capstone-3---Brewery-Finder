@@ -10,4 +10,6 @@ public interface BreweryDAO {
 
     Brewery get(long id);
 
+    void addBrewery (String breweryName, String breweryStreet, String breweryCity, String breweryState, String phoneNumber, String history, String image, String hoursOfOperation, String zipCode );
+
 }

@@ -11,7 +11,7 @@ public interface ReviewDAO {
 
     Review saveReview(Review review);
 
-    Review createReview(Brewery breweryId, Review review);
+    Review createReview(Long breweryId, Review review);
 
     //Review searchReviewByBrewery();
 

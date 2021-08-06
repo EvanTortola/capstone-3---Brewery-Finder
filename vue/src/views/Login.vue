@@ -27,7 +27,7 @@
             </b-col>
           </b-row>
           <b-row>
-            <b-col>=============
+            <b-col>
               <label for="username" class="sr-only text-white">Username</label>
             <input
               type="text"
