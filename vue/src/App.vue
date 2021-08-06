@@ -1,17 +1,20 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>&nbsp;|&nbsp;
-      <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link>
-      <!-- <router-link v-bind:to="{ name: 'addBrewery' }" v-if="$store.user.role == 'ROLE_ADMIN'">Add Brewery</router-link> -->
-    </div>
-    <router-view />
+  <div id="container">
+    <nav-bar />
+    <router-view :key="$route.fullPath" class="routerView" />
   </div>
 </template>
 
-<style>
-.nav {
-  justify-content: center;
+<script>
+import navBar from '@/components/NavBar'
+export default {
+  components: {
+    navBar
+  }
+  
 }
+</script>
+
+<style>
+
 </style>

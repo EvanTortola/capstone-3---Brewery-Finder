@@ -8,7 +8,8 @@
         <p>{{ brewery.zipCode }}</p>
         <p>{{ brewery.hoursOfOperation }}</p>
         <p> {{ brewery.phoneNumber}}</p>
-        <img :src="brewery.image" alt="">        
+        <img :src="brewery.image" alt=""> 
+        <button>Add Beer</button>       
     </div>
 </template>
 

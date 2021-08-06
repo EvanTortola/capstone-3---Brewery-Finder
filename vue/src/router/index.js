@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import Brewery from '../views/Brewery'
 import AddBrewery from '../views/AddBrewery'
+import AddBeer from '../views/AddBeer'
 //import BreweryDetail from '../components/BreweryDetail'
 
 Vue.use(Router)
@@ -69,7 +70,19 @@ const router = new Router({
     {
     path: "/addBrewery",
     name: "addBrewery",
-    component: AddBrewery
+    component: AddBrewery,
+    meta: {
+      requiresAuth: true,
+      // requiredAdmin: true
+     }
+    },
+    {
+      path: "/addBeer/:breweryId",
+      name: "addBeer",
+      component: AddBeer,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
 })
@@ -86,5 +99,15 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
+
+// router.addBrewery((to, from, next) => {
+//   const requiredAdmin = to.matched.some(x => x.meta.requiredAdmin);
+
+//   if(requiredAdmin && store.state.user != 'ROLE_ADMIN') {
+//     next('/');
+//   } else {
+//     next();
+//   }
+// })
 
 export default router;
