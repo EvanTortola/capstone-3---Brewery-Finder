@@ -5,14 +5,14 @@
     <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
        <div class="form-group">
             <label for="beerName"> Beer Name:</label>
-            <input id="beerName" type="text" class="form-control" v-model="beer.beerName" autocomplete="off" />
+            <input id="beerName" type="text" class="form-control" v-model="review.beerName" autocomplete="off" />
 
             <label for="beerType">Experience:</label>
-            <input id="type" type="text" class="form-control" v-model="beer.beerType">
+            <input id="type" type="text" class="form-control" v-model="review.beerType">
 
             
             <label for="rating">Rating:</label>
-              <select id="rating">
+              <select id="rating" v-model="review.rating">
                 <option value="1">1 Pour</option>
                 <option value="2">2 Pours</option>
                 <option value="3">3 Pours</option>
@@ -53,11 +53,11 @@ export default {
         submitForm(){
             const newReview = {
                 breweryId: Number(this.$route.params.breweryId),
-                beerName: this.beer.beerName,
-                beerType: this.beer.beerType,
-                beerDescription: this.beer.beerDescription,
-                abv: this.beer.abv,
-                image: this.beer.image
+                beerName: this.review.beerName,
+                beerType: this.review.beerType,
+                beerDescription: this.review.beerDescription,
+                abv: this.review.abv,
+                image: this.review.image
                
             };
 
@@ -74,11 +74,11 @@ export default {
                     });
             } else {
                 newReview.breweryId = this.$route.params.breweryId;
-                newReview.beerName = this.beer.beerName;
-                newReview.beerType = this.beer.beerType;
-                newReview.beerDescription = this.beer.beerDescription;
-                newReview.abv = this.beer.abv;
-                newReview.image = this.beer.image
+                newReview.beerName = this.review.beerName;
+                newReview.beerType = this.review.beerType;
+                newReview.beerDescription = this.review.beerDescription;
+                newReview.abv = this.review.abv;
+                newReview.image = this.review.image
               
                 reviewService
                     .updateBeer(newReview)
