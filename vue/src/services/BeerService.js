@@ -10,7 +10,10 @@ export default {
         .then(response => this.beer = response)
     },
 
-    addBeer() {
-        return http.post()
+    addBeer(beer) {
+        return http.post("/beer/new", beer)
+    },
+    getBeerByBreweryId(breweryId) {
+        return http.get(`/beer/${breweryId}`)
     }
 }
