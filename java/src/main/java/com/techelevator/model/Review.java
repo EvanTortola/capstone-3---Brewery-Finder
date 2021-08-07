@@ -5,9 +5,9 @@ import javax.validation.constraints.NotEmpty;
 public class Review {
     //
     @NotEmpty
-    private Long reviewId;
+    private long reviewId;
     @NotEmpty
-    private Long beerId;
+    private int beerId;
     @NotEmpty
     private String beerName;
     private String userExperience;
@@ -23,10 +23,10 @@ public class Review {
 
     }
 
-    public Review(@NotEmpty Long reviewId, @NotEmpty Long breweryId, @NotEmpty String breweryName, String userExperience, @NotEmpty int rating, @NotEmpty String dateTime) {
+    public Review(@NotEmpty long reviewId, @NotEmpty int beerId, @NotEmpty String beerName, String userExperience, @NotEmpty int rating, @NotEmpty String dateTime) {
         this.reviewId = reviewId;
-        this.beerId = breweryId;
-        this.beerName = breweryName;
+        this.beerId = beerId;
+        this.beerName = beerName;
         this.userExperience = userExperience;
         this.rating = rating;
         this.dateTime = dateTime;
@@ -35,7 +35,7 @@ public class Review {
 
 
     //
-    public Long getReviewId() {
+    public long getReviewId() {
         return reviewId;
     }
 
@@ -43,11 +43,11 @@ public class Review {
         this.reviewId = reviewId;
     }
 
-    public Long getBeerId() {
+    public int getBeerId() {
         return beerId;
     }
 
-    public void setBeerId(Long beerId) {
+    public void setBeerId(int beerId) {
         this.beerId = beerId;
     }
 
@@ -68,6 +68,8 @@ public class Review {
     }
 
     public int getRating() {
+        //int rating = 0;
+        //if (rating != 0) { return rating;} else {}
         return rating;
     }
 
@@ -83,7 +85,6 @@ public class Review {
     public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
-
 
 
     //

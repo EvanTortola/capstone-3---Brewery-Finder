@@ -2,6 +2,7 @@ package com.techelevator.dao;
 
 import com.techelevator.model.Beer;
 import com.techelevator.model.Review;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,8 @@ public class ReviewSqlDAO implements ReviewDAO{
 
 
     //do I need an @Autowired private ReviewSqlDAO reviewSqlDAO;?
+    @Autowired
+    ReviewSqlDAO reviewSqlDAO;
 
 
     //
@@ -39,14 +42,14 @@ public class ReviewSqlDAO implements ReviewDAO{
     }
 
     @Override
-    public void createReview(int breweryID, String breweryName, String userExperience, int rating, String dateTime) {
+    public void createReview(int beerId, String beerName, String userExperience, int rating, String dateTime) {
         String sql = "INSERT INTO review (beer_id, beer_name, user_experience, beer_rating, date_time) VALUES (?,?,?,?,?);";
         
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, breweryID, breweryName, userExperience, rating, dateTime);
+        jdbcTemplate.update(sql, beerId, beerName, userExperience, rating, dateTime);
     }
 
     @Override
-    public Review getReviewByBeer(Long beerId) {
+    public Review getReviewByBeer(int beerId) {
         Review beerReviewed = null;
 
         String sql = "SELECT review_id, beer_id, beer_name, user_experience, beer_rating, date_time FROM review  WHERE beer_id = ?;";
@@ -65,7 +68,7 @@ public class ReviewSqlDAO implements ReviewDAO{
         Review review = new Review();
 
         review.setReviewId(rs.getLong("review_id"));
-        review.setBeerId(rs.getLong("beer_id"));
+        review.setBeerId(rs.getInt("beer_id"));
         review.setBeerName(rs.getString("beer_name"));
         review.setUserExperience(rs.getString("user_experience"));
         review.setRating(rs.getInt("beer_rating"));
