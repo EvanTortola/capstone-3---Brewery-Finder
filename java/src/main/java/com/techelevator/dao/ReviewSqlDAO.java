@@ -1,5 +1,6 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.Beer;
 import com.techelevator.model.Review;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -19,13 +20,15 @@ public class ReviewSqlDAO implements ReviewDAO{
     }
 
 
+    //do I need an @Autowired private ReviewSqlDAO reviewSqlDAO;?
+
 
     //
     @Override
     public List<Review> listAllReviews() {
         List<Review> reviews = new ArrayList<>();
 
-        String sql = "SELECT r.review_id, r.beer_id, r.beer_name, r.user_experience, r.beer_rating, r.date_time FROM review r;";
+        String sql = "SELECT review_id, beer_id, beer_name, user_experience, beer_rating, date_time FROM review;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while (results.next()) {
@@ -37,15 +40,22 @@ public class ReviewSqlDAO implements ReviewDAO{
 
     @Override
     public void createReview(int breweryID, String breweryName, String userExperience, int rating, String dateTime) {
-        String sql = "INSERT INTO review (beer_id, beer_name, user_experience, beer_rating, date_time) VALUES ()";
+        String sql = "INSERT INTO review (beer_id, beer_name, user_experience, beer_rating, date_time) VALUES (?,?,?,?,?);";
         
-
-
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, breweryID, breweryName, userExperience, rating, dateTime);
     }
 
     @Override
     public Review getReviewByBeer(Long beerId) {
-        return null;
+        Review beerReviewed = null;
+
+        String sql = "SELECT review_id, beer_id, beer_name, user_experience, beer_rating, date_time FROM review  WHERE beer_id = ?;";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, beerId);
+        if (results.next()) {
+            beerReviewed = mapRowToReview(results);
+        }
+        return beerReviewed;
     }
 
 

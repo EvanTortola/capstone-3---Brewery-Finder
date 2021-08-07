@@ -56,7 +56,7 @@ CREATE TABLE review (
         beer_id int NOT NULL,
         beer_name varchar(150) NOT NULL,
         user_experience varchar(450),
-        rating int NOT NULL,
+        beer_rating int NOT NULL,
         date_time varchar(25) NOT NULL, --I'm iffy on this not having to be seperated into date and time data types like in the Meetups event table start_date and start_time
         
         CONSTRAINT PK_review PRIMARY KEY (review_id),
