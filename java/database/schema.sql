@@ -1,8 +1,10 @@
 BEGIN TRANSACTION;
 
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS brewery;
+
+DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS beer;
+DROP TABLE IF EXISTS brewery;
 DROP SEQUENCE IF EXISTS seq_user_id;
 
 CREATE SEQUENCE seq_user_id
@@ -49,13 +51,16 @@ CREATE TABLE beer (
         CONSTRAINT FK_beer_brewery FOREIGN KEY (brewery_id) REFERENCES brewery (brewery_id)
 );
         
-
-
-
-
-
-
-
-
+CREATE TABLE review (
+        review_id serial,
+        beer_id int NOT NULL,
+        beer_name varchar(150) NOT NULL,
+        user_experience varchar(450),
+        beer_rating int NOT NULL,
+        date_time varchar(25) NOT NULL, --I'm iffy on this not having to be seperated into date and time data types like in the Meetups event table start_date and start_time
+        
+        CONSTRAINT PK_review PRIMARY KEY (review_id),
+        CONSTRAINT FK_review_beer FOREIGN KEY (beer_id) REFERENCES beer (beer_id)
+);
 
 COMMIT TRANSACTION;
