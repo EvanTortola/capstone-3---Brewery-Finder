@@ -62,4 +62,9 @@ public class BreweriesController {
     public void addNewBrewery (@RequestBody Brewery brewery) {
         breweryDAO.addBrewery(brewery.getBreweryName(), brewery.getBreweryStreet(), brewery.getBreweryCity(), brewery.getBreweryState(), brewery.getZipCode(), brewery.getPhoneNumber(), brewery.getHistory(), brewery.getHoursOfOperation(),brewery.getImage());
     }
+
+    @RequestMapping(path ="/breweries", method = RequestMethod.PUT)
+    public void updateBrewery (@RequestBody Brewery brewery) {
+        breweryDAO.updateBrewery(brewery.getBreweryName(), brewery.getBreweryStreet(), brewery.getBreweryCity(), brewery.getBreweryState(), brewery.getZipCode(), brewery.getPhoneNumber(), brewery.getHistory(), brewery.getHoursOfOperation(),brewery.getImage(), brewery.getBreweryId());
+    }
 }

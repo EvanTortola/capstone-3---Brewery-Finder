@@ -9,6 +9,7 @@ import Brewery from '../views/Brewery'
 import AddBrewery from '../views/AddBrewery'
 import AddBeer from '../views/AddBeer'
 import AddReview from '../views/AddReview'
+import UpdateBrewery from '../views/UpdateBrewery'
 //import BreweryDetail from '../components/BreweryDetail'
 
 Vue.use(Router)
@@ -91,7 +92,16 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: "updateBrewery/:breweryId",
+      name: "updateBrewery",
+      component: UpdateBrewery,
+      meta: {
+        requiresAuth: true
+      }
     }
+
   ]
 })
 
