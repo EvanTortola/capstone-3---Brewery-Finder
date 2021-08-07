@@ -53,7 +53,7 @@ CREATE TABLE beer (
         
 CREATE TABLE review (
         review_id serial,
-        beer_id int NOT NULL,
+        beer_id int NOT NULL,        
         beer_name varchar(150) NOT NULL,
         user_experience varchar(450),
         beer_rating int NOT NULL,
