@@ -6,27 +6,12 @@ import org.springframework.web.bind.annotation.*;
 
 // import services.BreweryService;
 
-
-
-
-
-
 import javax.validation.Valid;
 import java.util.List;
 
-
-
 @CrossOrigin
 
-
-
-
-
-
-
 @RestController
-
-
 
 public class BreweriesController {
 
@@ -37,8 +22,6 @@ public class BreweriesController {
         this.breweryDAO = breweryDAO;
 
     }
-
-
 
 
     // GET API Brewery provides list of all breweries in Cleveland
