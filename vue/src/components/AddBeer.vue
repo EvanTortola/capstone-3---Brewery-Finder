@@ -61,7 +61,7 @@ export default {
                
             };
 
-            if (this.beerId === 0) {
+            if (this.name != '') {
                 beerService
                     .addBeer(newBeer)
                     .then (response => {
