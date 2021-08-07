@@ -9,9 +9,9 @@ public interface ReviewDAO {
 
 List<Review> listAllReviews();
 
-void createReview(int beerID, String beerName, String userExperience, int rating, String dateTime);
+void createReview(int beerId, String beerName, String userExperience, int rating, String dateTime);
 
-Review getReviewByBeer(Long beerId);
+Review getReviewByBeer(int beerId);
 
     //do we need a boolean createReview method for integration testing, like UserDAO line 17 has?
 }
