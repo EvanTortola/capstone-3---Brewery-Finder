@@ -17,7 +17,7 @@ VALUES ('Sibling Revelry Brewing', '29305 Clemens Rd', 'Westlake', 'Ohio', '4414
 );
 
 INSERT INTO brewery (brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image)
-VALUES ('Thirsty Dog', '1085 Old River Road', 'Cleveland', 'Ohio', '44113', '216-523-1501', 'At our Flats East Bank location we brew exclusive beers you can’t find anywhere else in addition to your Thirsty dog favorites on 42 tap handles.', 'Mon-Tue: Closed, Wed-Thur: 3:00pm-12:00am, Fri: 3:00pm-2:30am, Sat: 11:00am-2:30am, Sun: 11:00am-10:00pm', 'https://thirstydog.com/wp-content/uploads/P1360930.jpg'
+VALUES ('Thirsty Dog', '1085 Old River Road', 'Cleveland', 'Ohio', '44113', '216-523-1501', 'At our Flats East Bank location we brew exclusive beers you canï¿½t find anywhere else in addition to your Thirsty dog favorites on 42 tap handles.', 'Mon-Tue: Closed, Wed-Thur: 3:00pm-12:00am, Fri: 3:00pm-2:30am, Sat: 11:00am-2:30am, Sun: 11:00am-10:00pm', 'https://thirstydog.com/wp-content/uploads/P1360930.jpg'
 );
 
 INSERT INTO beer (brewery_id, name, type, description, img_url, abv)
@@ -41,12 +41,21 @@ VALUES ('3', 'Blood Hound Orange', 'IPA', 'Infused with blood oranges and hopped
 );
 
 INSERT INTO beer (brewery_id, name, type, description, img_url, abv)
-VALUES ('3', 'Citra Dog', 'IPA', 'You’ll find evidence of tangerine, grapefruit, orange and mango in the flavor and aroma from the multiple addition of a single hop variety, Citra.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fthirstydog.com%2Fportfolio-item%2Fcitra-dog%2F&psig=AOvVaw3bQ61RR_RKs8Yovi_5OWwR&ust=1628446254439000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMC7opnBn_ICFQAAAAAdAAAAABAD', '.068'
+VALUES ('3', 'Citra Dog', 'IPA', 'Youï¿½ll find evidence of tangerine, grapefruit, orange and mango in the flavor and aroma from the multiple addition of a single hop variety, Citra.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fthirstydog.com%2Fportfolio-item%2Fcitra-dog%2F&psig=AOvVaw3bQ61RR_RKs8Yovi_5OWwR&ust=1628446254439000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMC7opnBn_ICFQAAAAAdAAAAABAD', '.068'
 );
+
+
+INSERT INTO review (beer_id, beer_name, user_experience, beer_rating, date_time)
+VALUES (2,'Coolship Saison', 'It''s a sour, what else can I say', 4, '8-11-2020 3:30pm');
+
+
+INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
+
 
 
 COMMIT;
 
-
+ROLLBACK;
            
 
