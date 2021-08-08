@@ -21,8 +21,10 @@ public class Beer {
 
     private Long breweryId;
 
+    private Long rating;
 
-    public Beer (Long beerId, String name, String type, String description, String imgUrl, Long abv, Long breweryId) {
+
+    public Beer (Long beerId, String name, String type, String description, String imgUrl, Long abv, Long breweryId, Long rating) {
         this.beerId = beerId;
         this.name = name;
         this.type = type;
@@ -30,6 +32,7 @@ public class Beer {
         this.imgUrl = imgUrl;
         this.abv = abv;
         this.breweryId = breweryId;
+        this.rating = rating;
     }
 
     public Beer() {}
