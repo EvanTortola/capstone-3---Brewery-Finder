@@ -45,7 +45,8 @@ export default {
         breweryService.getBreweries(this.$route.params.breweryId).then(response => {
             this.breweries = response.data;
         })
-    }
+    },
+   
 
 }
 </script>
@@ -62,6 +63,10 @@ export default {
             font-size: 12px;
             text-align: center;
         }
+
+    .card {
+        height: 100px;
+    }
     
 
 
