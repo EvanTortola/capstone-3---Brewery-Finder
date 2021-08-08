@@ -10,7 +10,7 @@ export default {
         .then(response => this.beer = response)
     },
 
-    AddReview(review) {
+    addReview(review) {
         return http.post("/addReview", review)
     }
 
