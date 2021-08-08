@@ -68,6 +68,8 @@ public class Review {
     }
 
     public int getRating() {
+
+        //public int getRating() throws ReviewNotFoundException{
         //int rating = 0;
         //if (rating != 0) { return rating;} else {}
         return rating;
