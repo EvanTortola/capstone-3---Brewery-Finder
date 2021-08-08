@@ -7,8 +7,14 @@
             <label for="beerName"> Beer Name:</label>
             <input id="beerName" type="text" class="form-control" v-model="review.beerName" autocomplete="off" />
 
+            <label for="beerName"> Beer ID:</label>
+            <input id="beerId" type="text" class="form-control" v-model="review.beerId" autocomplete="off" />
+
             <label for="beerType">Experience:</label>
-            <input id="type" type="text" class="form-control" v-model="review.beerType">
+            <input id="type" type="text" class="form-control" v-model="review.userExperience">
+
+             <label for="beerName">Time / Date:</label>
+            <input id="date" type="text" class="form-control" v-model="review.dateTime" autocomplete="off" />
 
             
             <label for="rating">Rating:</label>
@@ -42,9 +48,11 @@ export default {
     data() {
         return{
             review: {
-                beerName: "",
-                experience: "",
-                rating:"",
+                beerId: "",
+                beerName: "",    
+                userExperience: "",
+                rating: "",
+                dateTime: ""
             },
             errorMsg: ""
         };
@@ -52,21 +60,19 @@ export default {
     methods: {
         submitForm(){
             const newReview = {
-                breweryId: Number(this.$route.params.breweryId),
+                beerId: this.review.beerId,
                 beerName: this.review.beerName,
-                beerType: this.review.beerType,
-                beerDescription: this.review.beerDescription,
-                abv: this.review.abv,
-                image: this.review.image
-               
+                userExperience: this.review.userExperience,
+                rating: this.review.rating,
+                dateTime: this.review.dateTime,
             };
 
-            if (this.beerName != '') {
+            if (this.beerId != 0) {
                 reviewService
                     .addReview(newReview)
                     .then (response => {
                         if (response.status === 201) {
-                            this.$router.push(`/breweries/${this.$route.params.breweryId}`);
+                            this.$router.push(`/`);
                         }
                     })
                     .catch(error => {
