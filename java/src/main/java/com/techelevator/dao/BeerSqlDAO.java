@@ -23,8 +23,7 @@ public class BeerSqlDAO implements BeerDAO{
    public List<Beer> getAllBeer() {
 
         List<Beer> allBeers = new ArrayList<>();
-        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv" +
-                "FROM beer;";
+        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv FROM beer;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while (results.next()) {
@@ -37,7 +36,7 @@ public class BeerSqlDAO implements BeerDAO{
     @Override
     public Beer getBeerByName(String name) {
         Beer newBeer = new Beer();
-        String sql = "SELECT * FROM beer WHERE name = ?";
+        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv FROM beer WHERE name = ?";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql, name);
 
         if(result.next()) {
@@ -49,7 +48,7 @@ public class BeerSqlDAO implements BeerDAO{
     @Override
     public List<Beer> getBeerByBrewery(Long breweryId) {
         List<Beer> breweryBeerList = new ArrayList<>();
-        String sql= "SELECT * FROM beer b JOIN brewery br ON b.beer_id = br.brewery_id WHERE brewery_name = ?;";
+        String sql= "SELECT beer_id, brewery_id, name, type, description, img_url, abv FROM beer b JOIN brewery br ON b.beer_id = br.brewery_id WHERE brewery_name = ?;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql, breweryId);
 
         while(result.next()) {
@@ -61,7 +60,7 @@ public class BeerSqlDAO implements BeerDAO{
     @Override
     public Beer getBeerById(Long beerId) {
         Beer beer = null;
-        String sql = "SELECT * FROM beer WHERE beer_id = ?;";
+        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv FROM beer WHERE beer_id = ?;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql,beerId);
         if (results.next()) {
@@ -72,7 +71,7 @@ public class BeerSqlDAO implements BeerDAO{
 
     @Override
     public boolean searchBeerByName(String name) {
-        String sql = "SELECT * FROM beer WHERE name = ?;";
+        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv FROM beer WHERE name = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql,name.toUpperCase());
 
         if (results.next()) {
