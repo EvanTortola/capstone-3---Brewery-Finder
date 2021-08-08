@@ -22,9 +22,9 @@
               >Thank you for registering, please sign in.</div>
             </b-col>
             <b-col></b-col>
-            <b-col>
+            <!-- <b-col>
               <h1 class="h3 mb-3 font-weight-normal text-white">Register</h1>
-            </b-col>
+            </b-col> -->
           </b-row>
           <b-row>
             <b-col>
@@ -40,7 +40,7 @@
             />
             </b-col>
             <b-col></b-col>
-            <b-col>
+            <!-- <b-col>
               <label class="sr-only text-white">Username</label>
             <input
               type="text"
@@ -48,7 +48,7 @@
               class="form-control"
               placeholder="Username"
             />
-            </b-col>
+            </b-col> -->
           </b-row>
             
           <b-row>
@@ -66,7 +66,7 @@
               <button type="submit" class="btn btn-light">Sign in</button>
             </b-col>
             <b-col></b-col>
-            <b-col>
+            <!-- <b-col>
               <label for="password" class="sr-only text-white">Password</label>
                 <input
                   type="password"
@@ -75,7 +75,7 @@
                   placeholder="Password"
                 />
                 <button type="submit" class="btn btn-light align-left">Sign in</button>
-            </b-col>
+            </b-col> -->
           </b-row>
             
         </form>
