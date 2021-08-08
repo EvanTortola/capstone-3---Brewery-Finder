@@ -18,11 +18,11 @@
                 <img :src="beer.imgUrl" alt="" class="beerImg">
             </div>
         </div>
-         <!-- <router-link :to="{name: 'addBeer', params: {breweryId: brewery.breweryId} }">
+         <router-link :to="{name: 'addBeer', params: {breweryId: brewery.breweryId} }">
             <div v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'" class="addBeer">
                 <button>Add Beer</button> 
             </div>   
-        </router-link> -->
+        </router-link>
         <router-link :to="{name: 'addReview', params: {breweryId: brewery.breweryId}}">
         <div class="addReview">
             <button>Add Review
