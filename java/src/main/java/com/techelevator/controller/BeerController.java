@@ -58,8 +58,8 @@ public class BeerController {
     }
 
     //Will allow the brewer to delete a beer
-    @RequestMapping(path = "/deleteBeer", method = RequestMethod.POST)
-    public boolean deleteBeer(@RequestParam Long beerId) {
+    @RequestMapping(path = "/deleteBeer/{beerId}", method = RequestMethod.POST)
+    public boolean deleteBeer(@PathVariable Long beerId) {
         beerDAO.deleteBeer(beerId);
         return true;
     }
