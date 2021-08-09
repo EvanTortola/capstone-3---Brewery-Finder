@@ -11,9 +11,12 @@ export default {
     },
 
     addBeer(beer) {
-        return http.post("/beer/new", beer)
+        return http.post("/beer/addBeer", beer)
     },
     getBeerByBreweryId(breweryId) {
         return http.get(`/beer/${breweryId}`)
+    },
+    getBeerByBeerId(beerId) {
+        return http.get(`/beer/beer/${beerId}`)
     }
 }
