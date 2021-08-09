@@ -1,6 +1,7 @@
 package com.techelevator.controller;
 import com.techelevator.dao.BreweryDAO;
 import com.techelevator.model.Brewery;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 // import services.BreweryService;
@@ -35,8 +36,14 @@ public class BreweriesController {
         return breweryDAO.get(id);
     }
 
+    
     @RequestMapping(path = "/breweries/new", method = RequestMethod.POST)
     public void addNewBrewery (@RequestBody Brewery brewery) {
         breweryDAO.addBrewery(brewery.getBreweryName(), brewery.getBreweryStreet(), brewery.getBreweryCity(), brewery.getBreweryState(), brewery.getZipCode(), brewery.getPhoneNumber(), brewery.getHistory(), brewery.getHoursOfOperation(),brewery.getImage());
+    }
+
+    @RequestMapping(path ="/breweries", method = RequestMethod.PUT)
+    public void updateBrewery (@RequestBody Brewery brewery) {
+        breweryDAO.updateBrewery(brewery.getBreweryName(), brewery.getBreweryStreet(), brewery.getBreweryCity(), brewery.getBreweryState(), brewery.getZipCode(), brewery.getPhoneNumber(), brewery.getHistory(), brewery.getHoursOfOperation(),brewery.getImage(), brewery.getBreweryId());
     }
 }

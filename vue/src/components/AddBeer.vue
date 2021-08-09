@@ -1,28 +1,38 @@
 <template>
 <div>
-    <h1>Add New Beer</h1>
-  <form v-on:submit.prevent="submitForm" class="breweryForm">
-    <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
-       <div class="form-group">
-            <label for="beerName"> Beer Name:</label>
-            <input id="beerName" type="text" class="form-control" v-model="beer.beerName" autocomplete="off" />
+    <b-container fluid class="bv-row">
+        <b-row>
+            <b-col></b-col>
+            <b-col>
+                <h1>Add New Beer</h1>
 
-            <label for="beerType">Beer Type:</label>
-            <input id="type" type="text" class="form-control" v-model="beer.beerType">
 
-            <label for="beerDescription">Beer Description:</label>
-            <input id="beerDescription" type="text" class="form-control" v-model="beer.beerDescription"> 
+                <form v-on:submit.prevent="submitForm" class="breweryForm">
+                    <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
+                    <div class="form-group">
+                            <label for="beerName"> Beer Name:</label>
+                            <input id="beerName" type="text" class="form-control" v-model="beer.beerName" autocomplete="off" />
 
-            <label for="abv">ABV:</label>
-            <input id="abv" type="text" class="form-control" v-model="beer.abv">
+                            <label for="beerType">Beer Type:</label>
+                            <input id="type" type="text" class="form-control" v-model="beer.beerType">
 
-            <label for="image">Image URL:</label>
-            <input id="image" type="text" name="img" accept="image/*" class="form-control" v-model="beer.image">  
+                            <label for="beerDescription">Beer Description:</label>
+                            <input id="beerDescription" type="text" class="form-control" v-model="beer.beerDescription"> 
 
-        </div>
-    <button class="btn btn-submit">Submit</button>
-    <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
-  </form>
+                            <label for="abv">ABV:</label>
+                            <input id="abv" type="text" class="form-control" v-model="beer.abv">
+
+                            <label for="image">Image URL:</label>
+                            <input id="image" type="text" name="img" accept="image/*" class="form-control" v-model="beer.image">  
+
+                        </div>
+                    <button class="btn btn-submit">Submit</button>
+                    <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
+                </form>
+            </b-col>
+            <b-col></b-col>
+        </b-row>  
+    </b-container>
 </div>
   
 </template>
