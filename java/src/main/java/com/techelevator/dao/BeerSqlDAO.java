@@ -23,7 +23,7 @@ public class BeerSqlDAO implements BeerDAO{
    public List<Beer> getAllBeer() {
 
         List<Beer> allBeers = new ArrayList<>();
-        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv FROM beer;";
+        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv, is_active FROM beer;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while (results.next()) {
@@ -48,7 +48,7 @@ public class BeerSqlDAO implements BeerDAO{
     @Override
     public List<Beer> getBeerByBrewery(Long breweryId) {
         List<Beer> breweryBeerList = new ArrayList<>();
-        String sql= "SELECT beer_id, brewery_id, name, type, description, img_url, abv FROM beer WHERE brewery_id = ?;";
+        String sql= "SELECT beer_id, brewery_id, name, type, description, img_url, abv, is_active  FROM beer WHERE brewery_id = ?;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql, breweryId);
 
         while(result.next()) {

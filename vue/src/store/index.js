@@ -37,7 +37,8 @@ export default new Vuex.Store({
       type: '',
       description: '',
       imgUrl: '',
-      abv: ''
+      abv: '',
+      isActive: ''
     }
   },
   mutations: {
