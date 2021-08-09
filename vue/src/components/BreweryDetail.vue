@@ -18,7 +18,7 @@
             </div>
         </div>
          <router-link :to="{name: 'addBeer', params: {breweryId: brewery.breweryId} }">
-            <div v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'" class="addBeer">
+            <div  class="addBeer">
                 <button>Add Beer</button> 
             </div>   
         </router-link>
@@ -30,7 +30,7 @@
         </router-link>
 
         <router-link :to="{name: 'updateBrewery', params: {breweryId: brewery.breweryId} }">
-        <div v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'" class="updateBrewery">
+        <div class="updateBrewery">
             <button>Update Existing Brewery
             </button> 
         </div>   

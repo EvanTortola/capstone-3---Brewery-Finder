@@ -3,7 +3,7 @@
       
       <b-container fluid class="bv-row heading"> 
         <b-row >
-          <b-col>
+          <b-col class="welcome-text">
             <h3>Welcome to Brew Spot- find your next local wateringhole, or find a new local brew! New Breweries and brews updated fresh daily!</h3>  
           </b-col>
         </b-row>         
@@ -19,7 +19,7 @@
 
                           
             <b-card tag="article"  class="mb-2">
-              <router-link :to="{name: 'Brewery', params: {breweryId: brewery.breweryId} }">
+              <router-link :to="{name: 'Brewery', params: {breweryId: brewery.breweryId}}">
 
                   
                 <h4 class="card-title">{{ brewery.breweryName }}</h4>
@@ -77,8 +77,9 @@ export default {
 
 <style>
 
-    h3 {
-      padding-top: 50px
+    .welcome-text {
+      padding-top: 50px;
+      color: white;
     }
     
     .btn-circle.btn-xl {
