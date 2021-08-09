@@ -36,7 +36,7 @@ public class BeerSqlDAO implements BeerDAO{
     @Override
     public Beer getBeerByName(String name) {
         Beer newBeer = new Beer();
-        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv FROM beer WHERE name = ?";
+        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv, is_active FROM beer WHERE name = ?";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql, name);
 
         if(result.next()) {
@@ -48,7 +48,7 @@ public class BeerSqlDAO implements BeerDAO{
     @Override
     public List<Beer> getBeerByBrewery(Long breweryId) {
         List<Beer> breweryBeerList = new ArrayList<>();
-        String sql= "SELECT beer_id, brewery_id, name, type, description, img_url, abv, is_active  FROM beer WHERE brewery_id = ?;";
+        String sql= "SELECT beer_id, brewery_id, name, type, description, img_url, abv, is_active FROM beer WHERE brewery_id = ?;";
         SqlRowSet result = jdbcTemplate.queryForRowSet(sql, breweryId);
 
         while(result.next()) {
@@ -71,7 +71,7 @@ public class BeerSqlDAO implements BeerDAO{
 
     @Override
     public boolean searchBeerByName(String name) {
-        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv FROM beer WHERE name = ?;";
+        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv, is_active FROM beer WHERE name = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql,name.toUpperCase());
 
         if (results.next()) {
@@ -89,7 +89,7 @@ public class BeerSqlDAO implements BeerDAO{
 
     @Override
     public boolean deleteBeer(Long beerId) {
-        jdbcTemplate.update("DELETE FROM beers WHERE beer_id = ?", beerId);
+        jdbcTemplate.update("DELETE FROM beer WHERE beer_id = ?", beerId);
         return true;
     }
 
