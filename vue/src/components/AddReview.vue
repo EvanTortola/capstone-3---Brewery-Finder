@@ -1,37 +1,46 @@
 <template>
-<div>
-    <h1>Add New Review</h1>
-  <form v-on:submit.prevent="submitForm" class="breweryForm">
-    <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
-       <div class="form-group">
-            <label for="beerName"> Beer Name:</label>
-            <input id="beerName" type="text" class="form-control" v-model="review.beerName" autocomplete="off" />
+    <div>
+        <b-container fluid class="bv-row">
+            <b-row> 
+                <b-col></b-col>
+                <b-col>
+                    <h1>Add New Review</h1>
+                    <form v-on:submit.prevent="submitForm" class="breweryForm">
+                        <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
+                        <div class="form-group">
+                            <label for="beerName"> Beer Name:</label>
+                            <input id="beerName" type="text" class="form-control" v-model="review.beerName" autocomplete="off" />
 
-            <label for="beerName"> Beer ID:</label>
-            <input id="beerId" type="text" class="form-control" v-model="review.beerId" autocomplete="off" />
+                            <label for="beerName"> Beer ID:</label>
+                            <input id="beerId" type="text" class="form-control" v-model="review.beerId" autocomplete="off" />
 
-            <label for="beerType">Experience:</label>
-            <input id="type" type="text" class="form-control" v-model="review.userExperience">
+                            <label for="beerType">Experience:</label>
+                            <input id="type" type="text" class="form-control" v-model="review.userExperience">
 
-             <label for="beerName">Time / Date:</label>
-            <input id="date" type="text" class="form-control" v-model="review.dateTime" autocomplete="off" />
+                            <label for="beerName">Time / Date:</label>
+                            <input id="date" type="text" class="form-control" v-model="review.dateTime" autocomplete="off" />
 
-            
-            <label for="rating">Rating:</label>
-              <select id="rating" v-model="review.rating">
-                <option value="1">1 Pour</option>
-                <option value="2">2 Pours</option>
-                <option value="3">3 Pours</option>
-                <option value="4">4 Pours</option>
-                <option value="5">5 Pours</option>
-             </select>
-      
+                            
+                            <label for="rating">Rating:</label>&nbsp;
+                            <select id="rating" v-model="review.rating">
+                                <option value="1">1 Pour</option>
+                                <option value="2">2 Pours</option>
+                                <option value="3">3 Pours</option>
+                                <option value="4">4 Pours</option>
+                                <option value="5">5 Pours</option>
+                            </select>
+                        
 
-        </div>
-    <button class="btn btn-submit" v-on:click.prevent="submitForm" >Submit</button>
-    <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
-  </form>
-</div>
+                        </div>
+                        <button class="btn btn-submit" v-on:click.prevent="submitForm" >Submit</button>
+                        <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
+                    </form>
+                </b-col> 
+
+                <b-col></b-col>
+            </b-row> 
+        </b-container>
+    </div>
   
 </template>
 

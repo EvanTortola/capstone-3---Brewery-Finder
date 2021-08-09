@@ -8,8 +8,9 @@
         <form class="form-signin" @submit.prevent="login">
 
           <b-row class="mb-3">
+            <b-col></b-col>            
             <b-col>
-              <h1 class="h3 mb-3 font-weight-normal text-white">Please Sign In</h1>
+              <h1 class="h3 mb-4 font-weight-normal text-white login-section">Please Sign In</h1>
               <div
                 class="alert alert-danger"
                 role="alert"
@@ -27,6 +28,7 @@
             </b-col> -->
           </b-row>
           <b-row>
+            <b-col></b-col>
             <b-col>
               <label for="username" class="sr-only text-white">Username</label>
             <input
@@ -52,6 +54,7 @@
           </b-row>
             
           <b-row>
+            <b-col></b-col>
             <b-col>
               <label for="password" class="sr-only text-white">Password</label>
               <input
@@ -239,6 +242,10 @@ export default {
  .hero-img {
    background-image: url("../assets/img/bg.jpg");
    background-size: cover;
+ }
+
+ .login-section {
+   margin-top: 10%
  }
 </style>
 
