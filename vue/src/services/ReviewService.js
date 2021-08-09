@@ -5,9 +5,9 @@ const http = axios.create({
 });
 
 export default {
-    getReviewByBreweryId(breweryId) {
-        return http.get(`/review/${breweryId}`)
-        .then(response => this.beer = response)
+    getReviewByBeerId(beerId) {
+        return http.get(`/reviews/${beerId}`)
+        
     },
 
     addReview(review) {

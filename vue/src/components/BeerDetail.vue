@@ -1,11 +1,21 @@
 <template>
   <div>
+    <div clas="beerDetail">
       <h1>{{beer.name}}</h1>
       <p>{{beer.description}}</p>
       <p>{{beer.type}}</p>
       <p>{{beer.abv}}</p>
       <img :src="beer.imgUrl" alt="">
-        
+    </div> 
+     
+    <div class="listOfReviews">
+    <div v-for="review in reviews" v-bind:key="review.reviewId">
+      <h3>{{review.beerName}}</h3>
+      <p>{{review.userExperience}}</p>
+      <p>{{review.rating}}</p>
+    </div> 
+    </div>
+
       <router-link :to="{name: 'addReview', params: {breweryId: beer.breweryId, beerId: beer.beerId, name: beer.name}}">
         <div class="addReview">
           <button>Add Review</button>
@@ -15,6 +25,7 @@
 </template>
 
 <script>
+import reviewService from "../services/ReviewService"
 import beerService from "../services/BeerService"
 export default {
     name: 
@@ -35,22 +46,35 @@ export default {
             this.$router.push("/");
           }
         });
-            },    
+            }, 
+        
+        retreiveReviews() {
+          reviewService
+            .getReviewByBeerId(this.$route.params.beerId)
+            .then(response => {
+              this.reviews = response.data
+            })
+        }
             
     },
     created() {
           this.retreiveBeer();
+          this.retreiveReviews();
         },
     
     data() {
       return {
-        beers: []
+        beers: [],
+        reviews: []
       }
     },
 
     computed: {
       beer() {
         return this.$store.state.beer;
+      },
+      review() {
+        return this.$store.state.review
       }
     }
     
