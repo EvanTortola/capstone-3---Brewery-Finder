@@ -10,7 +10,6 @@ import javax.validation.Valid;
 import java.util.List;
 
 @CrossOrigin
-
 @RestController
 
 public class BreweriesController {
@@ -20,7 +19,6 @@ public class BreweriesController {
 
     public BreweriesController(BreweryDAO breweryDAO) {
         this.breweryDAO = breweryDAO;
-
     }
 
 
@@ -32,9 +30,7 @@ public class BreweriesController {
       return breweries;
     }
 
-
-    // Brewery by ID provides the brewery with given ID -- int or long for ID???
-
+    //provides the brewery with given ID
     @RequestMapping(path = "/breweries/{id}", method = RequestMethod.GET)
     public Brewery getWithId (@Valid @PathVariable int id) {
         return breweryDAO.get(id);

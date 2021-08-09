@@ -31,7 +31,13 @@ export default new Vuex.Store({
       hoursOfOperation: '',
       image: '',
       phoneNumber: ''
-
+    },
+    beer: {
+      name: '',
+      type: '',
+      description: '',
+      imgUrl: '',
+      abv: ''
     }
   },
   mutations: {

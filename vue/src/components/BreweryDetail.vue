@@ -9,20 +9,19 @@
         <p class="hourOfOpp">{{ brewery.hoursOfOperation }}</p>
         <p class="phone"> {{ brewery.phoneNumber}}</p>
         <img :src="brewery.image" alt="" class="beerImg"> 
+        <h3 class="beerTitle">Beers</h3>
         <div class="listOfBeer">
+            
             <div class="beer" v-for="beer in beers" v-bind:key="beer.beerId">
                 <h3 class="beerName">{{beer.name}}</h3>
-                <p class="beerType">{{beer.type}}</p>
-                <p class="beerDesc">{{beer.description}}</p>
-                <p class="abv">{{beer.abv}}</p>
                 <img :src="beer.imgUrl" alt="" class="beerImg">
             </div>
         </div>
          <router-link :to="{name: 'addBeer', params: {breweryId: brewery.breweryId} }">
-            <div class="addBeer">
+            <div v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'" class="addBeer">
                 <button>Add Beer</button> 
             </div>   
-        </router-link> 
+        </router-link>
         <router-link :to="{name: 'addReview', params: {breweryId: brewery.breweryId}}">
         <div class="addReview">
             <button>Add Review
@@ -67,15 +66,17 @@ import beerService from "../services/BeerService"
                 beerService
                 .getBeerByBreweryId(this.$route.params.breweryId)
                 .then(response => {
-                    this.beer = response.data;
+                    this.beers = response.data;
                 })
             }
         },
 
         created() {
             this.retreiveBrewery();
+            this.getBeerByBreweryId();
+             
             },
-
+           
         data() {
            return {
                beers: []
@@ -85,7 +86,12 @@ import beerService from "../services/BeerService"
         computed: {
             brewery() {
              return this.$store.state.brewery;
+                },
+        
+             beer() {
+            return this.$store.state.beer;
                 }
+    
             }
 
 
@@ -96,4 +102,12 @@ import beerService from "../services/BeerService"
 
 <style>
 
+div.beer {
+    border-top: black;
+}
+
+.beerTitle {
+    justify-content: center;
+    align-content: center;
+}
 </style>
