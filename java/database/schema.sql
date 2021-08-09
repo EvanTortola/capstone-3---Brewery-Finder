@@ -1,7 +1,6 @@
 BEGIN TRANSACTION;
 
 DROP TABLE IF EXISTS users;
-
 DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS beer;
 DROP TABLE IF EXISTS brewery;
@@ -46,6 +45,7 @@ CREATE TABLE beer (
         description text NOT NULL,
         img_url text NOT NULL,
         abv varchar NOT NULL,
+        is_active boolean NOT NULL,
 
         CONSTRAINT PK_beer PRIMARY KEY (beer_id),      
         CONSTRAINT FK_beer_brewery FOREIGN KEY (brewery_id) REFERENCES brewery (brewery_id)

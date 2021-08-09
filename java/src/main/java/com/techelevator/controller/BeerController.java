@@ -4,6 +4,7 @@ import com.techelevator.dao.BeerDAO;
 import com.techelevator.dao.BreweryDAO;
 import com.techelevator.model.Beer;
 import com.techelevator.model.Brewery;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -49,8 +50,17 @@ public class BeerController {
         return beerDAO.getBeerById(id);
     }
 
+    //Will allow the brewer to add a new beer
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(path = "/addBeer", method = RequestMethod.POST)
+    public void addNewBeer(@RequestBody Beer newBeer) {
+        beerDAO.addNewBeer(newBeer);
+    }
 
-
-
-
+    //Will allow the brewer to delete a beer
+    @RequestMapping(path = "/deleteBeer", method = RequestMethod.POST)
+    public boolean deleteBeer(@RequestParam Long beerId) {
+        beerDAO.deleteBeer(beerId);
+        return true;
+    }
 }
