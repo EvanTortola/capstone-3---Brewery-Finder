@@ -60,7 +60,7 @@ public class BeerSqlDAO implements BeerDAO{
     @Override
     public Beer getBeerById(Long beerId) {
         Beer beer = null;
-        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv FROM beer WHERE beer_id = ?;";
+        String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv, is_active FROM beer WHERE beer_id = ?;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql,beerId);
         if (results.next()) {

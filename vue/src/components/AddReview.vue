@@ -8,12 +8,7 @@
                     <form v-on:submit.prevent="submitForm" class="breweryForm">
                         <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
                         <div class="form-group">
-                            <label for="beerName"> Beer Name:</label>
-                            <input id="beerName" type="text" class="form-control" v-model="review.beerName" autocomplete="off" />
-
-                            <label for="beerName"> Beer ID:</label>
-                            <input id="beerId" type="text" class="form-control" v-model="review.beerId" autocomplete="off" />
-
+                       
                             <label for="beerType">Experience:</label>
                             <input id="type" type="text" class="form-control" v-model="review.userExperience">
 
@@ -69,8 +64,8 @@ export default {
     methods: {
         submitForm(){
             const newReview = {
-                beerId: this.review.beerId,
-                beerName: this.review.beerName,
+                beerId: this.$route.params.beerId,
+                beerName: this.$route.params.name,
                 userExperience: this.review.userExperience,
                 rating: this.review.rating,
                 dateTime: this.review.dateTime,
@@ -81,7 +76,7 @@ export default {
                     .addReview(newReview)
                     .then (response => {
                         if (response.status === 201) {
-                            this.$router.push(`/`);
+                            this.$router.push(`/breweries/${this.$route.params.breweryId}`);
                         }
                     })
                     .catch(error => {
