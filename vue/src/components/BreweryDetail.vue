@@ -10,11 +10,21 @@
         <p class="phone"> {{ brewery.phoneNumber}}</p>
         <img :src="brewery.image" alt="" class="beerImg"> 
         <h3 class="beerTitle">Beers</h3>
+
         <div class="listOfBeer">
             
             <div class="beer" v-for="beer in beers" v-bind:key="beer.beerId">
+
+                <router-link :to="{name: 'beerDetail', params: {breweryId: brewery.breweryId, beerId: beer.beerId, name: beer.name} }">
                 <h3 class="beerName">{{beer.name}}</h3>
-                <img :src="beer.imgUrl" alt="" class="beerImg">
+                </router-link>
+               
+                <!-- <router-link :to="{name: 'addReview', params: {breweryId: brewery.breweryId, beerId: beer.beerId, name: beer.name}}">
+                    <div class="addReview">
+                        <button>Add Review</button>
+                    </div>
+                </router-link> -->
+           
             </div>
         </div>
          <router-link :to="{name: 'addBeer', params: {breweryId: brewery.breweryId} }">
@@ -22,12 +32,7 @@
                 <button>Add Beer</button> 
             </div>   
         </router-link>
-        <router-link :to="{name: 'addReview', params: {breweryId: brewery.breweryId}}">
-        <div class="addReview">
-            <button>Add Review
-            </button>
-        </div>
-        </router-link>
+       
 
         <router-link :to="{name: 'updateBrewery', params: {breweryId: brewery.breweryId} }">
         <div v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'" class="updateBrewery">
@@ -45,6 +50,7 @@ import breweryService from "../services/BreweryService"
 import beerService from "../services/BeerService"
     export default {
         name: "brewery-detail",
+
 
         methods: {
             retreiveBrewery() {
@@ -68,7 +74,8 @@ import beerService from "../services/BeerService"
                 .then(response => {
                     this.beers = response.data;
                 })
-            }
+            },
+            
         },
 
         created() {
@@ -79,7 +86,8 @@ import beerService from "../services/BeerService"
            
         data() {
            return {
-               beers: []
+               beers: [],
+              
            } 
         },
 
