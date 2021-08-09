@@ -61,6 +61,12 @@ public class BrewerySqlDAO implements BreweryDAO {
         jdbcTemplate.update(sql, breweryName, breweryStreet, breweryCity, breweryState, phoneNumber, history, image, hoursOfOperation, zipCode);
     }
 
+    @Override
+    public void updateBrewery(String breweryName, String breweryStreet, String breweryCity, String breweryState, String zipCode, String phoneNumber, String history, String hoursOfOperation, String image, long breweryId) {
+        String sql = "UPDATE brewery SET brewery_name = ?, street = ?, city = ?, state = ?, zip_code = ?, phone = ?, history = ?, hours_of_operation = ?, image = ? WHERE brewery_id = ?;";
+        jdbcTemplate.update(sql, breweryName, breweryStreet, breweryCity, breweryState, zipCode, phoneNumber, history, hoursOfOperation, image, breweryId);
+    }
+
 
     private Brewery mapRowToCard(SqlRowSet rs) {
         Brewery brewery = new Brewery();

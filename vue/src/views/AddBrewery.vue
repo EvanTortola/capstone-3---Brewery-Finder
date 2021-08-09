@@ -5,7 +5,7 @@
 <script>
 import BreweryForm from '../components/BreweryForm.vue'
 export default {
-  components: { BreweryForm },
+  components: { BreweryForm }
 
 }
 </script>
