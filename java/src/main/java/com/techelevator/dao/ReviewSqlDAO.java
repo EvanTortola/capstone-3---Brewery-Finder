@@ -49,14 +49,14 @@ public class ReviewSqlDAO implements ReviewDAO{
     }
 
     @Override
-    public Review getReviewByBeer(int beerId) {
-        Review beerReviewed = null;
+    public List<Review> getReviewByBeer(int beerId) {
+        List<Review> beerReviewed = new ArrayList<>();
 
         String sql = "SELECT review_id, beer_id, beer_name, user_experience, beer_rating, date_time FROM review  WHERE beer_id = ?;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, beerId);
-        if (results.next()) {
-            beerReviewed = mapRowToReview(results);
+        while (results.next()) {
+            beerReviewed.add(mapRowToReview(results));
         }
         return beerReviewed;
     }
