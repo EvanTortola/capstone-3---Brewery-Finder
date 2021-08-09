@@ -18,12 +18,7 @@
                 <router-link :to="{name: 'beerDetail', params: {breweryId: brewery.breweryId, beerId: beer.beerId, name: beer.name} }">
                 <h3 class="beerName">{{beer.name}}</h3>
                 </router-link>
-               
-                <!-- <router-link :to="{name: 'addReview', params: {breweryId: brewery.breweryId, beerId: beer.beerId, name: beer.name}}">
-                    <div class="addReview">
-                        <button>Add Review</button>
-                    </div>
-                </router-link> -->
+             
            
             </div>
         </div>
@@ -87,6 +82,7 @@ import beerService from "../services/BeerService"
         data() {
            return {
                beers: [],
+               
               
            } 
         },

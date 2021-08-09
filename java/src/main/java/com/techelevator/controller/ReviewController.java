@@ -32,7 +32,7 @@ public class ReviewController {
     };
 
     @RequestMapping(path = "/reviews/{beerId}", method = RequestMethod.GET)
-    public Review getReviewByBeerId(@Valid @PathVariable int beerId) {
+    public List<Review> getReviewByBeerId(@Valid @PathVariable int beerId) {
         return reviewDAO.getReviewByBeer(beerId);
     };
 

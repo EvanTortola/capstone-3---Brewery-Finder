@@ -11,7 +11,7 @@ List<Review> listAllReviews();
 
 void createReview(int beerId, String beerName, String userExperience, int rating, String dateTime);
 
-Review getReviewByBeer(int beerId);
+List<Review> getReviewByBeer(int beerId);
 
     //do we need a boolean createReview method for integration testing, like UserDAO line 17 has?
 }

@@ -11,22 +11,25 @@
                     <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
                     <div class="form-group">
                             <label for="beerName"> Beer Name:</label>
-                            <input id="beerName" type="text" class="form-control" v-model="beer.beerName" autocomplete="off" />
+                            <input id="beerName" type="text" class="form-control" v-model="beer.name" autocomplete="off" />
 
                             <label for="beerType">Beer Type:</label>
-                            <input id="type" type="text" class="form-control" v-model="beer.beerType">
+                            <input id="type" type="text" class="form-control" v-model="beer.type">
 
                             <label for="beerDescription">Beer Description:</label>
-                            <input id="beerDescription" type="text" class="form-control" v-model="beer.beerDescription"> 
+                            <input id="beerDescription" type="text" class="form-control" v-model="beer.description"> 
 
                             <label for="abv">ABV:</label>
                             <input id="abv" type="text" class="form-control" v-model="beer.abv">
 
                             <label for="image">Image URL:</label>
-                            <input id="image" type="text" name="img" accept="image/*" class="form-control" v-model="beer.image">  
+                            <input id="image" type="text" name="img" accept="image/*" class="form-control" v-model="beer.imgUrl">  
+
+                            <label for="active">Active:</label>
+                            <input id="active" type="text" name="active"  class="form-control" v-model="beer.active">  
 
                         </div>
-                    <button class="btn btn-submit">Submit</button>
+                    <button class="btn btn-submit" v-on:click.prevent="submitForm">Submit</button>
                     <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
                 </form>
             </b-col>
@@ -42,7 +45,7 @@ import beerService from "../services/BeerService";
 export default {
     name: "add-beer",
     props: {
-        breweryId: {
+        beerId: {
             type: Number,
             default: 0
         }
@@ -50,11 +53,12 @@ export default {
     data() {
         return{
             beer: {
-                beerName: "",
-                beerType: "",
-                beerDescription:"",
+                name: "",
+                type: "",
+                description:"",
                 abv: "",
-                image: "",
+                imgUrl: "",
+                active:""
             },
             errorMsg: ""
         };
@@ -62,16 +66,17 @@ export default {
     methods: {
         submitForm(){
             const newBeer = {
-                breweryId: Number(this.$route.params.breweryId),
-                beerName: this.beer.beerName,
-                beerType: this.beer.beerType,
-                beerDescription: this.beer.beerDescription,
+                name: this.beer.name,
+                type: this.beer.type,
+                description: this.beer.description,
+                imgUrl: this.beer.imgUrl,
                 abv: this.beer.abv,
-                image: this.beer.image
+                breweryId: this.$route.params.breweryId,
+                active: this.beer.active
                
             };
 
-            if (this.name != '') {
+            if (this.beer.name != '') {
                 beerService
                     .addBeer(newBeer)
                     .then (response => {
