@@ -16,10 +16,11 @@ public interface BeerDAO {
 
      boolean searchBeerByName(String name);
 
-     
+     void addNewBeer(Beer newBeer);
+
+     boolean deleteBeer(Long beerId);
+
     // List<Beer> getAllBeerByBrewery(Long breweryId);  So brewer can update the beer status if the beer is out, or not sold anymore.
-    // CreateBeer(Beer newBeer)
     // updateActiveBreweryBeers(Long beerId, boolean isActive);
-    // RemoveBeer(Long beerId);  accessed by the brewer
     // UpdateBeerDescription(Long beerId, String name, String type, String Description, String imgUrl);
 }
