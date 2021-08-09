@@ -17,5 +17,9 @@ export default {
     
     addBrewery(brewery) {
         return http.post('/breweries/new', brewery)
+    },
+
+    updateBrewery(brewery) {
+        return http.put('/breweries', brewery)
     }
 }

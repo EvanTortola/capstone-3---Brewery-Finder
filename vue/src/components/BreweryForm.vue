@@ -91,28 +91,11 @@ export default {
                     .catch(error => {
                         this.handleErrorResponse(error, " adding");
                     });
-            } else {
-                newBrewery.breweryName = this.brewery.breweryName;
-                newBrewery.history = this.brewery.history;
-                newBrewery.breweryAddress = this.brewery.breweryAddress;
-                newBrewery.breweryCity = this.brewery.breweryCity;
-                newBrewery.breweryState = this.brewery.breweryState;
-                newBrewery.zipCode = this.brewery.zipCode;
-                newBrewery.hoursOfOperation = this.brewery.hoursOfOperation;
-                newBrewery.phoneNumber = this.brewery.phoneNumber;
-                newBrewery.image = this.brewery.image;
-                breweryService
-                    .updateBrewery(newBrewery)
-                    .then(response => {
-                        if (response.status === 200) {
-                            this.$router.push(`/`)
-                        }
-                    })
-                    .catch(error => {
-                        this.handleErrorResponse(error, "updating"); 
-                    });
-             } 
+            } 
         },
+
+             
+             
         cancelForm() {
             this.$router.push(`/`);
         },
