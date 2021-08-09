@@ -17,7 +17,7 @@ public class Beer {
 
     private String imgUrl;
 
-    private Long abv;
+    private String abv;
 
     private Long breweryId;
 
@@ -26,7 +26,9 @@ public class Beer {
     private boolean isActive = true;
 
 
-    public Beer (Long beerId, String name, String type, String description, String imgUrl, Long abv, Long breweryId, Long rating, boolean isActive) {
+
+    public Beer (Long beerId, String name, String type, String description, String imgUrl, String abv, Long breweryId, Long rating, boolean isActive) {
+
         this.beerId = beerId;
         this.name = name;
         this.type = type;
@@ -80,11 +82,11 @@ public class Beer {
         this.imgUrl = imgUrl;
     }
 
-    public Long getAbv() {
+    public String getAbv() {
         return abv;
     }
 
-    public void setAbv(Long abv) {
+    public void setAbv(String abv) {
         this.abv = abv;
     }
 

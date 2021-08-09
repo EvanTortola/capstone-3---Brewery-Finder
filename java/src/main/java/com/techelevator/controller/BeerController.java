@@ -63,6 +63,4 @@ public class BeerController {
         beerDAO.deleteBeer(beerId);
         return true;
     }
-
-
 }
