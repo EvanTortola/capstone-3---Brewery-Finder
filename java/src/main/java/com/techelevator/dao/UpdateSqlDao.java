@@ -1,5 +1,6 @@
 package com.techelevator.dao;
 
+import com.techelevator.model.BreweryUser;
 import com.techelevator.model.Update;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -37,9 +38,9 @@ public class UpdateSqlDao implements UpdateDAO{
     }
 
     @Override
-    public void insertIntoBreweryUser(long breweryId, long userId) {
+    public void insertIntoBreweryUser(BreweryUser breweryUser) {
         String sql = "INSERT INTO brewery_users (brewery_id, user_id) VALUES (?, ?);";
-        jdbcTemplate.update(sql, breweryId, userId);
+        jdbcTemplate.update(sql, breweryUser.getBreweryId(), breweryUser.getUserId());
     }
 
 

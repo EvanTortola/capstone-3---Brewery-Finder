@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Update;
+import com.techelevator.model.BreweryUser;
 
 import java.util.List;
 
@@ -10,5 +11,5 @@ public interface UpdateDAO {
 
     List<Update> getUpdatesByUserId(Long userId);
 
-    void insertIntoBreweryUser (long breweryId, long userId);
+    void insertIntoBreweryUser (BreweryUser breweryUser);
 }

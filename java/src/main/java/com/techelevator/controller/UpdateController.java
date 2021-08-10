@@ -1,6 +1,7 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.UpdateDAO;
+import com.techelevator.model.BreweryUser;
 import com.techelevator.model.Update;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +30,7 @@ public class UpdateController {
     }
 
     @RequestMapping (path = "/addBU", method = RequestMethod.POST)
-    public void addBreweryUser(Long breweryId, Long userId) {
-        updateDAO.insertIntoBreweryUser(breweryId, userId);
+    public void addBreweryUser(@RequestBody BreweryUser breweryUser) {
+        updateDAO.insertIntoBreweryUser(breweryUser);
     }
 }
