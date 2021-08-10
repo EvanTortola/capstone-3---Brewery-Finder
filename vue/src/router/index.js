@@ -12,6 +12,7 @@ import AddReview from '../views/AddReview'
 import UpdateBrewery from '../views/UpdateBrewery'
 //import BreweryDetail from '../components/BreweryDetail'
 import BeerDetail from '../views/BeerDetail'
+import Update from '../views/Update'
 
 Vue.use(Router)
 
@@ -108,6 +109,14 @@ const router = new Router({
       component: BeerDetail,
       meta: {
         requiresAuth: false
+      }
+    },
+    {
+      path: "/updates/:userId",
+      name: "update",
+      component: Update,
+      meta: {
+        requiresAuth: true
       }
     }
 

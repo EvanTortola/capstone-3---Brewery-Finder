@@ -72,7 +72,10 @@ export default new Vuex.Store({
   },
   SET_CURRENT_BEER(state, data) {
     state.beer = data;
-}
+},
+
+
+  
 
     
       

@@ -21,6 +21,8 @@
           <button>Add Review</button>
         </div>
       </router-link>
+
+    <button v-on:click.prevent="deleteBeer">Delete This Beer</button>
   </div>
 </template>
 
@@ -54,9 +56,22 @@ export default {
             .then(response => {
               this.reviews = response.data
             })
-        }
+        },
             
+            
+      deleteBeer() { 
+       
+         beerService.deleteBeer(this.$route.params.beerId).then(response => {
+        if (response.status === 200) {
+          this.$router.push(`/`);
+        }
+      });
+
+    }
     },
+
+    
+
     created() {
           this.retreiveBeer();
           this.retreiveReviews();
