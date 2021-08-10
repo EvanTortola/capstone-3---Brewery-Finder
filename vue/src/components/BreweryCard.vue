@@ -39,7 +39,7 @@
 
 <script>
 import breweryService from '../services/BreweryService';
-import updateService from '../services/UpdateService';
+
 
 export default {
     name: 'brewery-card',
@@ -47,17 +47,7 @@ export default {
 
     },
     methods: {
-        likeBrewery() {
-            this.breweryUser.userId = this.$store.state.user.id
-            const brewUser = {
-                breweryId: this.brewery.breweryId,
-                userId: this.$store.state.user.id
-            };
-            if (this.userId != 0){
-            updateService
-            .likeBrewery(brewUser)
-            }
-        }
+     
     },
 
     data() {

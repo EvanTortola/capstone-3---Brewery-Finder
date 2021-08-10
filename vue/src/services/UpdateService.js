@@ -11,5 +11,9 @@ export default {
 
     likeBrewery(brewUser) {
         return axios.post('/addBU', brewUser)
+    },
+
+    getUpdates(userId) {
+        return axios.get(`/updates/${userId}`)
     }
 }
