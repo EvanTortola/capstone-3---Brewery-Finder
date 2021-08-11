@@ -41,15 +41,15 @@ public class BeerController {
     @RequestMapping(path = "/{breweryId}", method = RequestMethod.GET)
     public List<Beer> getBeerByBrewery(@Valid @PathVariable Long breweryId) {
         List<Beer> beerByBreweryId = beerDAO.getBeerByBrewery(breweryId);
-            return beerByBreweryId;
+        return beerByBreweryId;
     }
 
     //Will get beer by ID
     @RequestMapping(path = "/beer/{id}", method = RequestMethod.GET)
-    public Beer getBeerById (@Valid @PathVariable Long id) {
+    public Beer getBeerById(@Valid @PathVariable Long id) {
         return beerDAO.getBeerById(id);
     }
-
+    
     //Will allow the brewer to add a new beer
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/addBeer", method = RequestMethod.POST)
