@@ -9,7 +9,7 @@
 
             <b-row class="mb-3 ">
                 <b-col></b-col>                          
-              <b-col>
+              <b-col cols="8">
                 <h1 class="h3 mb-4 sign-in-title">Please Sign In</h1>
                 <div
                   class="alert alert-danger"
