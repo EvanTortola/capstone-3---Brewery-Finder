@@ -27,7 +27,7 @@
                         </div>
                     </router-link>
 
-                    <button v-on:click.prevent="deleteBeer">Delete This Beer</button>
+                    <button v-on:click.prevent="deleteBeer" v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'">Delete This Beer</button>
                 </b-col>
                 <b-col></b-col>
             </b-row>
