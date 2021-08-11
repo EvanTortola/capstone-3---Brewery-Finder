@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <b-container fluid class="bv-row">
+    <div class="hero-img-brewery-detail">
+        <b-container fluid class="bv-row transprnt" >
             <b-row>
                 <b-col></b-col>
-                <b-col cols="8">
+                <b-col cols="8" >
                     <h1 class="name text-center brewery-title"> {{ brewery.breweryName }} </h1>
                     <p class="history"> {{ brewery.history }}</p>
                     <div>
@@ -149,6 +149,19 @@ import updateService from '../services/UpdateService';
 </script>
 
 <style>
+
+.hero-img-brewery-detail{
+    background-image: url("../assets/img/bg.jpg");
+    /* background-color: rgba(250, 250, 250, .2); */
+
+}
+
+.transprnt {
+    background-color: rgba(250, 250, 250, .6);
+    /* background-color: rgb(68, 52, 52); */
+    /* margin: 30%; */
+    /* opacity: .8; */
+}
 
 .brewery-title {
     font-size: 50px;
