@@ -95,7 +95,7 @@ export default {
     
     .mb-2 {
         /* margin-top: 20px; */
-        margin-bottom: 100px; 
+        /* margin-bottom: 100px;  */
     }
 
     .card-img {
