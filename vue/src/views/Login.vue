@@ -1,7 +1,7 @@
 <template>
     
   <div class="hero-img vw-100% vh-100" title= "Room with metal brewery cisterns along the walls, and a few wooden benches and small wood crates">
-      <div  >
+      <div  class="sign-in-form">
       <b-container fluid class="bv-row">
       
         <div id="login" class="text-center"> 
@@ -9,7 +9,7 @@
 
             <b-row class="mb-3 ">
                 <b-col></b-col>                          
-              <b-col class= "transprntbox-div">
+              <b-col >
                 <h1 class="h3 mb-4 sign-in-title">Please Sign In</h1>
                 <div
                   class="alert alert-danger"
@@ -101,29 +101,31 @@ export default {
    background: cover;
  }
 
-.form-padding {
-    padding: 20%
+.sign-in-form {
+    /* padding: 20%; */
+
+    margin: 0 30% 0 30%;
+
+    border-radius: 5px;
+
+    background-color: rgba(242, 242, 242, 0.8);
 }
 
  .sign-in-title {
-   margin: 10% 5% 10% 5%;
+   margin: 20% 5% 20% 5%;
 
    font-weight: bold;
    color: #128325;
  }
 
-.transprntbox-div {
+/* .transprntbox-div {
     margin: 30px;
     background-color: #ffffff;
     border: none;
     opacity: .8;    
-}
+} */
 
-.transprntbox-container {
 
-  font-weight: bold;
-  color: #000000;
-}
 
 .password-section {
     margin-top: 5%

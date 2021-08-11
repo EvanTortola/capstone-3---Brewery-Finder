@@ -1,6 +1,10 @@
 <template>
     <div class="nav">
+        
         <ul class="nav-ul">
+            <li class="nav-li">
+                <img src="src\assets\img\Logo.PNG" alt="">
+            </li>
             <li class="nav-li">
                 <router-link v-bind:to="{ name: 'home' }" class="nav-route-link">Home</router-link>
             </li>
