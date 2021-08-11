@@ -1,202 +1,59 @@
 <template>
+    
+  <div class="hero-img vw-100% vh-100" title= "Room with metal brewery cisterns along the walls, and a few wooden benches and small wood crates">
+      <div  >
+      <b-container fluid class="bv-row">
+      
+        <div id="login" class="text-center"> 
+          <form class="form-signin" @submit.prevent="login">
 
-  <div class="hero-img vw-100 vh-100">  
-
-    <b-container fluid class="bv-row">
-     
-      <div id="login" class="text-center"> 
-        <form class="form-signin" @submit.prevent="login">
-
-          <b-row class="mb-3">
-            <b-col></b-col>            
-            <b-col>
-              <h1 class="h3 mb-4 font-weight-normal text-white login-section">Please Sign In</h1>
-              <div
-                class="alert alert-danger"
-                role="alert"
-                v-if="invalidCredentials"
-              >Invalid username and password!</div>
-              <div
-                class="alert alert-success"
-                role="alert"
-                v-if="this.$route.query.registration"
-              >Thank you for registering, please sign in.</div>
-            </b-col>
-            <b-col></b-col>
-            <!-- <b-col>
-              <h1 class="h3 mb-3 font-weight-normal text-white">Register</h1>
-            </b-col> -->
-          </b-row>
-          <b-row>
-            <b-col></b-col>
-            <b-col>
-              <label for="username" class="sr-only text-white">Username</label>
-            <input
-              type="text"
-              id="username"
-              class="form-control"
-              placeholder="Username"
-              v-model="user.username"
-              required
-              autofocus
-            />
-            </b-col>
-            <b-col></b-col>
-            <!-- <b-col>
-              <label class="sr-only text-white">Username</label>
-            <input
-              type="text"
-              id="username"
-              class="form-control"
-              placeholder="Username"
-            />
-            </b-col> -->
-          </b-row>
-            
-          <b-row>
-            <b-col></b-col>
-            <b-col>
-              <label for="password" class="sr-only text-white">Password</label>
-              <input
-                type="password"
-                id="password"
-                class="form-control"
-                placeholder="Password"
-                v-model="user.password"
-                required
-              />
-              <router-link :to="{ name: 'register' }" class="text-primary bg-white">Need an account?</router-link>&nbsp;
-              <button type="submit" class="btn btn-light">Sign in</button>
-            </b-col>
-            <b-col></b-col>
-            <!-- <b-col>
-              <label for="password" class="sr-only text-white">Password</label>
+            <b-row class="mb-3 ">
+                <b-col></b-col>                          
+              <b-col class= "transprntbox-div">
+                <h1 class="h3 mb-4 sign-in-title">Please Sign In</h1>
+                <div
+                  class="alert alert-danger"
+                  role="alert"
+                  v-if="invalidCredentials"
+                >Invalid username and password!</div>
+                <div
+                  class="alert alert-success"
+                  role="alert"
+                  v-if="this.$route.query.registration"
+                >Thank you for registering, please sign in.</div>              
+           
+                <label for="username" class="sr-only text-primary">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    class="form-control"
+                    placeholder="Username"
+                    v-model="user.username"
+                    required
+                    autofocus
+                />
+                <label for="password" class="sr-only text-primary password-section">Password</label>
                 <input
                   type="password"
                   id="password"
                   class="form-control"
                   placeholder="Password"
+                  v-model="user.password"
+                  required
                 />
-                <button type="submit" class="btn btn-light align-left">Sign in</button>
-            </b-col> -->
-          </b-row>
-            
-        </form>
-      </div>
-    </b-container>    
-    <!-- <b-container fluid class="bv-row">
-      <b-row class="mb-5">
+                <div class="d-flex align-items-start justify-content-center sign-in-button">
+                    <router-link :to="{ name: 'register' }" class="text-primary need-acct">Need an account?</router-link>&nbsp;
+                    <button type="submit" class="btn btn-color">Sign in</button>
+                </div>
+              </b-col>
+              <b-col></b-col>
+            </b-row>
+              
+          </form>
+        </div>
+      </b-container>
 
-        <b-col>
-          <div id="login" class="text-left">
-            <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
-          </div>
-        <div class="alert alert-danger" role="alert" v-if="invalidCredentials">Invalid username and password!</div>
-        <div class="alert alert-success" role="alert" v-if="this.$route.query.registration">Thank you for registering, please sign in.</div>
-        </b-col>
-
-        <b-col></b-col>
-
-        <b-col>
-          <div id="login" class="text-left">
-            <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
-          </div>
-          <div class="alert alert-danger" role="alert" v-if="invalidCredentials">Invalid username and password!</div>
-          <div class="alert alert-success" role="alert" v-if="this.$route.query.registration">Thank you for registering, please sign in.</div>
-        </b-col>
-      </b-row>
-      <b-row class="mb-3">
-        <b-col> 
-          <b-input-group class="mb-4">
-            <b-input-group-prepend is-text>
-              <b-icon icon="person"></b-icon>
-            </b-input-group-prepend>
-            <b-form-input inline type="text" class="form-control" placeholder="Username" v-model="user.username" required autofocus></b-form-input>
-          </b-input-group>
-        </b-col>
-        <b-col order="5">
-          <b-input-group class="mb-4">
-            <b-input-group-prepend is-text>
-              <b-icon icon="person"></b-icon>
-            </b-input-group-prepend>
-            <b-form-input inline type="text" class="form-control" placeholder="Username" v-model="user.username" required autofocus></b-form-input>
-          </b-input-group>
-        </b-col>
-        <b-col order="1"></b-col>
-      </b-row>
-
-      <b-row class="mb-3">
-        <b-col order="6"> 
-          <b-input-group class="mb-2 mr-sm-2 mb-sm-0">
-          <b-input-group-prepend is-text>
-            <b-icon icon="key"></b-icon>
-          </b-input-group-prepend>
-          <b-form-input type="password" id="password" class="form-control" placeholder="Password" v-model="user.password" required></b-form-input>
-          </b-input-group>
-
-          <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
-          
-          <router-link :to="{ name: 'register' }"><em>Need an account?</em></router-link>&nbsp;
-          <button type="submit">Sign in</button>
-        </b-col>
-        <b-col order="1">
-          <b-input-group class="mb-2 mr-sm-2 mb-sm-0">
-          <b-input-group-prepend is-text>
-            <b-icon icon="key"></b-icon>
-          </b-input-group-prepend>
-          <b-form-input type="password" id="password" class="form-control" placeholder="Password" v-model="user.password" required></b-form-input>
-          </b-input-group>
-
-          <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
-          
-          <router-link :to="{ name: 'register' }"><em>Need an account?</em></router-link>&nbsp;
-          <button type="submit">Sign in</button>
-        </b-col>
-        <b-col></b-col>
-      </b-row>
-    </b-container> -->
-     
-    <!-- <div id="login" class="text-left">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1> -->
-      <!-- <div
-          class="alert alert-danger"
-          role="alert"
-          v-if="invalidCredentials"
-        >Invalid username and password!</div>
-        <div
-          class="alert alert-success"
-          role="alert"
-          v-if="this.$route.query.registration"
-        >Thank you for registering, please sign in.</div> -->
-      <!-- <b-input-group class="mb-4">
-        <b-input-group-prepend is-text>
-          <b-icon icon="person"></b-icon>
-        </b-input-group-prepend>
-        <b-form-input inline type="text" 
-          class="form-control" 
-          placeholder="Username" 
-          v-model="user.username" 
-          required 
-          autofocus></b-form-input>
-      </b-input-group> -->
-      <!-- <b-input-group class="mb-2 mr-sm-2 mb-sm-0">
-        <b-input-group-prepend is-text>
-          <b-icon icon="key"></b-icon>
-        </b-input-group-prepend>
-        <b-form-input type="password"
-          id="password"
-          class="form-control"
-          placeholder="Password"
-          v-model="user.password"
-          required
-          ></b-form-input>
-      </b-input-group> -->
-
-      <!-- <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox> -->
-
-      <!-- <router-link :to="{ name: 'register' }">Need an account?</router-link>
-        <button type="submit">Sign in</button> -->
-    <!-- </div> -->
+    </div>  
   </div>
 </template>
 
@@ -241,11 +98,53 @@ export default {
 <style>
  .hero-img {
    background-image: url("../assets/img/bg.jpg");
-   background-size: cover;
+   background: cover;
  }
 
- .login-section {
-   margin-top: 10%
+.form-padding {
+    padding: 20%
+}
+
+ .sign-in-title {
+   margin: 10% 5% 10% 5%;
+
+   font-weight: bold;
+   color: #128325;
  }
+
+.transprntbox-div {
+    margin: 30px;
+    background-color: #ffffff;
+    border: none;
+    opacity: .8;    
+}
+
+.transprntbox-container {
+
+  font-weight: bold;
+  color: #000000;
+}
+
+.password-section {
+    margin-top: 5%
+}
+
+.sign-in-button {
+    margin: 2% 0 10% 0
+}
+
+.need-acct {
+    margin: 1% 8% 0 0
+}
+
+.btn-color {
+    background-color: #128325;
+    padding: 10px;
+
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+
+}
+
 </style>
 

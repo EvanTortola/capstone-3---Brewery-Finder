@@ -1,7 +1,7 @@
 <template>
  <form v-on:submit.prevent="submitForm" class="updatedBrewery">
-      <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
-       <div class="form-group">
+    <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
+    <div class="form-group">
       <label for="breweryName">Name:</label>
       <input id="breweryName" type="text" class="form-control" v-model="brewery.breweryName" autocomplete="off" />
     </div>
