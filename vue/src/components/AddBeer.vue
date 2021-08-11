@@ -1,9 +1,9 @@
 <template>
-<div>
-    <b-container fluid class="bv-row">
+<div class="hero-img vw-100% vh-100"> 
+    <b-container fluid class="bv-row transprnt-overlay vw-100% vh-100">
         <b-row>
             <b-col></b-col>
-            <b-col>
+            <b-col cols="8"> 
                 <h1>Add New Beer</h1>
 
 

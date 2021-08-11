@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <b-container fluid class="bv-row">
+    <div class="hero-img">
+        <b-container fluid class="bv-row transprnt-overlay" >
             <b-row>
                 <b-col></b-col>
-                <b-col cols="8">
+                <b-col cols="8" >
                     <h1 class="name text-center brewery-title"> {{ brewery.breweryName }} </h1>
                     <p class="history"> {{ brewery.history }}</p>
                     <div>
@@ -16,24 +16,27 @@
                         <!-- <p class="text-center hourOfOpp"> Open Hours: {{ brewery.hoursOfOperation }} </p> -->
                         <!-- <p class="phone"> {{ brewery.phoneNumber}}</p> -->
                         <img :src="brewery.image" alt="image inside the brewery" class="beerImg"> 
-                        <router-link :to="{name: 'updateBrewery', params: {breweryId: brewery.breweryId} }">
+                        <!-- <router-link :to="{name: 'updateBrewery', params: {breweryId: brewery.breweryId} }"> -->
                         <!-- <div class="updateBrewery"> -->
-                            <button class="updateBrewery update-brewery-btn">Update Existing Brewery</button> 
+                            <!-- <button class="updateBrewery update-brewery-btn">Update Existing Brewery</button>  -->
                         <!-- </div>    -->
-                        </router-link> 
+                        <!-- </router-link>  -->
                     </div>
 
+                
 
 
-                    <h3 class="beer-title">Beer List</h3>
-                    <div class="listOfBeer">
-                        <div class="beer" v-for="beer in beers" v-bind:key="beer.beerId">
+                    
+                        <h3 class="beer-title">Beer List</h3>
+                            <div class="listOfBeer">
+                                <div class="beer" v-for="beer in beers" v-bind:key="beer.beerId">
 
-                            <router-link :to="{name: 'beerDetail', params: {breweryId: brewery.breweryId, beerId: beer.beerId, name: beer.name} }">
-                            <h3 class="beerName">{{beer.name}}</h3>
-                            </router-link>                       
-                        </div>
-                    </div>
+                                <router-link :to="{name: 'beerDetail', params: {breweryId: brewery.breweryId, beerId: beer.beerId, name: beer.name} }">
+                                <h3 class="beerName">{{beer.name}}</h3>
+                                </router-link>                       
+                                </div>
+                            </div>
+                    
 
                     <b-button href="#" variant="primary" class="like" v-on:click.prevent="likeBrewery">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
@@ -41,20 +44,20 @@
                         </svg>
                     </b-button>
  
-                    <div>
-                        <router-link :to="{name: 'addBeer', params: {breweryId: brewery.breweryId} }">
-                            <!-- <div  class="addBeer"> -->
+                    <!-- <div>
+                         <router-link :to="{name: 'addBeer', params: {breweryId: brewery.breweryId} }">
+                             <div  class="addBeer">
                                 <button class="addBeer add-beer-btn">Add Beer</button> 
-                            <!-- </div>    -->
-                        </router-link>                      
+                             </div>   
+                        </router-link>                    
 
-                        <!-- <router-link :to="{name: 'updateBrewery', params: {breweryId: brewery.breweryId} }">
+                        <router-link :to="{name: 'updateBrewery', params: {breweryId: brewery.breweryId} }">
                         <div class="updateBrewery">
-                            <button>Update Existing Brewery
+                            <button>Update ing Brewery
                             </button> 
                         </div>   
-                        </router-link>  -->
-                    </div>
+                        </router-link> 
+                    </div> -->
 
 
                 </b-col>
@@ -71,6 +74,7 @@ import beerService from "../services/BeerService"
 import updateService from '../services/UpdateService';
     export default {
         name: "brewery-detail",
+        
 
 
         methods: {
@@ -107,7 +111,8 @@ import updateService from '../services/UpdateService';
             updateService
             .likeBrewery(brewUser)
             }
-        }
+        },
+      
             
         },
 
@@ -120,6 +125,7 @@ import updateService from '../services/UpdateService';
         data() {
            return {
                beers: [],
+              
                
               
            } 
@@ -143,6 +149,13 @@ import updateService from '../services/UpdateService';
 </script>
 
 <style>
+
+.transprnt-overlay {
+    background-color: rgba(250, 250, 250, .6);
+    /* background-color: rgb(68, 52, 52); */
+    /* margin: 30%; */
+    /* opacity: .8; */
+}
 
 .brewery-title {
     font-size: 50px;

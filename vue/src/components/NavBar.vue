@@ -1,6 +1,10 @@
 <template>
     <div class="nav">
+        
         <ul class="nav-ul">
+            <li class="logo">
+                
+            </li>
             <li class="nav-li">
                 <router-link v-bind:to="{ name: 'home' }" class="nav-route-link">Home</router-link>
             </li>
@@ -51,6 +55,10 @@
     background-color: rgb(18, 131, 37);
 }
 
+.logo {
+    /* image: ; */
+}
+
 .nav-li {    
     border-right: 1px solid rgb(192, 194, 92);
 }
@@ -65,7 +73,7 @@
 }
 
 .nav-li-float-right {
-    float: right;
+    align-content: flex-end;
 }
 
 .nav-route-link:hover {
