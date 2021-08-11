@@ -1,29 +1,38 @@
 <template>
-  <div>
-    <div clas="beerDetail">
-      <h1>{{beer.name}}</h1>
-      <p>{{beer.description}}</p>
-      <p>{{beer.type}}</p>
-      <p>{{beer.abv}}</p>
-      <img :src="beer.imgUrl" alt="">
-    </div> 
-     
-    <div class="listOfReviews">
-    <div v-for="review in reviews" v-bind:key="review.reviewId">
-      <h3>{{review.beerName}}</h3>
-      <p>{{review.userExperience}}</p>
-      <p>{{review.rating}}</p>
-    </div> 
+
+    <div>
+        <b-container fluid class="bv-row">
+            <b-row>
+                <b-col></b-col>
+                <b-col>
+                    <div clas="beerDetail">
+                    <h1>{{beer.name}}</h1>
+                    <p>{{beer.description}}</p>
+                    <p>{{beer.type}}</p>
+                    <p>{{beer.abv}}</p>
+                    <img :src="beer.imgUrl" alt="">
+                    </div> 
+                    
+                    <div class="listOfReviews">
+                    <div v-for="review in reviews" v-bind:key="review.reviewId">
+                    <h3>{{review.beerName}}</h3>
+                    <p>{{review.userExperience}}</p>
+                    <p>{{review.rating}}</p>
+                    </div> 
+                    </div>
+
+                    <router-link :to="{name: 'addReview', params: {breweryId: beer.breweryId, beerId: beer.beerId, name: beer.name}}">
+                        <div class="addReview">
+                        <button>Add Review</button>
+                        </div>
+                    </router-link>
+
+                    <button v-on:click.prevent="deleteBeer">Delete This Beer</button>
+                </b-col>
+                <b-col></b-col>
+            </b-row>
+        </b-container>
     </div>
-
-      <router-link :to="{name: 'addReview', params: {breweryId: beer.breweryId, beerId: beer.beerId, name: beer.name}}">
-        <div class="addReview">
-          <button>Add Review</button>
-        </div>
-      </router-link>
-
-    <button v-on:click.prevent="deleteBeer">Delete This Beer</button>
-  </div>
 </template>
 
 <script>
