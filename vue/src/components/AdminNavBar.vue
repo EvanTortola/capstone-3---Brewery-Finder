@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="nav-admin">
       <router-link v-bind:to="{name: 'addBrewery' }">Add Brewery</router-link>
     </div>
 </template>
@@ -12,9 +12,9 @@ export default {
 </script>
 
 <style>
-.nav {
-    display: flex;
+.nav-admin {
+    /* display: flex;
 
-    justify-content: space-around;
+    justify-content: space-around; */
 }
 </style>
