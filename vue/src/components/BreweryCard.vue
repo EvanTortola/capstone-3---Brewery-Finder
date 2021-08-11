@@ -24,9 +24,15 @@
                         </b-card>                    
                     </b-col>
 
-                    <b-col></b-col>
                     <b-col>
-                        <!-- for the next button component -->
+                        <button type="button" class="btn btn-warning btn-circle btn-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                        </button>
+                    </b-col>
+                    <b-col>
+                        
                     </b-col>
                 </b-row>
             </b-container>
@@ -74,7 +80,18 @@ export default {
       color: white;
     }
     
-    .btn-circle.btn-xl {
+    .btn-circle {
+        width: 180px;
+        height: 180px;
+        padding: 10px 16px;
+        margin: 70% 0 0 20%;
+
+        border-radius: 90px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .btn-xl {
       width: 180px;
       height: 180px;
       padding: 10px 16px;
@@ -100,12 +117,7 @@ export default {
 
     .card-img {
       max-width: 180px;
-      max-height: 100px 
-      
-    
+      max-height: 100px      
     }
-
-    
-
 
 </style> 
