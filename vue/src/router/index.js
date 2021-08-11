@@ -13,6 +13,7 @@ import UpdateBrewery from '../views/UpdateBrewery'
 //import BreweryDetail from '../components/BreweryDetail'
 import BeerDetail from '../views/BeerDetail'
 import Update from '../views/Update'
+import UpdateForm from '../views/UpdateForm'
 
 Vue.use(Router)
 
@@ -118,8 +119,15 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+    path: "/update/:breweryName/:breweryId",
+    name: "addUpdate",
+    component: UpdateForm,
+    meta: {
+      requiresAuth: true
     }
-
+    }
   ]
 })
 
