@@ -115,7 +115,7 @@ export default {
    margin: 20% 5% 20% 5%;
 
    font-weight: bold;
-   color: #128325;
+   color: rgb(18, 131, 37);
  }
 
 /* .transprntbox-div {
@@ -140,7 +140,7 @@ export default {
 }
 
 .btn-color {
-    background-color: #128325;
+    background-color: rgb(18, 130, 36);
     padding: 10px;
 
     color: rgb(255, 255, 255);
