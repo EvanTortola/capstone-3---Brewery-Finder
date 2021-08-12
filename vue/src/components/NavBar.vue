@@ -2,8 +2,8 @@
     <div class="nav">
         
         <ul class="nav-ul">
-            <li class="logo">
-                
+            <li class="nav-li ">
+                <img src="..\assets\img\LogomarkSm.png" alt="Brew Spot Logo">
             </li>
             <li class="nav-li">
                 <router-link v-bind:to="{ name: 'home' }" class="nav-route-link">Home</router-link>
@@ -38,13 +38,13 @@
 
 <style>
 .nav {
-    /* display: flex; */
-/* 
-    justify-content: flex-start; */
+    justify-content: flex-start;
+    align-content: center;
 }
 
 .nav-ul {
     display: flex;
+    align-content: center;
 
     list-style-type: none;
     margin: 0;
@@ -52,11 +52,12 @@
     overflow: hidden;
     width: 100%;
 
-    background-color: rgb(18, 131, 37);
+    background-color: rgb(60, 129, 0);
 }
 
 .logo {
-    /* image: ; */
+    
+
 }
 
 .nav-li {    

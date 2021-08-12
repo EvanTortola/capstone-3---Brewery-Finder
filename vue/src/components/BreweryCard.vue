@@ -8,7 +8,7 @@
                         <!-- column intentionally empty to center cards and button -->
                     </b-col>
 
-                    <b-col v-for="brewery in breweries" v-bind:key="brewery.breweryId" class="card">
+                    <b-col v-for="brewery in breweries" v-bind:key="brewery.breweryId" class="card text-center">
                     <!-- can we limit the amount of breweries shown per page with a v-if and an event listener that moves you to the next page and shows the next 3 breweries? -->                    
                         <b-card tag="article"  class="mb-2">
                             <router-link :to="{name: 'Brewery', params: {breweryId: brewery.breweryId} }">
