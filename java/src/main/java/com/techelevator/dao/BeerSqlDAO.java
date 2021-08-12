@@ -21,7 +21,6 @@ public class BeerSqlDAO implements BeerDAO{
 
     @Override
    public List<Beer> getAllBeer() {
-
         List<Beer> allBeers = new ArrayList<>();
         String sql = "SELECT beer_id, brewery_id, name, type, description, img_url, abv, is_active FROM beer;";
 
@@ -93,7 +92,11 @@ public class BeerSqlDAO implements BeerDAO{
         return true;
     }
 
+    //@Override
+    //public void updateActiveBreweryBeers(Long beerId, boolean isActive) {
+    //    jdbcTemplate.update("UPDATE beers SET is_active = ? WHERE beer_id = ?", isActive, beerId);
 
+   // }
 
     private Beer mapRowToBeer(SqlRowSet row) {
         Beer newBeer = new Beer();
