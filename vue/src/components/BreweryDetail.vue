@@ -184,4 +184,6 @@ import updateService from '../services/UpdateService';
     margin-top: 1%
 }
 
+.beerImg {}
+
 </style>
