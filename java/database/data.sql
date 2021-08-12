@@ -20,9 +20,9 @@ INSERT INTO brewery (brewery_name, street, city, state, zip_code, phone, history
 VALUES ('Masthead Brewing Co.', '1261 Superior Ave.', 'Cleveland', 'Ohio', '44114', '216-206-6176', 'Built in 1921 as an automotive dealership and is now listed on the National Register of Historic Places. The taproom features 300 seats, a 100’ long bar, and an additional 50 seat dog friendly patio with a view of downtown Cleveland. We’ve become known for our ever evolving lineup of juicy New England IPAs, Neapolitan-style pizza, and our barrel aged beer utilizing exclusively allocated whiskey barrels from top-rated distilleries.', 'Mon: Closed, Tues-Thur: 11:30am-10:00pm, Fri-Sat: 11:30am-11pm, Sun: 12:00pm-7:00pm', 'https://mastheadbrewingco.com/wp-content/uploads/2019/12/MJC6912-scaled.jpg'
 );
 
-INSERT INTO brewery (brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image)
-VALUES ('Canton Brewing Company', '120 3rd St NW', 'Canton', 'Ohio', '44702', '330-409-0343', 'The Canton Brewing Companys Restaurant and Speakeasy tap room both feature great lineups of delicious food and beer, all prepared and brewed in house. Canton Brewing Company offers various styles of craft beers created by blending the age-old traditions with modern techniques.', 'Mon-Wed: Closed, Thurs: 4:00-9:00pm, Fri: 11:30am-10:00pm, Sat: 11:30am-10:00pm, Sun: Closed', 'https://media-cdn.tripadvisor.com/media/photo-s/0d/a4/65/b2/canton-brewing-company.jpg'
-);
+--INSERT INTO brewery (brewery_name, street, city, state, zip_code, phone, history, hours_of_operation, image)
+--VALUES ('Canton Brewing Company', '120 3rd St NW', 'Canton', 'Ohio', '44702', '330-409-0343', 'The Canton Brewing Companys Restaurant and Speakeasy tap room both feature great lineups of delicious food and beer, all prepared and brewed in house. Canton Brewing Company offers various styles of craft beers created by blending the age-old traditions with modern techniques.', 'Mon-Wed: Closed, Thurs: 4:00-9:00pm, Fri: 11:30am-10:00pm, Sat: 11:30am-10:00pm, Sun: Closed', 'https://media-cdn.tripadvisor.com/media/photo-s/0d/a4/65/b2/canton-brewing-company.jpg'
+--);
 
 INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
 VALUES (1, 'LemonGrass Wheat', 'Wheat', 'Light and crushable American Wheat beer brewed with a touch of lemongrass to accentuate the fruity aromatics from the yeast.', 'https://untappd.akamaized.net/photos/2021_06_12/2bac464b5e7f908374834081ab3d913f_640x640.jpg', '4.2%', true
@@ -164,33 +164,33 @@ INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
 VALUES (5, 'Hollow Earth Triple NEIPA', 'IPA', 'We have thrown brewing science to the curb before, but this time we are taking it to the next level. This beer is loaded to the brim with creamy malts and juicy hops.', 'https://untappd.akamaized.net/photo/2020_06_12/9dbd2eb705e4cbc3b86aa80f4a0309e9_c_905454886_640x640.jpg', '9.2%', true
 );
 
-INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
-VALUES (6, 'Tuscora Pilsner', 'German-Style Pilsner', 'Bright light gold, sweet grainy bread notes and hints of herbal hops, with crispy grainy sweetness and light corn notes. ', 'http://drinkcantonbeer.com/wp-content/uploads/2017/07/tuscora_stockimage.jpg', '5.3%', true
-);
+--INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
+--VALUES (6, 'Tuscora Pilsner', 'German-Style Pilsner', 'Bright light gold, sweet grainy bread notes and hints of herbal hops, with crispy grainy sweetness and light corn notes. ', 'http://drinkcantonbeer.com/wp-content/uploads/2017/07/tuscora_stockimage.jpg', '5.3%', true
+--);
 
-INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
-VALUES (6, 'Cascade', 'Pale Ale', 'Hazy golden with an off-white head, citrus, grapefruit and tangerine with slight notes of malt sweetness, and slight grapefruit, pine, citrus and bready caramel notes.', 'http://drinkcantonbeer.com/wp-content/uploads/2017/07/Cascade_stockimage.jpg', '5.8%', true
-);
+--INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
+--VALUES (6, 'Cascade', 'Pale Ale', 'Hazy golden with an off-white head, citrus, grapefruit and tangerine with slight notes of malt sweetness, and slight grapefruit, pine, citrus and bready caramel notes.', 'http://drinkcantonbeer.com/wp-content/uploads/2017/07/Cascade_stockimage.jpg', '5.8%', true
+--);
 
-INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
-VALUES (6, 'Carpe Noctem', 'Coffee Porter', 'Deep brown, nearly black with a khaki head, big aromas of sweet bread and pretzels, with bready pretzel notes and faint notes of bakers chocolate.', 'http://drinkcantonbeer.com/wp-content/uploads/2017/07/carpe_stockimage-1.jpg', '6.8%', true
-);
+--INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
+--VALUES (6, 'Carpe Noctem', 'Coffee Porter', 'Deep brown, nearly black with a khaki head, big aromas of sweet bread and pretzels, with bready pretzel notes and faint notes of bakers chocolate.', 'http://drinkcantonbeer.com/wp-content/uploads/2017/07/carpe_stockimage-1.jpg', '6.8%', true
+--);
 
-INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
-VALUES (6, 'Deja Vu', 'White Stout', 'White stout brewed with oats, wheat and lactose. Conditioned on mounds of coffee beans from our friends at Carpe Diem, real vanilla beans and chocolate.', 'https://untappd.akamaized.net/photos/2020_01_18/f9dd1725977cb8796ce7670799d8159c_640x640.jpg', '5.5%', true
-);
+--INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
+--VALUES (6, 'Deja Vu', 'White Stout', 'White stout brewed with oats, wheat and lactose. Conditioned on mounds of coffee beans from our friends at Carpe Diem, real vanilla beans and chocolate.', 'https://untappd.akamaized.net/photos/2020_01_18/f9dd1725977cb8796ce7670799d8159c_640x640.jpg', '5.5%', true
+--);
 
-INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
-VALUES (6, 'Audi 5000', 'IPA', 'This Imperial IPA is brewed with real mango, real Madagascar vanilla beans, lactose, oats and wheat. It pours a cloudy burnt orange/dark yellowish color and has flavors and aromas of candied orange, mango, citrus and creamsicle type flavors. It has a medium to heavy body with a nice creamy mouthfeel and smooth, rounded hop flavors with low bitterness.', 'https://untappd.akamaized.net/photos/2019_04_27/09146ce33818ae72bc2864833db508d1_640x640.jpg', '8.5%', true
-);
+--INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
+--VALUES (6, 'Audi 5000', 'IPA', 'This Imperial IPA is brewed with real mango, real Madagascar vanilla beans, lactose, oats and wheat. It pours a cloudy burnt orange/dark yellowish color and has flavors and aromas of candied orange, mango, citrus and creamsicle type flavors. It has a medium to heavy body with a nice creamy mouthfeel and smooth, rounded hop flavors with low bitterness.', 'https://untappd.akamaized.net/photos/2019_04_27/09146ce33818ae72bc2864833db508d1_640x640.jpg', '8.5%', true
+--);
 
-INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
-VALUES (6, 'Alpha and Omega', 'Double IPA', 'This Double IPA is brewed with a blend of hops including Citra, Mosaic and an unnamed hop, giving off flavors and aromas of pineapple, mango, juicy citrus and melon. It pours a dark gold color and has a medium body with low bitterness. Brewed with oats and wheat to give it some body and a soft mouthfeel.', 'https://untappd.akamaized.net/photos/2019_05_03/817d1e51dc0e702e25bbd292e6be3389_640x640.jpg', '8.1%', true
-);
+--INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
+--VALUES (6, 'Alpha and Omega', 'Double IPA', 'This Double IPA is brewed with a blend of hops including Citra, Mosaic and an unnamed hop, giving off flavors and aromas of pineapple, mango, juicy citrus and melon. It pours a dark gold color and has a medium body with low bitterness. Brewed with oats and wheat to give it some body and a soft mouthfeel.', 'https://untappd.akamaized.net/photos/2019_05_03/817d1e51dc0e702e25bbd292e6be3389_640x640.jpg', '8.1%', true
+--);
 
-INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
-VALUES (6, 'SLURP!', 'Sour Ale', 'Kettle Sour brewed with oats and lactose while being infused with real tangerine puree and real Madagascar vanilla beans. Flavors and aromas of candied orange, fresh tangerine, vanilla and lemon tart.', 'https://untappd.akamaized.net/photos/2019_06_25/6791247a0f1ad02851a714a1371c0396_640x640.jpg', '3.5%', true
-);
+--INSERT INTO beer (brewery_id, name, type, description, img_url, abv, is_active)
+--VALUES (6, 'SLURP!', 'Sour Ale', 'Kettle Sour brewed with oats and lactose while being infused with real tangerine puree and real Madagascar vanilla beans. Flavors and aromas of candied orange, fresh tangerine, vanilla and lemon tart.', 'https://untappd.akamaized.net/photos/2019_06_25/6791247a0f1ad02851a714a1371c0396_640x640.jpg', '3.5%', true
+--);
 
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');

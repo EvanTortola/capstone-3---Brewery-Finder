@@ -5,12 +5,12 @@
             <b-row>
                 <b-col></b-col>
                 <b-col>
-                    <div clas="beerDetail">
-                    <h1>{{beer.name}}</h1>
+                    <div class="beerDetail">
+                    <h1 class="name text-center beer-title"> {{beer.name}}</h1>
                     <p>{{beer.description}}</p>
                     <p>{{beer.type}}</p>
                     <p>{{beer.abv}}</p>
-                    <img :src="beer.imgUrl" alt="">
+                    <img :src="beer.imgUrl" alt="Picture Of Beer" class="beerImg">
                     </div> 
                     
                     <div class="listOfReviews">
@@ -106,5 +106,16 @@ export default {
 </script>
 
 <style>
+
+h1 {
+align-items: center;
+justify-content: center;
+}
+
+
+
+
+
+
 
 </style>

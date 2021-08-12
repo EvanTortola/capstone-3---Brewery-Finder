@@ -119,14 +119,13 @@ import updateService from '../services/UpdateService';
         created() {
             this.retreiveBrewery();
             this.getBeerByBreweryId();
-             
+            this.isLoading = false;
             },
            
         data() {
            return {
-               beers: [],
+            beers: [],
               
-               
               
            } 
         },
