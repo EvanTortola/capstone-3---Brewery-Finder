@@ -1,50 +1,47 @@
 <template>
-    <div class="brewery-detail-background">
+    <div class="brewery-detail-background vw-100% vh-100">
         <b-container fluid class="bv-row" >
             <b-row>
                 <b-col></b-col>
                 <b-col cols="8" >
                     <h1 class="name text-center mt-5 brewery-title"> {{ brewery.breweryName }} </h1>
                     <p class="history"> {{ brewery.history }}</p>
-                    <div >
-                        <p class="text-center mt-5 brewery-detail-subtitle"> Location</p>
-                        <p class=" text-center address city state zip phone hourOfOpp"> Located at {{ brewery.breweryAddress }} {{ brewery.breweryCity }}, {{ brewery.breweryState }} {{ brewery.zipCode }}  |  Phone Number: {{ brewery.phoneNumber}}</p>
-                        <p class="text-center hourOfOpp"> Open Hours: {{ brewery.hoursOfOperation }} </p>
+                    <div>
+                       <b-row> 
+                           <b-col cols="9">
+                                <p class=" mt-5 brewery-detail-subtitle"> Located at:</p>
+                                <p class=" address city state zip phone hourOfOpp">{{ brewery.breweryAddress }} {{ brewery.breweryCity }}, {{ brewery.breweryState }} {{ brewery.zipCode }}  |  Phone Number: {{ brewery.phoneNumber}}</p>
+                                <p class=" hourOfOpp"> Open Hours: {{ brewery.hoursOfOperation }} </p>                            
+                            <b-row>
+                                <b-col>
+                                        <b-button href="#" variant="primary" class="like" v-on:click.prevent="likeBrewery"> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                                                <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
+                                            </svg>&nbsp;
+                                            Like our brewery to get updates!                                            
+                                        </b-button>
+                                </b-col>
+                            </b-row>
+                                <img :src="brewery.image" alt="image inside the brewery" class="brewery-detail-img"> 
+                            </b-col>
+                            <b-col>
+                                
+                                <h3 class="beer-heading">Beer List</h3>
+                                <b-row>
+                                    <div>
+                                        <div class="beer" v-for="beer in beers" v-bind:key="beer.beerId">
 
-                        <b-row>
-                        <img :src="brewery.image" alt="image inside the brewery"> 
+                                            <router-link :to="{name: 'beerDetail', params: {breweryId: brewery.breweryId, beerId: beer.beerId, name: beer.name} }">
+                                            <h3 class="beerName list-of-beer">{{beer.name}}</h3>
+                                            </router-link>                       
+                                        </div>
+                                    
+                                    </div>
+                                </b-row>
+
+                            </b-col>
                         </b-row>                       
                     </div>
-
-                
-
-
-                    <b-row>
-                        
-                        <b-col>
-                        <h3 class="beer-heading text-center">Beer List</h3>
-                        
-                            <div class="listOfBeer">
-                                <div class="beer" v-for="beer in beers" v-bind:key="beer.beerId">
-
-                                <router-link :to="{name: 'beerDetail', params: {breweryId: brewery.breweryId, beerId: beer.beerId, name: beer.name} }">
-                                <h3 class="beerName">{{beer.name}}</h3>
-                                </router-link>                       
-                                </div>
-                            </div>
-                    
-
-                    <b-button href="#" variant="primary" class="like" v-on:click.prevent="likeBrewery">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
-                            <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
-                        </svg>
-                    </b-button>
-                    </b-col>
-                    </b-row>
-                    
- 
-                   
-
 
                 </b-col>
                 <b-col></b-col>
@@ -135,7 +132,6 @@ import updateService from '../services/UpdateService';
 
 <style>
 
-
 .brewery-detail-background {
     background-color: rgba(241, 235, 172, .5);
 }
@@ -151,17 +147,16 @@ import updateService from '../services/UpdateService';
 .brewery-detail-subtitle {
     color: rgb(18, 131, 37);
 
-    font-size: 25px;
+    font-size: 40px;
     font-weight: bold;
 }
 
-.beer {
-    border-top: black;
-    /* border-width: 1ch; */
+.brewery-detail-img {
+    max-width: 900px;
 }
 
 .beer-heading {
-    margin-top: 3%;
+    margin-top: 20%;
 
     color: rgb(18, 131, 37);
     font-size: 40px;
@@ -170,6 +165,23 @@ import updateService from '../services/UpdateService';
     align-content: center; */
 }
 
+.list-of-beer {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.list-of-beer:hover{
+    color:rgb(128, 128, 128);;
+}
+
+.beer {
+
+    margin:.5%;
+
+    border-top: black;
+    /* border-width: 1ch; */
+}
 .update-brewery-btn {
     margin-top: 1%;
 }
