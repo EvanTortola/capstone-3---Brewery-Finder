@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div v-for="update in updates" v-bind:key="update.updateId">
+    <div v-for="update in updates" v-bind:key="update.updateId" class="update">
       <h4>{{update.breweryName}}</h4>
       <p>{{update.update}}</p>
     </div>
