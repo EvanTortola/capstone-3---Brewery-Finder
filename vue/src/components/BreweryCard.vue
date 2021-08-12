@@ -1,6 +1,6 @@
 <template>
-    <div class="hero-img vw-100% vh-100%" title= "Room with metal brewery cisterns along the walls, and a few wooden benches and small wood crates" >
-        <div>
+    <div class="hero-img vw-100% vh-100" title= "Room with metal brewery cisterns along walls, wooden benches, and small wood crates">
+        <div class="transprnt-overlay-login vw-100 vh-100">
             <b-container fluid class="bv-row">          
                 
                 <b-row  >
@@ -56,13 +56,7 @@
                         <!-- </b-card>                     -->
                     </b-col>
 
-                    <!-- <b-col>
-                        <button type="button" class="btn btn-warning btn-circle btn-xl" v-on:click.prevent="first3 = false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
-                        </button>
-                    </b-col> -->
+
                     <b-col>
                         
                     </b-col>
@@ -109,9 +103,11 @@ export default {
 
 <style>
 
+
+
     .welcome-text {
       padding-top: 50px;
-      color: white;
+      color: rgb(0, 0, 0);
     }
     
     .btn-circle {
@@ -155,7 +151,6 @@ export default {
     .card-img {
       max-width: 180px;
       max-height: 100px;  
-      justify-content: center;
     }
     .card-title {
         justify-content: center;

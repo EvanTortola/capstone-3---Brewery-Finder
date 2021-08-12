@@ -1,6 +1,6 @@
 <template>
-    <div class="hero-img">
-        <b-container fluid class="bv-row transprnt-overlay" >
+    <div class="brewery-detail-background">
+        <b-container fluid class="bv-row" >
             <b-row>
                 <b-col></b-col>
                 <b-col cols="8" >
@@ -132,11 +132,9 @@ import updateService from '../services/UpdateService';
 
 <style>
 
-.transprnt-overlay {
-    background-color: rgba(250, 250, 250, .6);
-    /* background-color: rgb(68, 52, 52); */
-    /* margin: 30%; */
-    /* opacity: .8; */
+
+.brewery-detail-background {
+    background-color: rgba(241, 235, 172, .5);
 }
 
 .brewery-title {
