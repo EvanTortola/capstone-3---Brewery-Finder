@@ -89,6 +89,10 @@ CREATE TABLE brewery_users (
         CONSTRAINT FK_brewery_users_brewery FOREIGN KEY (brewery_id) REFERENCES brewery (brewery_id),
         CONSTRAINT FK_brewery_users_users FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8233b3a2db0b6925c1b9aa2ba0d701a9d40be767
 COMMIT TRANSACTION;
 
 
