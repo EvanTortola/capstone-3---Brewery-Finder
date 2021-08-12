@@ -62,5 +62,23 @@ CREATE TABLE review (
         CONSTRAINT PK_review PRIMARY KEY (review_id),
         CONSTRAINT FK_review_beer FOREIGN KEY (beer_id) REFERENCES beer (beer_id)
 );
+CREATE TABLE update (
+        update_id serial,
+        brewery_id int NOT NULL,
+        brewery_name varchar(50) NOT NULL,
+        update text NOT NULL,
+        
+        CONSTRAINT PK_update PRIMARY KEY (update_id),      
+        CONSTRAINT FK_update_brewery FOREIGN KEY (brewery_id) REFERENCES brewery (brewery_id)
+);
+CREATE TABLE brewery_users (
+        brewery_id int NOT NULL,
+        user_id int NOT NULL,
+        
+        CONSTRAINT PK_brewery_users PRIMARY KEY (brewery_id, user_id),      
+        CONSTRAINT FK_brewery_users_brewery FOREIGN KEY (brewery_id) REFERENCES brewery (brewery_id),
+        CONSTRAINT FK_brewery_users_users FOREIGN KEY (user_id) REFERENCES users (user_id)
+);
+
 
 COMMIT TRANSACTION;

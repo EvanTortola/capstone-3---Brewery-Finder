@@ -2,17 +2,16 @@
     <div class="nav">
         
         <ul class="nav-ul">
-            <li class="nav-li">
-              <router-link v-bind:to="{name: 'addBrewery' }" class="nav-route-link">Add Brewery</router-link>            
+            <li class="nav-li-float-right">
+                <h1 class="nav-route-link"></h1>
             </li>
         </ul>
-      
     </div>
 </template>
 
-<script>
-export default {
-  name: 'admin-nav-bar'
+<script>    
+    export default {
+    
 
 }
 </script>
@@ -46,10 +45,12 @@ export default {
 
 .nav-route-link {
     display: block;
-    color: white;
+    color:  white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    
+
 
 }
 
