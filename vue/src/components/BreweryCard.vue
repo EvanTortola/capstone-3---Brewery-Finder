@@ -1,36 +1,68 @@
 <template>
-    <div class="hero-img vw-100% vh-100" title= "Room with metal brewery cisterns along the walls, and a few wooden benches and small wood crates">
+    <div class="hero-img vw-100% vh-100%" title= "Room with metal brewery cisterns along the walls, and a few wooden benches and small wood crates" >
         <div>
             <b-container fluid class="bv-row">          
                 
-                <b-row >
+                <b-row  >
                     <b-col>
                         <!-- column intentionally empty to center cards and button -->
                     </b-col>
-
-                    <b-col v-for="brewery in breweries" v-bind:key="brewery.breweryId" class="card">
+                    
+                    <b-col  v-for="brewery in breweries.slice(0,3)" v-bind:key="brewery.breweryId"  class="card">
                     <!-- can we limit the amount of breweries shown per page with a v-if and an event listener that moves you to the next page and shows the next 3 breweries? -->                    
-                        <b-card tag="article"  class="mb-2">
+                        <!-- <b-card tag="article"  class="mb-2"> -->
                             <router-link :to="{name: 'Brewery', params: {breweryId: brewery.breweryId} }">
 
                                 
-                                <h4 class="card-title">{{ brewery.breweryName }}</h4>
-                                <b-card-text>
+                                <h4 class=" text-center card-title">{{ brewery.breweryName }}</h4>
+                                <b-card-text class="text-center">
                                     {{ brewery.breweryCity }}
                                 </b-card-text>
                                 <img :src=" brewery.image " img-bottom class="card-img" />
                                     
                             </router-link>
-                        </b-card>                    
+                        <!-- </b-card>                     -->
                     </b-col>
 
-                    <b-col>
-                        <button type="button" class="btn btn-warning btn-circle btn-xl">
+                    <!-- <b-col>
+                        <button type="button" class="btn btn-warning btn-circle btn-xl" v-on:click.prevent="first3 = false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                         </svg>
                         </button>
+                    </b-col> -->
+                    <b-col>
+                        
                     </b-col>
+                </b-row>
+                <b-row  >
+                    <b-col>
+                        <!-- column intentionally empty to center cards and button -->
+                    </b-col>
+                    
+                    <b-col  v-for="brewery in breweries.slice(3)" v-bind:key="brewery.breweryId"  class="card">
+                    <!-- can we limit the amount of breweries shown per page with a v-if and an event listener that moves you to the next page and shows the next 3 breweries? -->                    
+                        <!-- <b-card tag="article"  class="mb-2"> -->
+                            <router-link :to="{name: 'Brewery', params: {breweryId: brewery.breweryId} }">
+
+                                
+                                <h4 class=" text-center card-title">{{ brewery.breweryName }}</h4>
+                                <b-card-text class="text-center">
+                                    {{ brewery.breweryCity }}
+                                </b-card-text>
+                                <img :src=" brewery.image " img-bottom class=" text-center card-img" />
+                                    
+                            </router-link>
+                        <!-- </b-card>                     -->
+                    </b-col>
+
+                    <!-- <b-col>
+                        <button type="button" class="btn btn-warning btn-circle btn-xl" v-on:click.prevent="first3 = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                        </button>
+                    </b-col> -->
                     <b-col>
                         
                     </b-col>
@@ -45,10 +77,12 @@ import breweryService from '../services/BreweryService';
 
 
 export default {
+    first3: true,
     name: 'brewery-card',
     props: {
 
     },
+    
     methods: {
      
     },
@@ -101,8 +135,11 @@ export default {
     }
 
     .card {
-      height: 20rem;;
+      height: 17rem;
+      width: 20rem;
       margin: 7% .5%;
+      justify-content: center;
+      align-content: center;
       
     }
 
@@ -117,7 +154,11 @@ export default {
 
     .card-img {
       max-width: 180px;
-      max-height: 100px      
+      max-height: 100px;  
+      justify-content: center;
+    }
+    .card-title {
+        justify-content: center;
     }
 
 </style> 

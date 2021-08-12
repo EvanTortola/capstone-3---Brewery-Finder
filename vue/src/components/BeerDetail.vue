@@ -14,10 +14,12 @@
                     </div> 
                     
                     <div class="listOfReviews">
-                    <div v-for="review in reviews" v-bind:key="review.reviewId">
-                    <h3>{{review.beerName}}</h3>
+                    <div v-for="review in reviews" v-bind:key="review.reviewId" class="review">
+                    <!-- <h3>{{review.beerName}}</h3> -->
+                    
+                    <img src="../assets\img/homer_simpson.png" v-for="n in review.rating" v-bind:key="n" alt="" class="homer">
                     <p>{{review.userExperience}}</p>
-                    <p>{{review.rating}}</p>
+                    <!-- <p>{{review.rating}} Pours</p> -->
                     </div> 
                     </div>
 
@@ -106,5 +108,12 @@ export default {
 </script>
 
 <style>
+.homer {
+  height: 50px;
+  width: 50px;
+}
+.review {
+  border-top: black 2px solid;
+}
 
 </style>
