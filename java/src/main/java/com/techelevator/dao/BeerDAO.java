@@ -14,13 +14,12 @@ public interface BeerDAO {
 
      Beer getBeerById(Long beerId);
 
-     boolean searchBeerByName(String name);
+     boolean searchBeerByName(String name); //So we can search a beer using the search bar.
 
      void addNewBeer(Beer newBeer);
 
      boolean deleteBeer(Long beerId);
 
-    // List<Beer> getAllBeerByBrewery(Long breweryId);  So brewer can update the beer status if the beer is out, or not sold anymore.
-    // updateActiveBreweryBeers(Long beerId, boolean isActive);
-    // UpdateBeerDescription(Long beerId, String name, String type, String Description, String imgUrl);
+   // void updateActiveBreweryBeers(Long beerId, boolean isActive); //So you can update beer activity if they are seasonal or no longer available.
+
 }

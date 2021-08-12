@@ -16,11 +16,7 @@
                         <!-- <p class="text-center hourOfOpp"> Open Hours: {{ brewery.hoursOfOperation }} </p> -->
                         <!-- <p class="phone"> {{ brewery.phoneNumber}}</p> -->
                         <img :src="brewery.image" alt="image inside the brewery" class="beerImg"> 
-                        <!-- <router-link :to="{name: 'updateBrewery', params: {breweryId: brewery.breweryId} }"> -->
-                        <!-- <div class="updateBrewery"> -->
-                            <!-- <button class="updateBrewery update-brewery-btn">Update Existing Brewery</button>  -->
-                        <!-- </div>    -->
-                        <!-- </router-link>  -->
+                       
                     </div>
 
                 
@@ -44,20 +40,7 @@
                         </svg>
                     </b-button>
  
-                    <!-- <div>
-                         <router-link :to="{name: 'addBeer', params: {breweryId: brewery.breweryId} }">
-                             <div  class="addBeer">
-                                <button class="addBeer add-beer-btn">Add Beer</button> 
-                             </div>   
-                        </router-link>                    
-
-                        <router-link :to="{name: 'updateBrewery', params: {breweryId: brewery.breweryId} }">
-                        <div class="updateBrewery">
-                            <button>Update ing Brewery
-                            </button> 
-                        </div>   
-                        </router-link> 
-                    </div> -->
+                   
 
 
                 </b-col>
@@ -119,14 +102,13 @@ import updateService from '../services/UpdateService';
         created() {
             this.retreiveBrewery();
             this.getBeerByBreweryId();
-             
+            this.isLoading = false;
             },
            
         data() {
            return {
-               beers: [],
+            beers: [],
               
-               
               
            } 
         },

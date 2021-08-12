@@ -12,8 +12,8 @@
                             <label for="beerType">Experience:</label>
                             <input id="type" type="text" class="form-control" v-model="review.userExperience">
 
-                            <label for="beerName">Time / Date:</label>
-                            <input id="date" type="text" class="form-control" v-model="review.dateTime" autocomplete="off" />
+                            <!-- <label for="beerName">Time / Date:</label>
+                            <input id="date" type="text" class="form-control" v-model="review.dateTime" autocomplete="off" /> -->
 
                             
                             <label for="rating">Rating:</label>&nbsp;
@@ -42,6 +42,7 @@
 <script>
 import reviewService from "../services/ReviewService";
 export default {
+    currentdate: '',
     name: "add-review",
     props: {
         breweryId: {
@@ -68,15 +69,15 @@ export default {
                 beerName: this.$route.params.name,
                 userExperience: this.review.userExperience,
                 rating: this.review.rating,
-                dateTime: this.review.dateTime,
+                dateTime: this.getDate(),
             };
 
             if (this.beerId != 0) {
                 reviewService
                     .addReview(newReview)
                     .then (response => {
-                        if (response.status === 201) {
-                            this.$router.push(`/breweries/${this.$route.params.breweryId}`);
+                        if (response.status === 200) {
+                            this.$router.push(`/${this.$route.params.breweryId}/${this.$route.params.beerId}/${this.$route.params.beerName}`);
                         }
                     })
                     .catch(error => {
@@ -119,6 +120,14 @@ export default {
                 this.errorMsg = 
                 "Error " + verb + " beer. Request could not be created.";
             }
+        },
+        getDate() {
+            var currentdate = new Date();
+            currentdate.getDay() + "/" + currentdate.getMonth() 
+            + "/" + currentdate.getFullYear() + "  " 
+                + currentdate.getHours() + ":" 
+            + currentdate.getMinutes()
+            return currentdate
         }
     },
     created() {
