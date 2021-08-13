@@ -25,11 +25,6 @@ export default {
 </script>
 
 <style>
-.nav-admin {
-    /* display: flex;
-
-    justify-content: space-around; */
-}
 
 .nav-ul {
     display: flex;
@@ -40,7 +35,7 @@ export default {
     overflow: hidden;
     width: 100%;
 
-    background-color: rgb(18, 131, 37);
+    background-color: rgb(60, 129, 0);
 }
 
 .nav-li {    
@@ -49,7 +44,7 @@ export default {
 
 .nav-route-link {
     display: block;
-    color: white;
+    color: rgb(219, 201, 177);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

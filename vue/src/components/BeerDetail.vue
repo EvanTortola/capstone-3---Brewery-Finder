@@ -7,7 +7,7 @@
                 <b-col>
 
                     <div class="beerDetail">
-                        <h1 class="name text-center beer-title"> {{beer.name}}</h1>
+                        <h1 class="name text-center beer-title beer-detail-heading"> {{beer.name}}</h1>
                         <p>{{beer.description}}</p>
                         <p>{{beer.type}}</p>
                         <p>{{beer.abv}}</p>
@@ -126,6 +126,12 @@ export default {
 h1 {
 align-items: center;
 justify-content: center;
+}
+
+.beer-detail-heading {
+  margin-top: 5%;
+
+  color: rgb(18, 131, 37);
 }
 
 .beer-details-img {

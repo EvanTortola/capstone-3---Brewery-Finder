@@ -1,7 +1,8 @@
 <template>
     <div class="hero-img vw-100% vh-100" title= "Room with metal brewery cisterns along walls, wooden benches, and small wood crates">
         <div class="transprnt-overlay-login vw-100 vh-100">
-            <h1 class="text-center welcome-text-heading">Puruse These Fine Establishments</h1>
+            <h1 class="text-center welcome-text-heading">     
+                Browse These Fine Establishments</h1>
             <b-container fluid class="bv-row">          
                 
                 <b-row  >
@@ -123,6 +124,10 @@ export default {
         font-weight: bold;
 
         color: rgb(18, 131, 37);
+    }
+
+    .welcome-img {
+        /* height: 30px; */
     }
 
 

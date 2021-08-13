@@ -3,7 +3,7 @@
         
         <ul class="nav-ul">
             <li class="nav-li ">
-                <img src="..\assets\img\LogomarkSm.png" alt="Brew Spot Logo">
+                <img src="..\assets\img\LogomarkSm.png" alt="Brew Spot Logomark" class="nav-img">
             </li>
             <li class="nav-li">
                 <router-link v-bind:to="{ name: 'home' }" class="nav-route-link">Home</router-link>
@@ -21,11 +21,7 @@
                 <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''" class="nav-route-link">Login</router-link>
             </li>
         </ul>
-        <!-- <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;&nbsp;
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>&nbsp;&nbsp;
-      <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link>&nbsp;&nbsp;
-      <router-link v-bind:to="{name: 'update', params: {userId: this.$store.state.user.id} }" v-if="$store.state.token != ''">Updates</router-link> -->
-      
+       
     </div>
 </template>
 
@@ -42,6 +38,12 @@
     align-content: center;
 }
 
+.nav-img {
+    margin-right: 10px;
+
+    height: 40px
+}
+
 .nav-ul {
     display: flex;
     align-content: center;
@@ -55,10 +57,6 @@
     background-color: rgb(60, 129, 0);
 }
 
-.logo {
-    
-
-}
 
 .nav-li {    
     border-right: 1px solid rgb(192, 194, 92);
@@ -66,7 +64,7 @@
 
 .nav-route-link {
     display: block;
-    color: white;
+    color: rgb(219, 201, 177);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
