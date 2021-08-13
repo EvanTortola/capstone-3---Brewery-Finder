@@ -1,5 +1,5 @@
 <template>
-    <div class="webpage-base-background vw-100% vh-100%" >
+    <div class="webpage-base-background vw-100% vh-100" >
         <b-container fluid class="bv-row">
             <b-row> 
                 <b-col></b-col>
@@ -16,7 +16,7 @@
                             <input id="date" type="text" class="form-control" v-model="review.dateTime" autocomplete="off" /> -->
 
                             
-                            <label for="rating">Rating:</label>&nbsp;
+                            <label for="rating" class="rating-margin">Rating:</label>&nbsp;
                             <select id="rating" v-model="review.rating">
                                 <option value="1">1 Pour</option>
                                 <option value="2">2 Pours</option>
@@ -152,5 +152,9 @@ export default {
 </script>
 
 <style>
+
+.rating-margin {
+    margin-top: 2%;
+}
 
 </style>

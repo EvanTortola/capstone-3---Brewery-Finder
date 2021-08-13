@@ -1,5 +1,5 @@
 <template>
-    <div class="webpage-base-background vw-100% vh-100">
+    <div class="webpage-base-background vw-100% vh-100%">
         <b-container fluid class="b-row">
             <b-row>
                 <p class="text-center form-heading ">Update Brewery</p>
