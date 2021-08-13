@@ -128,4 +128,21 @@ export default {
 }
 
 
+@media only screen and (max-width:444px) {
+
+    .form-detail-btns {
+        font-size: 12px;
+    }
+
+    .form-heading {
+    color: rgb(18, 131, 37);
+
+    font-size: 25px;
+    font-weight: bold;
+    margin: 2% 0 0 0;
+}
+
+}
+
+
 </style>

@@ -181,11 +181,9 @@ import updateService from '../services/UpdateService';
 }
 
 .beer {
-
     margin:.5%;
 
     border-top: black;
-    /* border-width: 1ch; */
 }
 .update-brewery-btn {
     margin-top: 1%;
@@ -193,6 +191,117 @@ import updateService from '../services/UpdateService';
 
 .add-beer-btn {
     margin-top: 1%
+}
+
+@media only screen and (max-width:1320px) {
+
+    .brewery-detail-img {
+        max-width: 600px;
+    }
+}
+
+@media only screen and (max-width:1230px) {
+
+    .brewery-detail-img {
+        max-width: 500px;
+    }
+}
+
+@media only screen and (max-width:1037px) {
+
+    .brewery-detail-img {
+        max-width: 400px;
+    }
+}
+
+@media only screen and (max-width:853px) {
+
+    .brewery-detail-img {
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-width:514px) {
+
+    .brewery-detail-img {
+        max-width: 280px;
+    }
+}
+
+@media only screen and (max-width:430px) {
+
+    .brewery-detail-img {
+        max-width: 300px;
+    }
+
+    .brewery-title {
+        color: rgb(18, 131, 37);
+
+        font-size: 30px;
+        font-weight: bold;
+        margin: 2% 0;
+    }
+
+    .brewery-detail-subtitle {
+        color: rgb(18, 131, 37);
+
+        font-size: 25px;
+        font-weight: bold;
+    }   
+
+    .beer-heading {
+        margin-top: 20%;
+
+        color: rgb(18, 131, 37);
+        font-size: 25px;
+        font-weight: bold;
+        /* justify-content: center;
+        align-content: center; */
+    }
+
+    .list-of-beer {
+        font-size: 15px;
+        color: black;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (max-width:416px) {
+
+    .brewery-detail-img {
+        max-width: 250px;
+    }
+
+    .brewery-title {
+        color: rgb(18, 131, 37);
+
+        font-size: 30px;
+        font-weight: bold;
+        margin: 2% 0;
+    }
+
+    .brewery-detail-subtitle {
+        color: rgb(18, 131, 37);
+
+        font-size: 25px;
+        font-weight: bold;
+    }   
+
+    .beer-heading {
+        margin-top: 20%;
+
+        color: rgb(18, 131, 37);
+        font-size: 25px;
+        font-weight: bold;
+        /* justify-content: center;
+        align-content: center; */
+    }
+
+    .list-of-beer {
+        font-size: 15px;
+        color: black;
+        text-decoration: none;
+    }
 }
 
 </style>

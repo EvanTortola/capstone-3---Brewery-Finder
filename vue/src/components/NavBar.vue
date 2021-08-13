@@ -2,8 +2,8 @@
     <div class="nav">
         
         <ul class="nav-ul">
-            <li class="nav-li ">
-                <img src="..\assets\img\LogomarkSm.png" alt="Brew Spot Logomark" class="nav-img">
+            <li class=" nav-li nav-skinny-logo">
+                <img src="..\assets\img\LargestLogomark.jpg" alt="Brew Spot Logomark" class="nav-img">
             </li>
             <li class="nav-li">
                 <router-link v-bind:to="{ name: 'home' }" class="nav-route-link">Home</router-link>
@@ -41,7 +41,7 @@
 .nav-img {
     margin-right: 10px;
 
-    height: 40px
+    height: 50px
 }
 
 .nav-ul {
@@ -78,4 +78,18 @@
 .nav-route-link:hover {
     background-color: rgb(192, 194, 92);
 }
+@media only screen and (max-width:383px) {
+
+    .nav-img {
+        height: 0px;
+
+        margin: 20px;
+        
+    }
+    .nav-skinny-logo {
+        background-image: url("../assets/img/LogoSm.png");
+        background-repeat: no-repeat;
+    }
+}
+
 </style>
