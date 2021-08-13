@@ -1,16 +1,17 @@
 <template>
 
-    <div>
+    <div class="brewery-detail-background vh-100">
         <b-container fluid class="bv-row">
             <b-row>
                 <b-col></b-col>
                 <b-col>
+
                     <div class="beerDetail">
                     <h1 class="name text-center beer-title"> {{beer.name}}</h1>
                     <p>{{beer.description}}</p>
                     <p>{{beer.type}}</p>
                     <p>{{beer.abv}}</p>
-                    <img :src="beer.imgUrl" alt="Picture Of Beer" class="beerImg">
+                    <img :src="beer.imgUrl" alt="Picture Of Beer" class="beer-details-img">
                     </div> 
                     
                     <div class="listOfReviews">
@@ -22,14 +23,16 @@
                     <!-- <p>{{review.rating}} Pours</p> -->
                     </div> 
                     </div>
+                    <b-row>
+                        <router-link :to="{name: 'addReview', params: {breweryId: beer.breweryId, beerId: beer.beerId, name: beer.name}}">
+                            <div class="addReview">
+                            <button class="btn btn-color">Add Review</button>
+                            <button v-on:click.prevent="deleteBeer" v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'" class="btn btn-color beer-detail-btns">Delete This Beer</button>
 
-                    <router-link :to="{name: 'addReview', params: {breweryId: beer.breweryId, beerId: beer.beerId, name: beer.name}}">
-                        <div class="addReview">
-                        <button>Add Review</button>
-                        </div>
-                    </router-link>
+                            </div>
+                        </router-link>
 
-                    <button v-on:click.prevent="deleteBeer" v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'">Delete This Beer</button>
+                    </b-row>
                 </b-col>
                 <b-col></b-col>
             </b-row>
@@ -108,10 +111,12 @@ export default {
 </script>
 
 <style>
+
 .homer {
   height: 50px;
   width: 50px;
 }
+
 .review {
   border-top: black 2px solid;
 }
@@ -121,10 +126,12 @@ align-items: center;
 justify-content: center;
 }
 
+.beer-details-img {
+    max-width: 50px;
+}
 
-
-
-
-
+.beer-detail-btns {
+  margin-left: 2%;
+}
 
 </style>

@@ -1,13 +1,14 @@
 <template>
     
-  <div class="hero-img vw-100% vh-100" title= "Room with metal brewery cisterns along the walls, and a few wooden benches and small wood crates">
-      <div  class="sign-in-form">
+  <div class="hero-img vw-100% vh-100" title= "Room with metal brewery cisterns along walls, wooden benches, and small wood crates">
+      <div class="transprnt-overlay-login vw-100 vh-100">
+      <div  class="sign-in-form ">
       <b-container fluid class="bv-row">
       
         <div id="login" class="text-center"> 
           <form class="form-signin" @submit.prevent="login">
 
-            <b-row class="mb-3 ">
+            <b-row class="mb-3">
                 <b-col></b-col>                          
               <b-col cols="8">
                 <h1 class="h3 mb-4 sign-in-title">Please Sign In</h1>
@@ -22,7 +23,7 @@
                   v-if="this.$route.query.registration"
                 >Thank you for registering, please sign in.</div>              
            
-                <label for="username" class="sr-only text-primary">Username</label>
+                <label for="username" class="sr-only field-headings">Username</label>
                 <input
                     type="text"
                     id="username"
@@ -32,7 +33,7 @@
                     required
                     autofocus
                 />
-                <label for="password" class="sr-only text-primary password-section">Password</label>
+                <label for="password" class="sr-only password-section field-headings">Password</label>
                 <input
                   type="password"
                   id="password"
@@ -42,7 +43,7 @@
                   required
                 />
                 <div class="d-flex align-items-start justify-content-center sign-in-button">
-                    <router-link :to="{ name: 'register' }" class="text-primary need-acct">Need an account?</router-link>&nbsp;
+                    <router-link :to="{ name: 'register' }" class="need-acct">Need an account?</router-link>&nbsp;
                     <button type="submit" class="btn btn-color">Sign in</button>
                 </div>
               </b-col>
@@ -53,6 +54,7 @@
         </div>
       </b-container>
 
+    </div>
     </div>  
   </div>
 </template>
@@ -101,6 +103,12 @@ export default {
    background: cover;
  }
 
+.transprnt-overlay-login {
+    background-color: rgba(255, 250, 250, .4);
+    /* background-color: rgb(68, 52, 52); */
+    /* margin: 30%; */
+    /* opacity: .8; */
+}
 .sign-in-form {
     /* padding: 20%; */
 
@@ -108,7 +116,7 @@ export default {
 
     border-radius: 5px;
 
-    background-color: rgba(242, 242, 242, 0.8);
+    background-color: rgb(241, 235, 172);
 }
 
  .sign-in-title {
@@ -118,25 +126,27 @@ export default {
    color: rgb(18, 131, 37);
  }
 
-/* .transprntbox-div {
-    margin: 30px;
-    background-color: #ffffff;
-    border: none;
-    opacity: .8;    
-} */
-
-
+.field-headings {
+    color: rgb(18, 131, 37);
+}
 
 .password-section {
-    margin-top: 5%
+    margin-top: 5%;
 }
 
 .sign-in-button {
-    margin: 2% 0 10% 0
+    margin: 2% 0 10% 0;
 }
 
 .need-acct {
-    margin: 1% 8% 0 0
+    margin: 1% 2% 0 0;
+    color: rgb(128, 128, 128);
+    text-decoration: none;
+}
+.need-acct:hover {
+    margin: 1% 2% 0 0;
+    color:rgb(18, 131, 37);
+    text-decoration: none;
 }
 
 .btn-color {
@@ -146,6 +156,14 @@ export default {
     color: rgb(255, 255, 255);
     font-size: 16px;
 
+}
+
+.btn-color:hover {
+    background-color: rgb(19, 168, 44);
+    padding: 10px;
+
+    color: rgb(255, 255, 255);
+    font-size: 16px;
 }
 
 </style>
