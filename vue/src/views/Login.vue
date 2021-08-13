@@ -123,6 +123,7 @@ export default {
    margin: 20% 5% 20% 5%;
 
    font-weight: bold;
+   font-size: 50px;
    color: rgb(18, 131, 37);
  }
 

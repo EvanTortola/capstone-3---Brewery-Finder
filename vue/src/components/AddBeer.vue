@@ -1,15 +1,15 @@
 <template>
-<div class="hero-img vw-100% vh-100"> 
+<div class="webpage-base-background vw-100% vh-100%"> 
     <b-container fluid class="bv-row transprnt-overlay vw-100% vh-100">
         <b-row>
             <b-col></b-col>
             <b-col cols="8"> 
-                <h1>Add New Beer</h1>
+                <h1 class=" text-center form-heading">Add New Beer</h1>
 
 
                 <form v-on:submit.prevent="submitForm" class="breweryForm">
                     <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
-                    <div class="form-group">
+                    <div class="form-group form-body">
                             <label for="beerName"> Beer Name:</label>
                             <input id="beerName" type="text" class="form-control" v-model="beer.name" autocomplete="off" />
 
@@ -29,8 +29,8 @@
                             <input id="active" type="text" name="active"  class="form-control" v-model="beer.active">  
 
                         </div>
-                    <button class="btn btn-submit" v-on:click.prevent="submitForm">Submit</button>
-                    <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
+                    <button class="btn btn-submit btn-color form-detail-btns" v-on:click.prevent="submitForm">Submit</button>
+                    <button class="btn btn-cancel btn-color form-detail-btns" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
                 </form>
             </b-col>
             <b-col></b-col>

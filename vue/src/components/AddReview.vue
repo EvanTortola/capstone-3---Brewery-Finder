@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <div class="webpage-base-background vw-100% vh-100" >
         <b-container fluid class="bv-row">
             <b-row> 
                 <b-col></b-col>
                 <b-col>
-                    <h1>Add New Review</h1>
+                    <h1 class="text-center form-heading">Add New Review</h1>
                     <form v-on:submit.prevent="submitForm" class="breweryForm">
                         <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
                         <div class="form-group">
@@ -16,7 +16,7 @@
                             <input id="date" type="text" class="form-control" v-model="review.dateTime" autocomplete="off" /> -->
 
                             
-                            <label for="rating">Rating:</label>&nbsp;
+                            <label for="rating" class="rating-margin">Rating:</label>&nbsp;
                             <select id="rating" v-model="review.rating">
                                 <option value="1">1 Pour</option>
                                 <option value="2">2 Pours</option>
@@ -27,8 +27,8 @@
                         
 
                         </div>
-                        <button class="btn btn-submit" v-on:click.prevent="submitForm" >Submit</button>
-                        <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
+                        <button class="btn btn-submit btn-color form-detail-btns" v-on:click.prevent="submitForm" >Submit</button>
+                        <button class="btn btn-cancel btn-color form-detail-btns" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
                     </form>
                 </b-col> 
 
@@ -152,5 +152,9 @@ export default {
 </script>
 
 <style>
+
+.rating-margin {
+    margin-top: 2%;
+}
 
 </style>
