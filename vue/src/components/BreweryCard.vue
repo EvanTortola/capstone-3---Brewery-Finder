@@ -1,6 +1,7 @@
 <template>
     <div class="hero-img vw-100% vh-100" title= "Room with metal brewery cisterns along walls, wooden benches, and small wood crates">
         <div class="transprnt-overlay-login vw-100 vh-100">
+            <h1 class="text-center welcome-text-heading">Puruse These Fine Establishments</h1>
             <b-container fluid class="bv-row">          
                 
                 <b-row  >
@@ -13,15 +14,26 @@
                         <!-- <b-card tag="article"  class="mb-2"> -->
                             <router-link :to="{name: 'Brewery', params: {breweryId: brewery.breweryId} }">
 
-                                
-                                <h4 class=" text-center card-title">{{ brewery.breweryName }}</h4>
-                                <b-card-text class="text-center">
-                                    {{ brewery.breweryCity }}
-                                </b-card-text>
-                                <img :src=" brewery.image " img-bottom class="card-img" />
+                                <b-row>
+                                    <b-col>
+                                        <h4 class=" text-center card-title">{{ brewery.breweryName }}</h4>
+                                        <b-card-text class="text-center">
+                                            {{ brewery.breweryCity }}
+                                        </b-card-text>
+                                        
+                                        <b-row>
+                                            <b-col></b-col>
+                                            <b-col cols="7">
+                                                <img :src=" brewery.image " img-bottom class=" card-img" />
+                                            </b-col>
+                                            <b-col></b-col>
+
+                                        </b-row>
+                                    </b-col>
+                                </b-row>
                                     
                             </router-link>
-                        <!-- </b-card>                     -->
+  
                     </b-col>
 
                     <!-- <b-col>
@@ -47,10 +59,19 @@
 
                                 
                                 <h4 class=" text-center card-title">{{ brewery.breweryName }}</h4>
-                                <b-card-text class="text-center">
-                                    {{ brewery.breweryCity }}
-                                </b-card-text>
-                                <img :src=" brewery.image " img-bottom class=" text-center card-img" />
+                                <b-card-text class="text-center card-body">
+                                    {{ brewery.breweryCity }} 
+                                    </b-card-text>
+                                <b-row>
+                                    <b-col></b-col>
+                                    <b-col cols="8">
+                                        <img :src=" brewery.image " img-bottom class=" card-img" />
+                                    </b-col>
+                                    <b-col></b-col>
+
+                                </b-row>
+
+
                                     
                             </router-link>
                         <!-- </b-card>                     -->
@@ -105,10 +126,15 @@ export default {
 
 
 
-    .welcome-text {
-      padding-top: 50px;
-      color: rgb(0, 0, 0);
+    .welcome-text-heading {
+        padding-top: 50px;
+        font-size: 50px;
+        font-weight: bold;
+
+        color: rgb(18, 131, 37);
     }
+
+
     
     .btn-circle {
         width: 180px;
@@ -131,16 +157,26 @@ export default {
     }
 
     .card {
-      height: 17rem;
-      width: 20rem;
+      height: 300px;
+      width: 25rem;
       margin: 7% .5%;
+      border-radius: 30px;
+
       justify-content: center;
       align-content: center;
-      
+
+          background-color: rgb(233, 227, 162);
+/* 
+      color: rgb(18, 131, 37);
+       */
     }
 
     .card-body {
-        margin: 1%
+        /* margin: 1%; */
+        color: rgb(18, 131, 37);
+
+        font-size: 20px;
+        text-decoration: none;
     }
     
     .mb-2 {
@@ -154,6 +190,8 @@ export default {
     }
     .card-title {
         justify-content: center;
+
+        color:  rgb(18, 131, 37);
     }
 
 </style> 

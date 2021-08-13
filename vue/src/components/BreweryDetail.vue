@@ -1,5 +1,5 @@
 <template>
-    <div class="brewery-detail-background vw-100% vh-100">
+    <div class="brewery-detail-background vw-100% vh-100%">
         <b-container fluid class="bv-row" >
             <b-row>
                 <b-col></b-col>
@@ -9,7 +9,7 @@
                     <div>
                        <b-row> 
                            <b-col cols="9">
-                                <p class=" mt-5 brewery-detail-subtitle"> Located at:</p>
+                                <p class=" mt-5 brewery-detail-subtitle"> Located at</p>
                                 <p class=" address city state zip phone hourOfOpp">{{ brewery.breweryAddress }} {{ brewery.breweryCity }}, {{ brewery.breweryState }} {{ brewery.zipCode }}  |  Phone Number: {{ brewery.phoneNumber}}</p>
                                 <p class=" hourOfOpp"> Open Hours: {{ brewery.hoursOfOperation }} </p>                            
                             <b-row>
@@ -150,6 +150,11 @@ import updateService from '../services/UpdateService';
     font-size: 40px;
     font-weight: bold;
 }
+
+/* .brewery-subtitle-underline {
+
+    border-bottom: rgb(18, 131, 37);
+} */
 
 .brewery-detail-img {
     max-width: 900px;

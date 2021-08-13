@@ -5,12 +5,13 @@
             <b-row>
                 <b-col></b-col>
                 <b-col>
+
                     <div class="beerDetail">
                     <h1 class="name text-center beer-title"> {{beer.name}}</h1>
                     <p>{{beer.description}}</p>
                     <p>{{beer.type}}</p>
                     <p>{{beer.abv}}</p>
-                    <img :src="beer.imgUrl" alt="Picture Of Beer" class="beerImg">
+                    <img :src="beer.imgUrl" alt="Picture Of Beer" class="beer-details-img">
                     </div> 
                     
                     <div class="listOfReviews">
