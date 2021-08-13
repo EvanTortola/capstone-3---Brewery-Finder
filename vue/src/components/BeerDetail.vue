@@ -7,11 +7,11 @@
                 <b-col>
 
                     <div class="beerDetail">
-                        <h1 class="name text-center beer-title beer-detail-heading"> {{beer.name}}</h1>
+                        <h1 class="name text-center beer-title beer-details-heading"> {{beer.name}}</h1>
                         <p>{{beer.description}}</p>
                         <p>{{beer.type}}</p>
                         <p>{{beer.abv}}</p>
-                        <img :src="beer.imgUrl" alt="Picture Of Beer" class="beer-details-img">
+                        <img :src="beer.imgUrl" alt="Picture Of Beer" class="beer-detail-img">
                     </div> 
                     
                     <div class="listOfReviews">
@@ -134,13 +134,28 @@ justify-content: center;
   color: rgb(18, 131, 37);
 }
 
-.beer-details-img {
+.beer-detail-img {
     max-width: 300px;
 }
 
 .beer-detail-btns {
   margin-right: 2%;
   margin-top: 1%;
+}
+
+@media only screen and (max-width:514px) {
+
+    .beer-detail-img {
+  height: 200px;
+
+  }
+}
+
+@media only screen and (max-width:369px) {
+
+    .beer-detail-img {
+      width : 200px;
+  }
 }
 
 </style>

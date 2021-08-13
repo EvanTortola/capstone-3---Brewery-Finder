@@ -125,12 +125,6 @@ export default {
 
         color: rgb(18, 131, 37);
     }
-
-    .welcome-img {
-        /* height: 30px; */
-    }
-
-
     
     .btn-circle {
         width: 180px;
@@ -167,6 +161,7 @@ export default {
     .card-body {
         /* margin: 1%; */
         color: rgb(40, 70, 45);
+        margin-bottom: 1px;
 
         font-size: 20px;
         text-decoration: none;        
@@ -177,7 +172,62 @@ export default {
       max-height: 100px;  
     }
     .card-title {
+        margin-bottom: 5px;
+
+        font-size: 25px;
         color: rgb(40, 70, 45);
+
     }
+
+    @media only screen and (max-width: 886px) {
+        .welcome-text-heading {
+            font-size: 35px;;
+        }
+
+        .card {
+            height: 200px;
+            margin-right: 5%;
+
+        }
+
+        .card-title {
+            font-size: 18px;
+        }
+
+        .card-body {
+            font-size: 12px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .card-img {
+            height: 0px
+        }
+    }
+
+       @media only screen and (max-width:754px) {
+        .welcome-text-heading {
+            font-size: 25px;;
+        }
+
+        .card {
+            height: 150px;
+            margin-right: 5%;
+            /* flex-flow: row wrap; */
+
+        }
+
+        .card-title {
+            font-size: 15px;
+        }
+
+        .card-body {
+            font-size: 0px;
+        }
+
+        .card-img {
+            height: 0px
+        }
+       }
 
 </style> 

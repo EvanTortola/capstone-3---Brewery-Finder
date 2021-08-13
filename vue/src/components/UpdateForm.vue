@@ -45,7 +45,10 @@ export default {
                     this.$router.push(`/breweries/${this.$route.params.breweryId}`)
                 })
             }
-        }
+        },
+            cancelForm() {
+        this.$router.push(`/breweries/${this.$route.params.breweryId}`);
+    },
     },
 
     data() {
