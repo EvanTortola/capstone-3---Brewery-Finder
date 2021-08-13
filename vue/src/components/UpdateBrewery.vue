@@ -1,9 +1,11 @@
 <template>
-    <div class="hero-img vw-100% vh-100">
-        <b-container fluid class="b-row transprnt-overlay vw-100% vh-100">
+    <div class="webpage-base-background vw-100% vh-100%">
+        <b-container fluid class="b-row">
             <b-row>
+                <p class="text-center form-heading ">Update Brewery</p>
                 <b-col></b-col>
-                <b-col cols= "8">
+                <b-col cols= "8" class="form-body vw-100% vh-100">
+
                     <form v-on:submit.prevent="submitForm" class="updatedBrewery">
                         <div class="status-message error" v-show="errorMsg !== ''">{{errorMsg}}</div>
                         <div class="form-group">
@@ -35,8 +37,8 @@
                         <label for="image">Image URL:</label>
                         <input id="image" type="text" name="img" accept="image/*" class="form-control" v-model="brewery.image">    
                         </div>
-                        <button class="btn btn-submit" v-on:click.prevent="updateForm">Update Existing Brewery</button>
-                        <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
+                        <button class="btn btn-submit btn-color form-detail-btns" v-on:click.prevent="updateForm">Update Existing Brewery</button>
+                        <button class="btn btn-cancel btn-color form-detail-btns" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
                         
                     </form>
                 </b-col>
@@ -96,12 +98,51 @@ export default {
                     });
                 }
            
-             }
+             },
+            cancelForm() {
+                this.$router.push(`/breweries/${this.$route.params.breweryId}`);
+            },
+
+             
     }
 
 }
 </script>
 
 <style>
+.form-heading {
+    color: rgb(18, 131, 37);
+
+    font-size: 50px;
+    font-weight: bold;
+    margin: 2% 0 0 0;
+}
+
+.form-body {
+  margin: 2% 0 0 0;
+}
+
+.form-detail-btns {
+  margin-right: 2%;
+  margin-top: 1%;
+}
+
+
+@media only screen and (max-width:444px) {
+
+    .form-detail-btns {
+        font-size: 12px;
+    }
+
+    .form-heading {
+    color: rgb(18, 131, 37);
+
+    font-size: 25px;
+    font-weight: bold;
+    margin: 2% 0 0 0;
+}
+
+}
+
 
 </style>

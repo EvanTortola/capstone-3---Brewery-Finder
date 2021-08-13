@@ -1,6 +1,8 @@
 <template>
-    <div class="hero-img vw-100% vh-100%" title= "Room with metal brewery cisterns along the walls, and a few wooden benches and small wood crates" >
-        <div>
+    <div class="hero-img vw-100% vh-100" title= "Room with metal brewery cisterns along walls, wooden benches, and small wood crates">
+        <div class="transprnt-overlay-login vw-100 vh-100">
+            <h1 class="text-center welcome-text-heading">     
+                Browse These Fine Establishments</h1>
             <b-container fluid class="bv-row">          
                 
                 <b-row  >
@@ -9,33 +11,35 @@
                     </b-col>
                     
                     <b-col  v-for="brewery in breweries.slice(0,3)" v-bind:key="brewery.breweryId"  class="card">
-                    <!-- can we limit the amount of breweries shown per page with a v-if and an event listener that moves you to the next page and shows the next 3 breweries? -->                    
-                        <!-- <b-card tag="article"  class="mb-2"> -->
                             <router-link :to="{name: 'Brewery', params: {breweryId: brewery.breweryId} }">
 
-                                
-                                <h4 class=" text-center card-title">{{ brewery.breweryName }}</h4>
-                                <b-card-text class="text-center">
-                                    {{ brewery.breweryCity }}
-                                </b-card-text>
-                                <img :src=" brewery.image " img-bottom class="card-img" />
+                                <b-row>
+                                    <b-col>
+                                        <h4 class="text-center card-title">{{ brewery.breweryName }}</h4>
+                                        <!-- <h4 class="text center card-body"> {{ brewery.breweryCity }} </h4> -->
+                                        <b-card-text class="text-center card-body">
+                                            {{ brewery.breweryCity }}
+                                        </b-card-text>
+                                        
+                                        <b-row>
+                                            <b-col></b-col>
+                                            <b-col cols="7">
+                                                <img :src=" brewery.image " img-bottom class=" card-img" />
+                                            </b-col>
+                                            <b-col></b-col>
+
+                                        </b-row>
+                                    </b-col>
+                                </b-row>
                                     
                             </router-link>
-                        <!-- </b-card>                     -->
+  
                     </b-col>
 
-                    <!-- <b-col>
-                        <button type="button" class="btn btn-warning btn-circle btn-xl" v-on:click.prevent="first3 = false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
-                        </button>
-                    </b-col> -->
-                    <b-col>
-                        
-                    </b-col>
+                    <b-col></b-col>
+
                 </b-row>
-                <b-row  >
+                <b-row>
                     <b-col>
                         <!-- column intentionally empty to center cards and button -->
                     </b-col>
@@ -47,22 +51,25 @@
 
                                 
                                 <h4 class=" text-center card-title">{{ brewery.breweryName }}</h4>
-                                <b-card-text class="text-center">
-                                    {{ brewery.breweryCity }}
-                                </b-card-text>
-                                <img :src=" brewery.image " img-bottom class=" text-center card-img" />
+                                <b-card-text class="text-center card-body">
+                                    {{ brewery.breweryCity }} 
+                                    </b-card-text>
+                                <b-row>
+                                    <b-col></b-col>
+                                    <b-col cols="8">
+                                        <img :src=" brewery.image " img-bottom class=" card-img" />
+                                    </b-col>
+                                    <b-col></b-col>
+
+                                </b-row>
+
+
                                     
                             </router-link>
                         <!-- </b-card>                     -->
                     </b-col>
 
-                    <!-- <b-col>
-                        <button type="button" class="btn btn-warning btn-circle btn-xl" v-on:click.prevent="first3 = false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
-                        </button>
-                    </b-col> -->
+
                     <b-col>
                         
                     </b-col>
@@ -109,9 +116,14 @@ export default {
 
 <style>
 
-    .welcome-text {
-      padding-top: 50px;
-      color: white;
+
+
+    .welcome-text-heading {
+        padding-top: 50px;
+        font-size: 50px;
+        font-weight: bold;
+
+        color: rgb(18, 131, 37);
     }
     
     .btn-circle {
@@ -135,30 +147,87 @@ export default {
     }
 
     .card {
-      height: 17rem;
-      width: 20rem;
+      height: 300px;
+      width: 100px;
       margin: 7% .5%;
+      border-radius: 5px;
+
       justify-content: center;
       align-content: center;
-      
+
+      background-color:rgb(219, 164, 91);
     }
 
     .card-body {
-        margin: 1%
-    }
-    
-    .mb-2 {
-        /* margin-top: 20px; */
-        /* margin-bottom: 100px;  */
+        /* margin: 1%; */
+        color: rgb(40, 70, 45);
+        margin-bottom: 1px;
+
+        font-size: 20px;
+        text-decoration: none;        
     }
 
     .card-img {
-      max-width: 180px;
+      max-width: 200px;
       max-height: 100px;  
-      justify-content: center;
     }
     .card-title {
-        justify-content: center;
+        margin-bottom: 5px;
+
+        font-size: 25px;
+        color: rgb(40, 70, 45);
+
     }
+
+    @media only screen and (max-width: 886px) {
+        .welcome-text-heading {
+            font-size: 35px;;
+        }
+
+        .card {
+            height: 200px;
+            margin-right: 5%;
+
+        }
+
+        .card-title {
+            font-size: 18px;
+        }
+
+        .card-body {
+            font-size: 12px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .card-img {
+            height: 0px
+        }
+    }
+
+       @media only screen and (max-width:754px) {
+        .welcome-text-heading {
+            font-size: 25px;;
+        }
+
+        .card {
+            height: 150px;
+            margin-right: 5%;
+            /* flex-flow: row wrap; */
+
+        }
+
+        .card-title {
+            font-size: 15px;
+        }
+
+        .card-body {
+            font-size: 0px;
+        }
+
+        .card-img {
+            height: 0px
+        }
+       }
 
 </style> 

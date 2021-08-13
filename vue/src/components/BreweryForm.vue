@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="webpage-base-background  vw-100% vh-100%">
         <b-container fluid class="bv-row">
                 <b-row> 
                     <b-col></b-col>
@@ -29,8 +29,8 @@
                             <label for="image">Image URL:</label>
                             <input id="image" type="text" name="img" accept="image/*" class="form-control" v-model="brewery.image">    
                           </div>
-                          <button class="btn btn-submit" v-on:click.prevent="submitForm">Submit</button>
-                          <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
+                          <button class="btn btn-submit btn-color form-detail-btns" v-on:click.prevent="submitForm">Submit</button>
+                          <button class="btn btn-cancel btn-color form-detail-btns" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>
                       </form>
                     </b-col>
                     <b-col></b-col>

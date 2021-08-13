@@ -1,35 +1,38 @@
 <template>
 
-    <div>
+    <div class="webpage-base-background vh-100">
         <b-container fluid class="bv-row">
             <b-row>
                 <b-col></b-col>
                 <b-col>
+
                     <div class="beerDetail">
-                    <h1 class="name text-center beer-title"> {{beer.name}}</h1>
-                    <p>{{beer.description}}</p>
-                    <p>{{beer.type}}</p>
-                    <p>{{beer.abv}}</p>
-                    <img :src="beer.imgUrl" alt="Picture Of Beer" class="beerImg">
+                        <h1 class="name text-center beer-title beer-details-heading"> {{beer.name}}</h1>
+                        <p>{{beer.description}}</p>
+                        <p>{{beer.type}}</p>
+                        <p>{{beer.abv}}</p>
+                        <img :src="beer.imgUrl" alt="Picture Of Beer" class="beer-detail-img">
                     </div> 
                     
                     <div class="listOfReviews">
-                    <div v-for="review in reviews" v-bind:key="review.reviewId" class="review">
-                    <!-- <h3>{{review.beerName}}</h3> -->
-                    
-                    <img src="../assets\img/homer_simpson.png" v-for="n in review.rating" v-bind:key="n" alt="" class="homer">
-                    <p>{{review.userExperience}}</p>
-                    <!-- <p>{{review.rating}} Pours</p> -->
-                    </div> 
+                            <div v-for="review in reviews" v-bind:key="review.reviewId" class="review">
+                            <!-- <h3>{{review.beerName}}</h3> -->
+                            
+                            <img src="../assets\img/homer_simpson.png" v-for="n in review.rating" v-bind:key="n" alt="" class="homer">
+                            <p>{{review.userExperience}}</p>
+                            <!-- <p>{{review.rating}} Pours</p>x -->
+                        </div> 
                     </div>
+                    <b-row>
+                        <router-link :to="{name: 'addReview', params: {breweryId: beer.breweryId, beerId: beer.beerId, name: beer.name}}">
+                            <div class="addReview">
+                            <button class="btn btn-color form-detail-btns">Add Review</button>
+                            <button v-on:click.prevent="deleteBeer" v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'" class="btn btn-color beer-detail-btns">Delete This Beer</button>
 
-                    <router-link :to="{name: 'addReview', params: {breweryId: beer.breweryId, beerId: beer.beerId, name: beer.name}}">
-                        <div class="addReview">
-                        <button>Add Review</button>
-                        </div>
-                    </router-link>
+                            </div>
+                        </router-link>
 
-                    <button v-on:click.prevent="deleteBeer" v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'">Delete This Beer</button>
+                    </b-row>
                 </b-col>
                 <b-col></b-col>
             </b-row>
@@ -108,10 +111,14 @@ export default {
 </script>
 
 <style>
+
+
+
 .homer {
   height: 50px;
   width: 50px;
 }
+
 .review {
   border-top: black 2px solid;
 }
@@ -121,10 +128,34 @@ align-items: center;
 justify-content: center;
 }
 
+.beer-detail-heading {
+  margin-top: 5%;
 
+  color: rgb(18, 131, 37);
+}
 
+.beer-detail-img {
+    max-width: 300px;
+}
 
+.beer-detail-btns {
+  margin-right: 2%;
+  margin-top: 1%;
+}
 
+@media only screen and (max-width:514px) {
 
+    .beer-detail-img {
+  height: 200px;
+
+  }
+}
+
+@media only screen and (max-width:369px) {
+
+    .beer-detail-img {
+      width : 200px;
+  }
+}
 
 </style>
