@@ -1,32 +1,32 @@
 <template>
 
-    <div class="brewery-detail-background vh-100">
+    <div class="webpage-base-background vh-100">
         <b-container fluid class="bv-row">
             <b-row>
                 <b-col></b-col>
                 <b-col>
 
                     <div class="beerDetail">
-                    <h1 class="name text-center beer-title"> {{beer.name}}</h1>
-                    <p>{{beer.description}}</p>
-                    <p>{{beer.type}}</p>
-                    <p>{{beer.abv}}</p>
-                    <img :src="beer.imgUrl" alt="Picture Of Beer" class="beer-details-img">
+                        <h1 class="name text-center beer-title"> {{beer.name}}</h1>
+                        <p>{{beer.description}}</p>
+                        <p>{{beer.type}}</p>
+                        <p>{{beer.abv}}</p>
+                        <img :src="beer.imgUrl" alt="Picture Of Beer" class="beer-details-img">
                     </div> 
                     
                     <div class="listOfReviews">
-                    <div v-for="review in reviews" v-bind:key="review.reviewId" class="review">
-                    <!-- <h3>{{review.beerName}}</h3> -->
-                    
-                    <img src="../assets\img/homer_simpson.png" v-for="n in review.rating" v-bind:key="n" alt="" class="homer">
-                    <p>{{review.userExperience}}</p>
-                    <!-- <p>{{review.rating}} Pours</p> -->
-                    </div> 
+                            <div v-for="review in reviews" v-bind:key="review.reviewId" class="review">
+                            <!-- <h3>{{review.beerName}}</h3> -->
+                            
+                            <img src="../assets\img/homer_simpson.png" v-for="n in review.rating" v-bind:key="n" alt="" class="homer">
+                            <p>{{review.userExperience}}</p>
+                            <!-- <p>{{review.rating}} Pours</p>x -->
+                        </div> 
                     </div>
                     <b-row>
                         <router-link :to="{name: 'addReview', params: {breweryId: beer.breweryId, beerId: beer.beerId, name: beer.name}}">
                             <div class="addReview">
-                            <button class="btn btn-color">Add Review</button>
+                            <button class="btn btn-color form-detail-btns">Add Review</button>
                             <button v-on:click.prevent="deleteBeer" v-if="$store.state.user.authorities[0].name == 'ROLE_BREWER'" class="btn btn-color beer-detail-btns">Delete This Beer</button>
 
                             </div>
@@ -112,6 +112,8 @@ export default {
 
 <style>
 
+
+
 .homer {
   height: 50px;
   width: 50px;
@@ -127,11 +129,12 @@ justify-content: center;
 }
 
 .beer-details-img {
-    max-width: 50px;
+    max-width: 300px;
 }
 
 .beer-detail-btns {
-  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 1%;
 }
 
 </style>

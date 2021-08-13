@@ -1,5 +1,5 @@
 <template>
-    <div class="brewery-detail-background vw-100% vh-100%">
+    <div class="webpage-base-background vw-100% vh-100%">
         <b-container fluid class="bv-row" >
             <b-row>
                 <b-col></b-col>
@@ -132,7 +132,7 @@ import updateService from '../services/UpdateService';
 
 <style>
 
-.brewery-detail-background {
+.webpage-base-background {
     background-color: rgba(241, 235, 172, .5);
 }
 
